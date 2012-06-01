@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>davidfmiller</title>
+  <style>
+    body {
+      margin: 0; padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #doc {
+    }
+    #doc.rmr-full-screen {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
 
+<div id="doc">
+  davidfmiller
+  <input type="button" value="+">
+</div>
+
+<script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<script>
+
+YUI({
+  'modules' : {
+    'screen' : { fullpath : 'assets/js/screen.js' }
+  }
+}).use('screen', 'node', 'base', 'event', function(Y) {
+
+  var doc = Y.one('#doc'),
+      screen = new Y.Screen({ 'node': doc });
+      screen.on('fullscreen', function(e) {
+        Y.log('fullscreen');
+      });
+      screen.on('exit', function(e) {
+        Y.log('exit');
+      });
+
+  Y.one('div input').on('click', function(e){
+      screen.toggle();
+  });
+
+});
+</script>
 </body>
 </html>
