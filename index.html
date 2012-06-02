@@ -9,7 +9,18 @@
       width: 100%;
       height: 100%;
     }
-    #doc { }
+
+    #doc {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    #backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     #doc.rmr-full-screen {
       width: 100%;
       height: 100%;
@@ -28,12 +39,15 @@
 
 YUI({
   'modules' : {
-    'screen' : { fullpath : 'assets/js/screen.js' }
+    'screen' : { fullpath : 'assets/js/screen.js' },
+    'backdrop' : { fullpath : 'assets/js/backdrop.js' }
   }
-}).use('screen', 'node', 'base', 'event', function(Y) {
+}).use('screen', 'backdrop', 'node', 'base', 'event', function(Y) {
 
-  var doc = Y.one('#doc'),
-      screen = new Y.Screen({ 'node': doc });
+  var doc = Y.one('body'),
+      screen = new Y.Screen({ 'node': doc }),
+      backdrop = new Y.Backdrop({'url' : 'http://davidfmiller.github.com/assets/img/kaos.jpg' });
+
       screen.on('fullscreen', function(e) {
         Y.log('fullscreen');
       });
