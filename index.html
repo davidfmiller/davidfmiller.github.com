@@ -58,9 +58,12 @@ YUI({
 
       screen.on('fullscreen', function(e) {
         Y.log('fullscreen');
+        Y.one('body input').set('value', '-');
       });
       screen.on('exit', function(e) {
         Y.log('exit');
+        Y.one('body input').set('value', '+');
+        backdrop.resize(); /* ensure scrollbars don't linger */
       });
 
   Y.one('div input').on('click', function(e){
