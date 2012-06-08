@@ -34,7 +34,7 @@ YUI.add('backdrop', function(Y) {
         o.node.transition({
           'opacity' : 1,
           'duration' : o.$.get('duration')
-        }, function() { o.$.fire('drop'); });
+        }, function() { o.$.fire('drop'); Y.one('body').setStyle('backgroundImage', 'url(' + img.src + ')'); o.node.remove();  });
 
         Y.on('windowresize', function() { o.$.resize(); });
       };
@@ -69,15 +69,20 @@ YUI.add('backdrop', function(Y) {
        * Update the size of the backdrop to match the window size (will be attached to window resize event)
        */
       resize : function() {
+
         var body = Y.one(document.body),
-            region = null;
+            region = null,
+            node = Y.one('#' + this.get('id'));
 
         body.setStyle('minHeight', body.get('winHeight') + 'px');
+
         region = body.get('region');
-        Y.one('#' + this.get('id')).setStyles({'width': region.width + 'px', 'height': region.height + 'px'});
+        if (node) { node.setStyles({'width': region.width + 'px', 'height': region.height + 'px'}); }
 
         return this;
+
       },
+
 
       /*
        *
@@ -102,7 +107,6 @@ YUI.add('backdrop', function(Y) {
        */
 
 //      'NAME' : 'backdrop',
-      
     });
 
   }, '3.3.1', { requires : ['node', 'base', 'event', 'event-resize', 'transition' ] });
