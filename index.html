@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <title>davidfmiller</title>
   <style>
+    html {
+      background: #000;
+    }
+
     body {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
-      background: #000;
     }
 
     #doc {
@@ -25,9 +28,9 @@
       z-index: 0;
       opacity: 0;
     }
-    #doc.rmr-full-screen {
+    body.rmr-full-screen {
       width: 100%;
-      height: 100%;
+      min-height: 100%;
     }
   </style>
 </head>
@@ -62,7 +65,6 @@ YUI({
       screen.on('exit', function(e) {
         Y.log('exit');
         Y.one('body input').set('value', '+');
-        backdrop.resize(); /* ensure scrollbars don't linger */
       });
 
   Y.one('div input').on('click', function(e){
