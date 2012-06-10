@@ -16,37 +16,18 @@ YUI.add('backdrop', function(Y) {
     var Backdrop = function(config) {
       Backdrop.superclass.constructor.apply(this, arguments);
 
-      this.set('url', config.url);
+      this.set('url', config.hasOwnProperty('url') ? config.url : null);
       this.set('id', config.hasOwnProperty('id') ? config.id : null);
       this.set('duration', config.hasOwnProperty('duration') ? config.duration : null);
 
-      if (! this.get('url')) { return null; }
-
-      var img = new Image(), o = {};
-
-      o.$ = this;
-      o.node = Y.Node.create('<div id="' + this.get('id') + '"></div>');
-
-      img.onload = function() {
-        Y.one('body').append(o.node);
-        o.node.setStyle('backgroundImage', 'url(' + this.src + ')');
-        o.$.resize();
-        o.node.transition({
-          'opacity' : 1,
-          'duration' : o.$.get('duration')
-        }, function() { o.$.fire('drop'); Y.one('body').setStyle('backgroundImage', 'url(' + img.src + ')'); o.node.remove();  });
-
-        Y.on('windowresize', function() { o.$.resize(); });
-      };
-      img.src = this.get('url');
+      if (this.get('url')) { this.drop(); }
 
       return this;
     };
 
     Backdrop.ATTRS = {
       url : {
-        value : null,
-        writeOnce : true
+        value : null
       },
       id : {
         value : null,
@@ -63,6 +44,41 @@ YUI.add('backdrop', function(Y) {
 
     Y.Backdrop = Y.extend(Backdrop, Y.Base,
     {
+
+      destructor : function() {
+        this.set('id', null);
+        this.set('duration', null);
+        this.set('url', null);
+      },
+
+      /* 
+       *
+       *
+       */
+      drop : function(url) {
+
+        if (url) { this.set('url', url); }
+  
+        var img = new Image(), o = {};
+  
+        o.$ = this;
+        o.node = Y.Node.create('<div id="' + this.get('id') + '"></div>');
+  
+        img.onload = function() {
+          Y.one('body').append(o.node);
+          o.node.setStyle('backgroundImage', 'url(' + this.src + ')');
+          o.$.resize();
+          o.node.transition({
+            'opacity' : 1,
+            'duration' : o.$.get('duration')
+          }, function() { o.$.fire('drop'); Y.one('body').setStyle('backgroundImage', 'url(' + img.src + ')'); o.node.remove();  });
+  
+          Y.on('windowresize', function() { o.$.resize(); });
+        };
+        img.src = this.get('url');
+
+        return this;
+      },
 
       /*
        *
