@@ -71,7 +71,7 @@ YUI.add('backdrop', function(Y) {
           o.node.transition({
             'opacity' : 1,
             'duration' : o.$.get('duration')
-          }, function() { o.$.fire('drop'); Y.one('body').setStyle('backgroundImage', 'url(' + img.src + ')'); o.node.remove();  });
+          }, function() { o.$.fire('drop', o.$.get('url') ); Y.one('body').setStyle('backgroundImage', 'url(' + img.src + ')'); o.node.remove();  });
   
           Y.on('windowresize', function() { o.$.resize(); });
         };
