@@ -35,8 +35,7 @@ YUI.add('backdrop', function(Y) {
         writeOnce : true,
       },
       duration : {
-        value : null,
-        writeOnce : true,
+        value : 1,
         setter : function(i) { return (i ? parseFloat(i, 10) : 1); }
       }
     };
@@ -55,15 +54,20 @@ YUI.add('backdrop', function(Y) {
        *
        *
        */
-      drop : function(url) {
+      drop : function(config) {
 
-        if (url) { this.set('url', url); }
-  
+        if (typeof config === 'string') {
+          this.set('url', config);
+        } else {
+          if (config.hasOwnProperty('url')) { this.set('url', config.url); }
+          if (config.hasOwnProperty('duration')) { this.set('duration', config.duration); }
+        }
+
         var img = new Image(), o = {};
-  
+
         o.$ = this;
         o.node = Y.Node.create('<div id="' + this.get('id') + '"></div>');
-  
+
         img.onload = function() {
           Y.one('body').append(o.node);
           o.node.setStyle('backgroundImage', 'url(' + this.src + ')');
@@ -72,7 +76,7 @@ YUI.add('backdrop', function(Y) {
             'opacity' : 1,
             'duration' : o.$.get('duration')
           }, function() { o.$.fire('drop', o.$.get('url') ); Y.one('body').setStyle('backgroundImage', 'url(' + img.src + ')'); o.node.remove();  });
-  
+
           Y.on('windowresize', function() { o.$.resize(); });
         };
         img.src = this.get('url');
