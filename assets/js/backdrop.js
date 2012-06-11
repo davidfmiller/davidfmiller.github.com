@@ -1,17 +1,20 @@
 /*jslint browser:true, indent:2,white:true,nomen:false,plusplus:false */
 /*global YUI, window */
 
-
+/**
+ @module Backdrop 
+ */
 YUI.add('backdrop', function(Y) {
 
     'use strict';
 
-    /* 
-     *
-     * @param config (object)
-     *  'url' (string) - the path to the background image
-     *  'id' (string, optional) - 
-     *  'duration' (float, optional) - seconds
+    /**
+     @class Backdrop
+     @constructor
+     @param config (object)
+       'url' (string) - the path to the background image
+       'id' (string, optional) - 
+       'duration' (float, optional) - seconds
      */
     var Backdrop = function(config) {
       Backdrop.superclass.constructor.apply(this, arguments);
@@ -31,8 +34,8 @@ YUI.add('backdrop', function(Y) {
       },
       id : {
         value : null,
-        setter : function(id) { return id ? id : 'backdrop'; },
-        writeOnce : true,
+        setter : function(id) { return id || 'backdrop'; },
+        writeOnce : true
       },
       duration : {
         value : 1,
@@ -43,16 +46,19 @@ YUI.add('backdrop', function(Y) {
 
     Y.Backdrop = Y.extend(Backdrop, Y.Base,
     {
-
+      /**
+       @method destructor
+       */
       destructor : function() {
         this.set('id', null);
         this.set('duration', null);
         this.set('url', null);
       },
 
-      /* 
-       *
-       *
+      /**
+       @method drop
+       @chainable
+       @param config
        */
       drop : function(config) {
 
@@ -84,9 +90,10 @@ YUI.add('backdrop', function(Y) {
         return this;
       },
 
-      /*
-       *
-       * Update the size of the backdrop to match the window size (will be attached to window resize event)
+      /**
+       Update the size of the backdrop to match the window size (will be attached to window resize event)
+       @method resize
+       @chainable
        */
       resize : function() {
 
@@ -103,30 +110,15 @@ YUI.add('backdrop', function(Y) {
 
       },
 
-
-      /*
-       *
-       * @return string
+      /**
+       Return a string representation of the object
+       @method toString
+       @return string
        */
       toString : function() {
         return '[Backdrop]';
       }
 
-
-      /* 
-       *
-       *
-      remove : function() {
-
-        var $ = this;
-        Y.one('#' + this.get('id')).transition({
-          'opacity' : 0,
-          'duration' : this.get('duration')
-        }, function(e) { this.remove(); $.fire('remove'); });
-      },
-       */
-
-//      'NAME' : 'backdrop',
     });
 
   }, '3.3.1', { requires : ['node', 'base', 'event', 'event-resize', 'transition' ] });
