@@ -79,7 +79,7 @@ YUI.add('backdrop', function(Y) {
         if (typeof config === 'string') {
           this.set('url', config);
           this.set('styles', null)
-        } else {
+        } else if (config) {
           if (config.hasOwnProperty('url')) { this.set('url', config.url); }
           if (config.hasOwnProperty('duration')) { this.set('duration', config.duration); }
           this.set('styles', config.hasOwnProperty('styles') ? config.styles : null);
