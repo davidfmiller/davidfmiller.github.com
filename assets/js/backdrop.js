@@ -28,7 +28,7 @@ YUI.add('backdrop', function(Y) {
 
       return this;
     },
-    DEFAULT_STYLES = { 'position' : 'top left', 'repeat' : 'repeat-none', 'attachment' : 'fixed', 'size' : 'auto' };
+    DEFAULT_STYLES = { 'color' : 'transparent', 'position' : 'top left', 'repeat' : 'no-repeat', 'attachment' : 'fixed', 'size' : 'auto' };
 
     Backdrop.ATTRS = {
       url : {
@@ -95,6 +95,7 @@ YUI.add('backdrop', function(Y) {
 
           var s = Y.merge(DEFAULT_STYLES, o.$.get('styles'));
 
+          o.$.fire('start', this.src);
           s.image = 'url(' + this.src + ')';
           o.$._applyStyles(o.node, s);
 
@@ -104,7 +105,7 @@ YUI.add('backdrop', function(Y) {
             'opacity' : 1,
             'duration' : o.$.get('duration')
           }, function() {
-            o.$.fire('drop', o.$.get('url') );
+            o.$.fire('end', o.$.get('url') );
 
             var styles = Y.merge(DEFAULT_STYLES, o.$.get('styles')),
                 body = Y.one('body');
