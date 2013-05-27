@@ -92,7 +92,7 @@ YUI().use(function(Y) {
 
     }, 'down:37,39');
 
-    Y.all('#doc section section, section.zoom').each(function(n) {
+    Y.all('#doc section section').each(function(n) {
       n.plug(Y.Plugin.NodeFocusManager, {
         descendants: 'a, button',
         keys: {

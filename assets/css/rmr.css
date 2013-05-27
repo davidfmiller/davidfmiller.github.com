@@ -5,11 +5,14 @@ Licensed under the BSD License.
 http://yuilibrary.com/license/
 */
 html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
- 
+
+
+/* @group basics */
+
 html {
   background: #000;
 }
- 
+
 body {
   font: 15px courier, sans-serif;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
@@ -37,11 +40,26 @@ button {
   -moz-transition: 0.2s opacity;
   -moz-transition: 0.2s background-color;
 }
- 
+
+button.focus {
+  opacity: 1;
+}
+
+button:hover {
+  background-color: rgba(0,0,0,0.4);
+  background-position: -15px 0;
+  opacity: 1;
+}
+
+/* @end */
+
+
+/* @group screen */
+
 .rmr-screen div section section {
   display: none;
 }
- 
+
 .rmr-screen button {
   opacity: 1;
   background-position: 0 -15px;
@@ -50,23 +68,14 @@ button {
 .rmr-screen button:hover {
   background-position: -15px -15px;
 }
- 
-button.focus {
-  opacity: 1;
-}
- 
- 
-button:hover {
-  background-color: rgba(0,0,0,0.4);
-  background-position: -15px 0;
-  opacity: 1;
-}
- 
+
+/* @end */
+
 ::-moz-selection,
 ::selection {
   background: rgba(64,64,64,0.4);
 }
- 
+
 div {
   color: #fff;
   padding: 75px 25px 75px 75px;
@@ -80,7 +89,10 @@ div {
   -moz-transition: 0.5s opacity;
 }
  
-div:hover { -webkit-transition: 0.5s background-color;  }
+div:hover {
+  -webkit-transition: 0.5s background-color;
+}
+
 .rmr-screen #doc {
   background: transparent;
 }
@@ -144,25 +156,15 @@ section.zoom {
 .rmr-screen section.zoom {
   top: 25px;
 }
- 
+
 ol li {
   text-indent: -1000em;
   overflow: hidden;
   margin-bottom: 1px;
-  margin-right: 5px;
-  border: 1px solid rgba(223, 223,223, 0.1);
-  padding: 1px;
-  margin: 0 0 1px 0;
-  -webkit-transition: 0.5s border-color;
-  margin-right: 5px;
+  margin: 0 0 3px 0;
+  padding: 0;
 }
- 
-ol li:hover {
-  border-color: rgba(255,255,255,0.2);
-  margin-left: 5px;
-  margin-right: 0;
-}
- 
+
 ol a {
   opacity: 0.5;
   background: url(../img/thumb.jpg);
@@ -173,6 +175,11 @@ ol a {
   border: none;
   text-decoration: none;
   -webkit-transition: opacity 0.2s;
+  -webkit-transition: margin-left 0.2s;
+}
+
+ol a:hover {
+  margin-left: 5px;
 }
  
 body.rmr-screen ol a,
@@ -180,37 +187,409 @@ div:hover ol a {
   opacity: 0.5;
 }
  
-div ol a:focus,
 body.rmr-screen ol .active a,
 div ol .active a,
-div:hover ol li:hover a {
+div:hover ol li a:hover {
   opacity: 1;
 }
- 
+
+/* @group backdrop */
+
 div.backdrop a {
   border-bottom-color: yellow; /*ie*/
   border-bottom-color: rgba(255, 255, 0, 0.3);
   color: yellow;
 }
- 
+
+div.backdrop a:focus,
+div.backdrop a:hover { border-bottom-color: yellow; }
+
 div.backdrop a:focus,
 div.backdrop a:hover { border-bottom-color: yellow; }
  
+.rmr button { background-position: 0 -30px; }
+
+/* @end */
+
+/* @group bodhisattva */
+
+div.bodhisattva {
+  color: #222;
+  background: #fff;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: 0.5s background-color;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+ 
+div.bodhisattva a {
+  border-bottom-color: #48656b;
+  border-bottom-color: rgba(72,191,107,0.2);
+  color: #48656b;
+}
+ 
+div.bodhisattva a:focus,
+div.bodhisattva a:hover {
+  border-bottom-color: #48656b;
+}
+ 
+.bodhisattva button {
+  background-position: 0 -90px;
+}
+ 
+.bodhisattva button:hover {
+  background-position: -15px -90px;
+}
+
+.rmr-screen .bodhisattva button {
+  background-position: 0 -105px;
+}
+ 
+.rmr-screen .bodhisattva button:hover {
+  background-position: -15px -105px;
+}
+ 
+div.bodhisattva ol li a,
+div.bodhisattva dl,
+div.bodhisattva ul {
+  border-color: rgba(223,223,223,0.5);
+}
+
+/* @end */
+
+/* @group stream */
+
+div.stream {
+  color: #222;
+  background: #fff;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: 0.5s background-color;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+ 
+div.stream a {
+  border-bottom-color: #48656b;
+  border-bottom-color: rgba(72,191,107,0.2);
+  color: #48656b;
+}
+ 
+div.stream a:focus,
+div.stream a:hover {
+  border-bottom-color: #48656b;
+}
+
+.stream button {
+  background-position: 0 -90px;
+}
+ 
+.stream button:hover {
+  background-position: -15px -90px;
+}
+
+.rmr-screen .stream button {
+  background-position: 0 -105px;
+}
+ 
+.rmr-screen .stream button:hover {
+  background-position: -15px -105px;
+}
+ 
+div.stream ol li a,
+div.stream dl,
+div.stream ul {
+  border-color: rgba(223,223,223,0.5);
+}
+
+/* @end */
+
+/* @group kaos */
+
+.kaos button {
+  background-position: 0 -30px;
+}
+
+.kaos button:hover {
+  background-position: -15px -30px;
+}
+ 
+.rmr-screen .kaos button {
+  background-position: 0 -45px;
+}
+
+.rmr-screen .kaos button:hover {
+  background-position: -15px -45px;
+}
+ 
+div.kaos a {
+  border-bottom-color: red; /*ie*/
+  border-bottom-color: rgba(255, 0, 0, 0.3);
+  color: #ff0000;
+}
+ 
+div.kaos a:focus,
+div.kaos a:hover {
+  border-bottom-color: red;
+}
+
+div.kaos ol li a,
+div.kaos dl,
+div.kaos ul {
+  border-color: rgba(192,192,192,0.3);
+}
+
+/* @end */
+
+/* @group ubc */
+
+div.ubc {
+  background-color: rgba(0,0,0,0.8);
+}
+ 
+div.ubc a {
+  border-bottom-color: #444;
+  border-bottom-color: rgba(128,128,128, 0.3);
+  color: #aaa;
+}
+ 
+div.ubc a:focus,
+div.ubc a:hover {
+  border-bottom-color: #aaa;
+}
+.ubc button {
+  background-position: 0 -60px;
+}
+ 
+.ubc button:hover {
+  background-position: -15px -60px;
+}
+ 
+.rmr-screen .ubc button {
+  background-position: 0 -75px;
+}
+ 
+.rmr-screen .ubc button:hover {
+  background-position: -15px -75px;
+}
+
+div.ubc ol li a,
+div.ubc dl,
+div.ubc ul {
+  border-color: rgba(192,192,192,0.3);
+}
+
+/* @end */
+
+/* @group moma */
+
+div.moma {
+  background-color: rgba(0,0,0,0.8);
+}
+
+div.moma a {
+  border-bottom-color: #444;
+  border-bottom-color: rgba(128,128,128, 0.3);
+  color: #aaa;
+}
+
+div.moma a:focus,
+div.moma a:hover {
+  border-bottom-color: #aaa;
+}
+
+.moma button {
+  background-position: 0 -60px;
+}
+
+.moma button:hover {
+  background-position: -15px -60px;
+}
+ 
+.rmr-screen .moma button {
+  background-position: 0 -75px;
+}
+
+.rmr-screen .moma button:hover {
+  background-position: -15px -75px;
+}
+
+div.ubc ol li a,
+div.ubc dl,
+div.ubc ul {
+  border-color: rgba(192,192,192,0.3);
+}
+
+
+/* @end */
+
+/* @group chinatown */
+
+div.chinatown h1 span {
+  border-bottom-color: rgba(210,238,91,0.3);
+}
+ 
+div.chinatown ul {
+  border-left-color: rgba(210,238,91,0.3);
+}
+ 
+div.chinatown a {
+  color: #d2ee5b;
+  border-bottom-color: rgba(210,238,91,0.3);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+}
+ 
+div.chinatown a:hover {
+  border-bottom-color: rgb(210,238,91);
+}
+ 
+div.chinatown {
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+}
+
+/* @end */
+
+/* @group getty */
+
+div.getty {
+  background-color: rgba(0,0,0,0.8);
+}
+
+div.getty a {
+  border-bottom-color: #444;
+  border-bottom-color: rgba(128,128,128, 0.3);
+  color: #aaa;
+}
+ 
+div.vegas a:focus,
+div.vegas a:hover ,
+div.getty a:focus,
+div.getty a:hover {
+  border-bottom-color: #aaa;
+}
+ 
+.getty button {
+  background-position: 0 -60px;
+}
+ 
+.getty button:hover {
+  background-position: -15px -60px;
+}
+ 
+.rmr-screen .getty button {
+  background-position: 0 -75px;
+}
+ 
+.rmr-screen .getty button:hover {
+  background-position: -15px -75px;
+}
+
+div.getty ol li a,
+div.getty dl,
+div.getty ul {
+  border-color: rgba(192,192,192,0.3);
+}
+
+/* @end */
+
+/* @group evs */
+
+div.evs {
+  color: #222;
+  background: #fff;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: 0.5s background-color;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+ 
+div.evs a {
+  color: #755d17;
+  border-bottom-color: rgba(161,157,148, 0.2);
+}
+ 
+div.evs a:focus,
+div.evs a:hover {
+  border-bottom-color: rgb(161,157,148);  
+}
+
+.evs button {
+  background-position: 0 -90px;
+}
+ 
+.evs button:hover {
+  background-position: -15px -90px;
+}
+ 
+.rmr-screen .evs button {
+  background-position: 0 -105px;
+}
+ 
+.rmr-screen .evs button:hover {
+  background-position: -15px -105px;
+}
+ 
+div.evs ol li a,
+div.evs dl,
+div.evs ul {
+  border-color: rgba(223,223,223,0.5);
+}
+
+/* @end */
+
+/* @group vegas */
+
+div.vegas {
+  background-color: rgba(0,0,0,0.8);
+}
+ 
+div.vegas a {
+  border-bottom-color: #444;
+  border-bottom-color: rgba(128,128,128, 0.3);
+  color: #aaa;
+}
+ 
+div.vegas a:focus,
+div.vegas a:hover {
+  border-bottom-color: #aaa;
+}
+ 
+.vegas button {
+  background-position: 0 -60px;
+}
+ 
+.vegas button:hover {
+  background-position: -15px -60px;
+}
+ 
+.rmr-screen .vegas button {
+  background-position: 0 -75px;
+}
+ 
+.rmr-screen .vegas button:hover {
+  background-position: -15px -75px;
+}
+
+div.vegas ol li a,
+div.vegas dl,
+div.vegas ul {
+  border-color: rgba(192,192,192,0.3);
+}
+
+/* @end */
+
+/*
 .rmr button,
 .kaos button { background-position: 0 -30px; }
- 
+
 .rmr button:hover,
 .kaos button:hover { background-position: -15px -30px; }
  
 .rmr-screen .rmr button,
 .rmr-screen .kaos button { background-position: 0 -45px; }
- 
- 
+
 .rmr-screen .rmr button:hover,
 .rmr-screen .kaos button:hover { background-position: -15px -45px; }
  
 div.kaos a {
-  border-bottom-color: red; /*ie*/
+  border-bottom-color: red;
   border-bottom-color: rgba(255, 0, 0, 0.3);
   color: #ff0000;
 }
@@ -258,30 +637,7 @@ div.ubc a:focus, div.ubc a:hover {
 .rmr-screen .getty button:hover,
 .rmr-screen .moma button:hover,
 .rmr-screen .ubc button:hover { background-position: -15px -75px; }
- 
-div.chinatown h1 span {
-  border-bottom-color: rgba(210,238,91,0.3);
-}
- 
-div.chinatown ul {
-  border-left-color: rgba(210,238,91,0.3);
-}
- 
-div.chinatown a {
-  color: #d2ee5b;
-  border-bottom-color: rgba(210,238,91,0.3);
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
-}
- 
-div.chinatown a:hover {
-  border-bottom-color: rgb(210,238,91);
-}
- 
-div.chinatown {
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
-}
- 
+
 div.evs,
 div.bodhisattva,
 div.stream {
@@ -309,49 +665,40 @@ div.evs a:hover {
   border-bottom-color: rgb(161,157,148);  
 }
  
-div.bodhisattva a:focus,
-div.bodhisattva a:hover,
 div.stream a:focus,
 div.stream a:hover { border-bottom-color: #48656b; }
  
 .evs button,
-.bodhisattva button,
 .stream button { background-position: 0 -90px; }
  
 .evs button:hover,
-.bodhisattva button:hover,
 .stream button:hover { background-position: -15px -90px; }
  
  
 .rmr-screen .evs button,
-.rmr-screen .bodhisattva button,
 .rmr-screen .stream button { background-position: 0 -105px; }
  
 .rmr-screen .evs button:hover,
-.rmr-screen .bodhisattva button:hover,
 .rmr-screen .stream button:hover { background-position: -15px -105px; }
  
 div.evs ol li,
 div.evs dl, div.evs ul,
-div.bodhisattva ol li,
-div.bodhisattva dl, div.bodhisattva ul,
 div.stream ol li,
 div.stream dl, div.stream ul { border-color: rgba(223,223,223,0.5); }
- 
- 
-div.rmr ol li,
+*/
+/* @group rmr */
+
+div.rmr ol li a,
 div.rmr dl,
 div.rmr ul {
   border-color: rgba(185, 184, 185,0.5); /* */
   border-color: rgba(75,75,75,0.2);
 }
- 
+
 div.rmr ol li:hover {
   border-color: rgba(75,75,75,0.5);
 }
- 
- 
-div.bodhisattva ol li:hover,
+
 div.stream ol li:hover{
   border-color: rgba(185, 184, 185, 1);
 }
@@ -372,6 +719,9 @@ div.rmr a:focus,
 div.rmr a:hover {
   border-color: rgb(194, 13, 18);
 }
+
+/* @end */
+
  
  
 #backdrop {
@@ -383,8 +733,9 @@ div.rmr a:hover {
   top: 0;
   z-index: 0;
 }
- 
-ol li.rmr { display: none; }
+
+/* @group thumbs */
+
 ol li.kaos a { background-position: -25px 0; }
 ol li.ubc a { background-position: -50px 0; }
 ol li.stream a { background-position: -75px 0; }
@@ -398,9 +749,12 @@ ol li.evs a { background-position: -225px 0; }
 ol li a:hover {
   border: none;
 }
- 
- 
- 
+
+ol li.rmr { display: none; }
+
+/* @end */
+
+
 @media screen and (max-device-width: 480px) { /* smartphone */
   html { background: #fff; font-size: 13px; }
   body { -webkit-text-size-adjust: 400%; text-shadow: none; }
