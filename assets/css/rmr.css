@@ -167,7 +167,7 @@ ol li {
 
 ol a {
   opacity: 0.5;
-  background: url(../img/thumb.jpg);
+  background: url(../img/thumb.jpg) no-repeat;
   cursor: pointer;
   display: block;
   width: 25px;
@@ -175,11 +175,11 @@ ol a {
   border: none;
   text-decoration: none;
   -webkit-transition: opacity 0.2s;
-  -webkit-transition: margin-left 0.2s;
+  -webkit-transition: padding-left 0.2s;
 }
 
 ol a:hover {
-  margin-left: 5px;
+  padding-left: 10px;
 }
  
 body.rmr-screen ol a,
@@ -575,117 +575,6 @@ div.vegas ul {
 
 /* @end */
 
-/*
-.rmr button,
-.kaos button { background-position: 0 -30px; }
-
-.rmr button:hover,
-.kaos button:hover { background-position: -15px -30px; }
- 
-.rmr-screen .rmr button,
-.rmr-screen .kaos button { background-position: 0 -45px; }
-
-.rmr-screen .rmr button:hover,
-.rmr-screen .kaos button:hover { background-position: -15px -45px; }
- 
-div.kaos a {
-  border-bottom-color: red;
-  border-bottom-color: rgba(255, 0, 0, 0.3);
-  color: #ff0000;
-}
- 
-div.kaos a:focus,
-div.kaos a:hover { border-bottom-color: red; }
- 
-div.vegas,
-div.getty,
-div.moma,
-div.ubc { background-color: rgba(0,0,0,0.8); }
- 
-div.vegas a,
-div.getty a,
-div.moma a,
-div.ubc a {
-  border-bottom-color: #444;
-  border-bottom-color: rgba(128,128,128, 0.3);
-  color: #aaa;
-}
- 
-div.vegas a:focus, div.vegas a:hover,
-div.getty a:focus, div.getty a:hover,
-div.moma a:focus, div.moma a:hover,
-div.ubc a:focus, div.ubc a:hover {
-  border-bottom-color: #aaa;
-}
- 
-.vegas button,
-.getty button,
-.moma button,
-.ubc button { background-position: 0 -60px; }
- 
-.vegas button:hover,
-.getty button:hover,
-.moma button:hover,
-.ubc button:hover { background-position: -15px -60px; }
- 
-.rmr-screen .vegas button,
-.rmr-screen .getty button,
-.rmr-screen .moma button,
-.rmr-screen .ubc button { background-position: 0 -75px; }
- 
-.rmr-screen .vegas button:hover,
-.rmr-screen .getty button:hover,
-.rmr-screen .moma button:hover,
-.rmr-screen .ubc button:hover { background-position: -15px -75px; }
-
-div.evs,
-div.bodhisattva,
-div.stream {
-  color: #222;
-  background: #fff;
-  background: rgba(255,255,255,0.8);
-  -webkit-transition: 0.5s background-color;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-}
- 
-div.bodhisattva a,
-div.stream a {
-  border-bottom-color: #48656b;
-  border-bottom-color: rgba(72,191,107,0.2);
-  color: #48656b;
-}
- 
-div.evs a {
-  color: #755d17;
-  border-bottom-color: rgba(161,157,148, 0.2);
-}
- 
-div.evs a:focus,
-div.evs a:hover {
-  border-bottom-color: rgb(161,157,148);  
-}
- 
-div.stream a:focus,
-div.stream a:hover { border-bottom-color: #48656b; }
- 
-.evs button,
-.stream button { background-position: 0 -90px; }
- 
-.evs button:hover,
-.stream button:hover { background-position: -15px -90px; }
- 
- 
-.rmr-screen .evs button,
-.rmr-screen .stream button { background-position: 0 -105px; }
- 
-.rmr-screen .evs button:hover,
-.rmr-screen .stream button:hover { background-position: -15px -105px; }
- 
-div.evs ol li,
-div.evs dl, div.evs ul,
-div.stream ol li,
-div.stream dl, div.stream ul { border-color: rgba(223,223,223,0.5); }
-*/
 /* @group rmr */
 
 div.rmr ol li a,
@@ -736,15 +625,16 @@ div.rmr a:hover {
 
 /* @group thumbs */
 
-ol li.kaos a { background-position: -25px 0; }
-ol li.ubc a { background-position: -50px 0; }
-ol li.stream a { background-position: -75px 0; }
-ol li.moma a { background-position: -100px 0; }
-ol li.getty a { background-position: -125px 0; }
-ol li.vegas a { background-position: -150px 0; }
-ol li.bodhisattva a { background-position: -175px 0; }
-ol li.chinatown a { background-position: -200px 0; } /* todo */
-ol li.evs a { background-position: -225px 0; }
+ol li.backdrop a { background-position: right 0; }
+ol li.kaos a { background-position: right -25px ; }
+ol li.ubc a { background-position: right -50px; }
+ol li.stream a { background-position: right -75px; }
+ol li.moma a { background-position: right -100px; }
+ol li.getty a { background-position: right -125px; }
+ol li.vegas a { background-position: right -150px; }
+ol li.bodhisattva a { background-position: right -175px; }
+ol li.chinatown a { background-position: right -200px; } /* todo */
+ol li.evs a { background-position: right -225px; }
  
 ol li a:hover {
   border: none;
@@ -780,16 +670,7 @@ ol li.rmr { display: none; }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) { /* retina */
  
   ol a {
-    background-size: 250px 25px;
+    background-size: 25px 250px;
     background-image: url(../img/thumb-2x.jpg);
   }
- 
-  ol li.kaos a { background-position: -25px 0; }
-  ol li.ubc a { background-position: -50px 0; }
-  ol li.stream a { background-position: -75px 0; }
-  ol li.moma a { background-position: -100px 0; }
-  ol li.getty a { background-position: -125px 0; }
-  ol li.vegas a { background-position: -150px 0; }
-  ol li.bodhisattva a { background-position: -175px 0; }
- 
 }
