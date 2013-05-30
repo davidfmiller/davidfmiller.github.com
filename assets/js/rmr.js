@@ -62,7 +62,7 @@ YUI().use(function(Y) {
 
     Y.all('ol li a').on('click', function(e) {
       e.halt();
-      bg(e.target);
+      bg(e.target.ancestor('a', true));
     });
 
     if (screen.isSupported()) {

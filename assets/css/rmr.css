@@ -163,9 +163,10 @@ ol li {
   margin-bottom: 1px;
   margin: 0 0 3px 0;
   padding: 0;
+  display: block;
 }
 
-ol a {
+ol a span {
   opacity: 0.5;
   background: url(../img/thumb.jpg) no-repeat;
   cursor: pointer;
@@ -175,21 +176,32 @@ ol a {
   border: none;
   text-decoration: none;
   -webkit-transition: opacity 0.2s;
-  -webkit-transition: padding-left 0.2s;
 }
 
-ol a:hover {
-  padding-left: 10px;
+ol a,
+ol a em {
+  display: block;
+  border: none;
 }
- 
+
+ol a em {
+  border: 1px solid rgba(48,48,48,0.5);
+  width: 25px;
+  -webkit-transition: margin-left 0.2s;
+}
+
+ol a:hover em {
+  margin-left: 10px;
+}
+/*
 body.rmr-screen ol a,
 div:hover ol a {
   opacity: 0.5;
-}
+}*/
  
-body.rmr-screen ol .active a,
-div ol .active a,
-div:hover ol li a:hover {
+body.rmr-screen ol .active a span,
+div ol .active a span,
+div:hover ol li a:hover span {
   opacity: 1;
 }
 
@@ -625,16 +637,16 @@ div.rmr a:hover {
 
 /* @group thumbs */
 
-ol li.backdrop a { background-position: right 0; }
-ol li.kaos a { background-position: right -25px ; }
-ol li.ubc a { background-position: right -50px; }
-ol li.stream a { background-position: right -75px; }
-ol li.moma a { background-position: right -100px; }
-ol li.getty a { background-position: right -125px; }
-ol li.vegas a { background-position: right -150px; }
-ol li.bodhisattva a { background-position: right -175px; }
-ol li.chinatown a { background-position: right -200px; } /* todo */
-ol li.evs a { background-position: right -225px; }
+ol li.backdrop a span { background-position: right 0; }
+ol li.kaos a span { background-position: right -25px ; }
+ol li.ubc a span { background-position: right -50px; }
+ol li.stream a span { background-position: right -75px; }
+ol li.moma a span { background-position: right -100px; }
+ol li.getty a span { background-position: right -125px; }
+ol li.vegas a span { background-position: right -150px; }
+ol li.bodhisattva a span { background-position: right -175px; }
+ol li.chinatown a span { background-position: right -200px; } /* todo */
+ol li.evs a span { background-position: right -225px; }
  
 ol li a:hover {
   border: none;
@@ -669,7 +681,7 @@ ol li.rmr { display: none; }
  
 @media only screen and (-webkit-min-device-pixel-ratio: 2) { /* retina */
  
-  ol a {
+  ol a span {
     background-size: 25px 250px;
     background-image: url(../img/thumb-2x.jpg);
   }
