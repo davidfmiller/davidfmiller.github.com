@@ -667,18 +667,7 @@ ol li.rmr { display: none; }
   #doc a:active { color: red; }
   ol { display: none; }
 }
- 
-@media only screen and (device-width: 768px) { /* tablet */
-  html { background: #fff; font-size: 13px;}
-  body { -webkit-text-size-adjust: 300%; text-shadow: none; }
-  p { display: block;  line-height: 16px; padding: 20px 0 15px 0; }
-  div { width: auto; color: #000; }
-  #doc a { color: blue; border-bottom: 1px solid #ddd; text-decoration: none; }
-  #doc a:visited { color: purple; }
-  #doc a:active { color: red; }
-  ol { display: none; }
-}
- 
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2) { /* retina */
  
   ol a span {
