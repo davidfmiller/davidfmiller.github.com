@@ -66,14 +66,7 @@ YUI().use(function(Y) {
       bg(e.target.ancestor('a', true));
     });
 
-    if (screen.isSupported()) {
-      toggle = function() { screen.toggle(); };
-      input = Y.Node.create('<button title="' + title + '" class="zoom">' + title + '</button>');
-      Y.one('section.zoom').append(input);
-      input.on('click', toggle);
-      Y.on('key', toggle, body, 'f');
-    }
-
+    /* left/right keys */
     Y.one('body').on('key', function(e) {
 
       if (e.altKey || e.ctrlKey) { return; }
@@ -93,6 +86,15 @@ YUI().use(function(Y) {
 
     }, 'down:37,39');
 
+    if (screen.isSupported()) {
+      toggle = function() { screen.toggle(); };
+      input = Y.Node.create('<button title="' + title + '" class="zoom">' + title + '</button>');
+      Y.one('section.zoom').append(input);
+      input.on('click', toggle);
+      Y.on('key', toggle, body, 'f');
+    }
+
+    /* focus manager */
     Y.all('#doc section section').each(function(n) {
       n.plug(Y.Plugin.NodeFocusManager, {
         descendants: 'a, button',
