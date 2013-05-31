@@ -75,7 +75,7 @@ button:hover {
   background: rgba(64,64,64,0.4);
 }
 
-div {
+#doc {
   color: #fff;
   padding: 75px 25px 75px 75px;
   position: relative;
@@ -627,6 +627,35 @@ div.rmr a:hover {
   z-index: 0;
 }
 
+/* @group popover */
+
+.popover {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 1000;
+  border: 1px solid #444;
+  opacity: 0;
+  -webkit-transition: 0.2s opacity;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+}
+
+.popover.pop {
+  opacity: 1;
+}
+
+.popover .bd {
+  width: 400px;
+  height: 300px;
+}
+
+.popover .choklat {
+  background: url(../img/popover/choklat.jpg);
+  background-size: 400px 300px;
+}
+
+/* @end */
+
 /* @group thumbs */
 
 ol li.backdrop a span { background-position: right 0; }
@@ -653,7 +682,7 @@ ol li.rmr { display: none; }
   html { background: #fff; font-size: 13px; }
   body { -webkit-text-size-adjust: 400%; text-shadow: none; }
   p { display: block; line-height: 16px; padding: 20px 0 15px 0; }
-  div { width: auto; color: #000; }
+  #doc { width: auto; color: #000; }
   #doc a { color: blue; border-bottom: 1px solid #ddd; text-decoration: none; }
   #doc a:visited { color: purple; }
   #doc a:active { color: red; }
@@ -665,7 +694,7 @@ ol li.rmr { display: none; }
   html { background: #fff; font-size: 13px;}
   body { -webkit-text-size-adjust: 300%; text-shadow: none; }
   p { display: block;  line-height: 16px; padding: 20px 0 15px 0; }
-  div { width: auto; color: #000; }
+  #doc { width: auto; color: #000; }
   #doc a { color: blue; border-bottom: 1px solid #ddd; text-decoration: none; }
   #doc a:visited { color: purple; }
   #doc a:active { color: red; }
@@ -679,3 +708,4 @@ ol li.rmr { display: none; }
     background-image: url(../img/thumb-2x.jpg);
   }
 }
+
