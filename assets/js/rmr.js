@@ -12,6 +12,7 @@ YUI().use(function(Y) {
   'use strict';
 
   if (Y.UA.mobile) { return false; }
+
   Y.use('backdrop', 'screen', 'node', 'node-focusmanager', function(Y) {
 
     var dropper = new Y.Backdrop({
