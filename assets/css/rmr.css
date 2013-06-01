@@ -55,7 +55,7 @@ button:hover {
 
 /* @group screen */
 
-.rmr-screen div section section {
+.rmr-screen #doc section section {
   display: none;
 }
 
@@ -81,7 +81,6 @@ button:hover {
   position: relative;
   width: 300px;
   z-index: 1;
-  background-color: transparent;
   -webkit-transition: 0.5s color; 
   -webkit-transition: 0.5s background-color; 
   -webkit-transition: 0.5s opacity;
@@ -186,7 +185,7 @@ ol a em {
 ol a em {
   border: 1px solid rgba(48,48,48,0.5);
   width: 25px;
-  -webkit-transition: margin-left 0.2s;
+  -webkit-transition: margin-left 0.2s cubic-bezier(.68,.14,.59,1.35);
 }
 
 ol a:hover em {
@@ -201,17 +200,17 @@ div:hover ol li a:hover span {
 
 /* @group backdrop */
 
-div.backdrop a {
+#doc.backdrop a {
   border-bottom-color: yellow; /*ie*/
   border-bottom-color: rgba(255, 255, 0, 0.3);
   color: yellow;
 }
 
-div.backdrop a:focus,
-div.backdrop a:hover { border-bottom-color: yellow; }
+#doc.backdrop a:focus,
+#doc.backdrop a:hover { border-bottom-color: yellow; }
 
-div.backdrop a:focus,
-div.backdrop a:hover { border-bottom-color: yellow; }
+#doc.backdrop a:focus,
+#doc.backdrop a:hover { border-bottom-color: yellow; }
  
 .rmr button { background-position: 0 -30px; }
 
@@ -219,7 +218,7 @@ div.backdrop a:hover { border-bottom-color: yellow; }
 
 /* @group bodhisattva */
 
-div.bodhisattva {
+#doc.bodhisattva {
   color: #222;
   background: #fff;
   background: rgba(255,255,255,0.8);
@@ -227,14 +226,14 @@ div.bodhisattva {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
  
-div.bodhisattva a {
+#doc.bodhisattva a {
   border-bottom-color: #48656b;
   border-bottom-color: rgba(72,191,107,0.2);
   color: #48656b;
 }
  
-div.bodhisattva a:focus,
-div.bodhisattva a:hover {
+#doc.bodhisattva a:focus,
+#doc.bodhisattva a:hover {
   border-bottom-color: #48656b;
 }
  
@@ -254,9 +253,9 @@ div.bodhisattva a:hover {
   background-position: -15px -105px;
 }
  
-div.bodhisattva ol li a,
-div.bodhisattva dl,
-div.bodhisattva ul {
+#doc.bodhisattva ol li a,
+#doc.bodhisattva dl,
+#doc.bodhisattva ul {
   border-color: rgba(223,223,223,0.5);
 }
 
@@ -264,7 +263,7 @@ div.bodhisattva ul {
 
 /* @group stream */
 
-div.stream {
+#doc.stream {
   color: #222;
   background: #fff;
   background: rgba(255,255,255,0.8);
@@ -272,14 +271,14 @@ div.stream {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
  
-div.stream a {
+#doc.stream a {
   border-bottom-color: #48656b;
   border-bottom-color: rgba(72,191,107,0.2);
   color: #48656b;
 }
  
-div.stream a:focus,
-div.stream a:hover {
+#doc.stream a:focus,
+#doc.stream a:hover {
   border-bottom-color: #48656b;
 }
 
@@ -299,9 +298,9 @@ div.stream a:hover {
   background-position: -15px -105px;
 }
  
-div.stream ol li a,
-div.stream dl,
-div.stream ul {
+#doc.stream ol li a,
+#doc.stream dl,
+#doc.stream ul {
   border-color: rgba(223,223,223,0.5);
 }
 
@@ -325,20 +324,20 @@ div.stream ul {
   background-position: -15px -45px;
 }
  
-div.kaos a {
+#doc.kaos a {
   border-bottom-color: red; /*ie*/
   border-bottom-color: rgba(255, 0, 0, 0.3);
   color: #ff0000;
 }
  
-div.kaos a:focus,
-div.kaos a:hover {
+#doc.kaos a:focus,
+#doc.kaos a:hover {
   border-bottom-color: red;
 }
 
-div.kaos ol li a,
-div.kaos dl,
-div.kaos ul {
+#doc.kaos ol li a,
+#doc.kaos dl,
+#doc.kaos ul {
   border-color: rgba(192,192,192,0.3);
 }
 
@@ -346,18 +345,18 @@ div.kaos ul {
 
 /* @group ubc */
 
-div.ubc {
+#doc.ubc {
   background-color: rgba(0,0,0,0.8);
 }
  
-div.ubc a {
+#doc.ubc a {
   border-bottom-color: #444;
   border-bottom-color: rgba(128,128,128, 0.3);
   color: #aaa;
 }
  
-div.ubc a:focus,
-div.ubc a:hover {
+#doc.ubc a:focus,
+#doc.ubc a:hover {
   border-bottom-color: #aaa;
 }
 .ubc button {
@@ -376,9 +375,9 @@ div.ubc a:hover {
   background-position: -15px -75px;
 }
 
-div.ubc ol li a,
-div.ubc dl,
-div.ubc ul {
+#doc.ubc ol li a,
+#doc.ubc dl,
+#doc.ubc ul {
   border-color: rgba(192,192,192,0.3);
 }
 
@@ -386,18 +385,18 @@ div.ubc ul {
 
 /* @group moma */
 
-div.moma {
+#doc.moma {
   background-color: rgba(0,0,0,0.8);
 }
 
-div.moma a {
+#doc.moma a {
   border-bottom-color: #444;
   border-bottom-color: rgba(128,128,128, 0.3);
   color: #aaa;
 }
 
-div.moma a:focus,
-div.moma a:hover {
+#doc.moma a:focus,
+#doc.moma a:hover {
   border-bottom-color: #aaa;
 }
 
@@ -417,9 +416,9 @@ div.moma a:hover {
   background-position: -15px -75px;
 }
 
-div.ubc ol li a,
-div.ubc dl,
-div.ubc ul {
+#doc.ubc ol li a,
+#doc.ubc dl,
+#doc.ubc ul {
   border-color: rgba(192,192,192,0.3);
 }
 
@@ -428,25 +427,25 @@ div.ubc ul {
 
 /* @group chinatown */
 
-div.chinatown h1 span {
+#doc.chinatown h1 span {
   border-bottom-color: rgba(210,238,91,0.3);
 }
  
-div.chinatown ul {
+#doc.chinatown ul {
   border-left-color: rgba(210,238,91,0.3);
 }
  
-div.chinatown a {
+#doc.chinatown a {
   color: #d2ee5b;
   border-bottom-color: rgba(210,238,91,0.3);
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 }
  
-div.chinatown a:hover {
+#doc.chinatown a:hover {
   border-bottom-color: rgb(210,238,91);
 }
  
-div.chinatown {
+#doc.chinatown {
   color: #fff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 }
@@ -455,20 +454,20 @@ div.chinatown {
 
 /* @group getty */
 
-div.getty {
+#doc.getty {
   background-color: rgba(0,0,0,0.8);
 }
 
-div.getty a {
+#doc.getty a {
   border-bottom-color: #444;
   border-bottom-color: rgba(128,128,128, 0.3);
   color: #aaa;
 }
  
-div.vegas a:focus,
-div.vegas a:hover ,
-div.getty a:focus,
-div.getty a:hover {
+#doc.vegas a:focus,
+#doc.vegas a:hover ,
+#doc.getty a:focus,
+#doc.getty a:hover {
   border-bottom-color: #aaa;
 }
  
@@ -488,9 +487,9 @@ div.getty a:hover {
   background-position: -15px -75px;
 }
 
-div.getty ol li a,
-div.getty dl,
-div.getty ul {
+#doc.getty ol li a,
+#doc.getty dl,
+#doc.getty ul {
   border-color: rgba(192,192,192,0.3);
 }
 
@@ -498,7 +497,7 @@ div.getty ul {
 
 /* @group evs */
 
-div.evs {
+#doc.evs {
   color: #222;
   background: #fff;
   background: rgba(255,255,255,0.8);
@@ -506,13 +505,13 @@ div.evs {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
  
-div.evs a {
+#doc.evs a {
   color: #755d17;
   border-bottom-color: rgba(161,157,148, 0.2);
 }
  
-div.evs a:focus,
-div.evs a:hover {
+#doc.evs a:focus,
+#doc.evs a:hover {
   border-bottom-color: rgb(161,157,148);  
 }
 
@@ -532,9 +531,9 @@ div.evs a:hover {
   background-position: -15px -105px;
 }
  
-div.evs ol li a,
-div.evs dl,
-div.evs ul {
+#doc.evs ol li a,
+#doc.evs dl,
+#doc.evs ul {
   border-color: rgba(223,223,223,0.5);
 }
 
@@ -542,18 +541,18 @@ div.evs ul {
 
 /* @group vegas */
 
-div.vegas {
+#doc.vegas {
   background-color: rgba(0,0,0,0.8);
 }
  
-div.vegas a {
+#doc.vegas a {
   border-bottom-color: #444;
   border-bottom-color: rgba(128,128,128, 0.3);
   color: #aaa;
 }
  
-div.vegas a:focus,
-div.vegas a:hover {
+#doc.vegas a:focus,
+#doc.vegas a:hover {
   border-bottom-color: #aaa;
 }
  
@@ -573,9 +572,9 @@ div.vegas a:hover {
   background-position: -15px -75px;
 }
 
-div.vegas ol li a,
-div.vegas dl,
-div.vegas ul {
+#doc.vegas ol li a,
+#doc.vegas dl,
+#doc.vegas ul {
   border-color: rgba(192,192,192,0.3);
 }
 
@@ -583,35 +582,35 @@ div.vegas ul {
 
 /* @group rmr */
 
-div.rmr ol li a,
-div.rmr dl,
-div.rmr ul {
+#doc.rmr ol li a,
+#doc.rmr dl,
+#doc.rmr ul {
   border-color: rgba(185, 184, 185,0.5); /* */
   border-color: rgba(75,75,75,0.2);
 }
 
-div.rmr ol li:hover {
+#doc.rmr ol li:hover {
   border-color: rgba(75,75,75,0.5);
 }
 
-div.stream ol li:hover{
+#doc.stream ol li:hover{
   border-color: rgba(185, 184, 185, 1);
 }
  
-div.rmr {
+#doc.rmr {
   background-color: rgba(162,162,162,0.8);
   color: rgb(75, 75, 75);
   text-shadow: 1px 1px 1px rgba(75, 75, 75,0.1);
 }
  
  
-div.rmr a {
+#doc.rmr a {
   color: rgb(194, 13, 18);
   border-color: rgba(194, 13, 18, 0.3);
 }
  
-div.rmr a:focus,
-div.rmr a:hover {
+#doc.rmr a:focus,
+#doc.rmr a:hover {
   border-color: rgb(194, 13, 18);
 }
 
