@@ -682,9 +682,9 @@ ol li.rmr { display: none; }
   body { -webkit-text-size-adjust: 400%; text-shadow: none; }
   p { display: block; line-height: 16px; padding: 20px 0 15px 0; }
   #doc { width: auto; color: #000; }
-  #doc a { color: blue; border-bottom: 1px solid #ddd; text-decoration: none; }
-  #doc a:visited { color: purple; }
-  #doc a:active { color: red; }
+  #doc a { color: blue !important; border-bottom: 1px solid #ddd !important; text-decoration: none !important; }
+  #doc a:visited { color: purple !important; }
+  #doc a:active { color: red !important; }
   ol { display: none; }
 }
 
@@ -694,9 +694,9 @@ ol li.rmr { display: none; }
   body { -webkit-text-size-adjust: 300%; text-shadow: none; }
   p { display: block;  line-height: 16px; padding: 20px 0 15px 0; }
   #doc { width: auto; color: #000; }
-  #doc a { color: blue; border-bottom: 1px solid #ddd; text-decoration: none; }
-  #doc a:visited { color: purple; }
-  #doc a:active { color: red; }
+  #doc a { color: blue !important; border-bottom: 1px solid #ddd !important; text-decoration: none !important; }
+  #doc a:visited { color: purple !important; }
+  #doc a:active { color: red !important; }
   ol { display: none; }
 }
 
