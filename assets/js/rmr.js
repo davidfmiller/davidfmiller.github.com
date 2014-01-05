@@ -109,8 +109,8 @@ YUI().use(function(Y) {
       n.plug(Y.Plugin.NodeFocusManager, {
         descendants: 'a, button',
         keys: {
-          next: 'down:39',
-          previous: 'down:37'
+          next: 'down:40',
+          previous: 'down:38'
         }
       });
     });
