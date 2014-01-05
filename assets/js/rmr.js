@@ -11,7 +11,7 @@ YUI().use(function(Y) {
 
   if (Y.UA.mobile) { return false; }
 
-  Y.use('backdrop', 'screen', 'popover', 'node-focusmanager', function(Y) {
+  Y.use('backdrop', 'screen', 'node-focusmanager', function(Y) {
 
     var dropper = new Y.Backdrop({
       'id' : 'backdrop',
@@ -115,16 +115,17 @@ YUI().use(function(Y) {
       });
     });
 
-    if (! document.body.addEventListener) { return; } // todo move to yui key event
-    document.body.addEventListener('keypress', function(e) {
+    Y.one(document.body).on('key', function(e) {
+
       var code = e.keyCode,
           li = null;
-      if (code < 48 || code > 57) { return; } // 1 through 0
+
       code = code == 48 ? 9 : code - 49;
       li = Y.all('ol li');
       if (li.size() <= code) { return; }
       bg(li.item(code).one('a'));
-    });
+
+    }, '48,49,50,51,52,53,54,55,56,57');
 
   });
 });
