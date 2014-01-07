@@ -189,7 +189,7 @@ ol a em {
 }
 
 ol a:hover em {
-  margin-left: 10px;
+/*  margin-left: 10px;*/
 }
 
 body.rmr-screen ol .active a span,
@@ -708,3 +708,154 @@ ol li.rmr { display: none; }
   }
 }
 
+
+
+
+
+
+@-webkit-keyframes pop-in {
+  0% { opacity: 0; -webkit-transform: scale(0.5); }
+  100% { opacity: 1; -webkit-transform: scale(1); }
+}
+
+.rmr-popover {
+  background: #000;
+	background: rgba(0,0,0,0.8);
+  position: absolute;
+  box-shadow: 1px 1px 5px rgba(0,0,0,1);
+  color: #fff;
+  border-radius: 0px;
+  z-index: 1;
+}
+
+.rmr-popover a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.rmr-popover a:hover {
+  text-decoration: underline;
+}
+
+.rmr-popover.popped {
+  opacity: 1;
+}
+
+.rmr-popover.pop {
+  -webkit-animation:pop-in 0.1s;
+}
+
+.rmr-popover .bd {
+  position: relative;
+  padding: 5px;
+}
+
+.rmr-popover b {
+  display: block;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.rmr-popover.top b {
+	top: 100%;
+	left: 10px;
+	border-color: #000;
+  border-bottom: none;  
+  border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid black;
+}
+
+.rmr-popover.bottom b {
+	top: -5px;
+	left: 10px;
+	border-color: #000;
+  border-bottom: 5px solid black;
+  border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: none;
+}
+
+.rmr-popover.right b {
+  top: 50%;
+	left: -5px;
+	border-color: #000;
+  border-right: 5px solid black;
+  border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+  border-left: none;
+}
+
+.rmr-popover.left b {
+  top: 50%;
+	right: -5px;
+	border-color: #000;
+  border-left: 5px solid black;
+  border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+  border-right: none;
+}
+
+.rmr-popover .bd {
+  width: 600px;
+  height: 400px;
+  padding: 0;
+  background-size: 600px 400px;
+}
+
+a[data-popover]:after {
+  content: "∙";
+  font-weight: normal;
+}
+
+.rmr-popover.evs .bd {
+  background-image: url(../img/popovers/evs.jpg);
+}
+
+.rmr-popover.getty .bd {
+  background-image: url(../img/popovers/getty.jpg);
+}
+
+.rmr-popover.hd .bd {
+  background-image: url(../img/popovers/hd.jpg);
+}
+
+.rmr-popover.beatroute .bd {
+  background-image: url(../img/popovers/beatroute.jpg);
+}
+
+.rmr-popover.plug .bd {
+  background-image: url(../img/popovers/plug.jpg);
+}
+
+.rmr-popover.anand .bd {
+  background-image: url(../img/popovers/anand.jpg);
+}
+
+.rmr-popover.vangaalen .bd {
+  background-image: url(../img/popovers/vangaalen.jpg);
+}
+
+.rmr-popover.metric .bd {
+  background-image: url(../img/popovers/metric.jpg);
+}
+
+.rmr-popover.mays .bd {
+  background-image: url(../img/popovers/mays.jpg);
+}
+
+.rmr-popover.forbidden .bd {
+  background-image: url(../img/popovers/forbidden.jpg);
+}
+
+.rmr-popover.block .bd {
+  background-image: url(../img/popovers/block.jpg);
+}
+
+.rmr-popover.moma .bd {
+  background-image: url(../img/popovers/moma.jpg);
+}
