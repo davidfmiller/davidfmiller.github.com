@@ -458,6 +458,10 @@ div:hover ol li a:hover span {
   background-color: rgba(0,0,0,0.8);
 }
 
+.rmr-screen #doc.getty {
+  background: transparent;
+}
+
 #doc.getty a {
   border-bottom-color: #444;
   border-bottom-color: rgba(128,128,128, 0.3);
@@ -796,9 +800,6 @@ a[data-popover]:after {
 .rmr-popover.moma      .bd { background-image: url(http://davidfmiller.github.io/assets/img/popovers/moma.jpg); }
 
 /* @end */
-
-
-
 
 @media screen and (max-device-width: 480px) { /* smartphone */
 
