@@ -204,12 +204,12 @@ li.active b {
   height: 0;
   position: absolute;
   left: -25px;
-  top: 8px;
+  top: 10px;
   z-index: 2;
 
-  border-top: 6px solid transparent;
-	border-bottom: 6px solid transparent;
-	border-left: 6px solid #000;
+  border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid #000;
 }
 
 section:hover li b { 
@@ -238,7 +238,7 @@ div:hover ol li a:hover span {
  
 .rmr button { background-position: 0 -30px; }
 
-#doc.backdrop li.active b { border-left-color: yellow; }
+#doc.backdrop li b { border-left-color: yellow; }
 
 /* @end */
 
@@ -285,7 +285,7 @@ div:hover ol li a:hover span {
   border-color: rgba(223,223,223,0.5);
 }
 
-#doc.bodhisattva li.active b { border-left-color: #48656b; }
+#doc.bodhisattva li b { border-left-color: #48656b; }
 
 /* @end */
 
@@ -332,7 +332,7 @@ div:hover ol li a:hover span {
   border-color: rgba(223,223,223,0.5);
 }
 
-#doc.stream li.active b { border-left-color: #48656b; }
+#doc.stream li b { border-left-color: #48656b; }
 
 /* @end */
 
@@ -371,7 +371,7 @@ div:hover ol li a:hover span {
   border-color: rgba(192,192,192,0.3);
 }
 
-#doc.kaos li.active b { border-left-color: #ff0000; }
+#doc.kaos li b { border-left-color: #ff0000; }
 
 /* @end */
 
@@ -413,7 +413,7 @@ div:hover ol li a:hover span {
   border-color: rgba(192,192,192,0.3);
 }
 
-#doc.ubc li.active b { border-left-color: #aaa; }
+#doc.ubc li b { border-left-color: #aaa; }
 
 /* @end */
 
@@ -456,7 +456,7 @@ div:hover ol li a:hover span {
   border-color: rgba(192,192,192,0.3);
 }
 
-#doc.moma li.active b { border-left-color: #aaa; }
+#doc.moma li b { border-left-color: #aaa; }
 
 /* @end */
 
@@ -485,7 +485,7 @@ div:hover ol li a:hover span {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 }
 
-#doc.chinatown li.active b { border-left-color: #d2ee5b; }
+#doc.chinatown li b { border-left-color: #d2ee5b; }
 
 /* @end */
 
@@ -534,7 +534,7 @@ div:hover ol li a:hover span {
   border-color: rgba(192,192,192,0.3);
 }
 
-#doc.getty li.active b { border-left-color: #aaa; }
+#doc.getty li b { border-left-color: #aaa; }
 
 /* @end */
 
@@ -580,7 +580,7 @@ div:hover ol li a:hover span {
   border-color: rgba(223,223,223,0.5);
 }
 
-#doc.evs li.active b { border-left-color: #755d17; }
+#doc.evs li b { border-left-color: #755d17; }
 
 /* @end */
 
@@ -623,7 +623,7 @@ div:hover ol li a:hover span {
   border-color: rgba(192,192,192,0.3);
 }
 
-#doc.vegas li.active b { border-left-color: #aaa; }
+#doc.vegas li b { border-left-color: #aaa; }
 
 /* @end */
 
