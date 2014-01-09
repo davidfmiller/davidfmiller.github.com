@@ -43,7 +43,9 @@ YUI().use(function(Y) {
     bg = function(n) {
       var cls = parser(n.getAttribute('href'));
       document.location = '#' + cls;
-      dropper.drop({ 'url' : n.getAttribute('href'), 'styles' : styles[cls] });
+      if (! doc.hasClass(cls)) {
+        dropper.drop({ 'url' : n.getAttribute('href'), 'styles' : styles[cls] });
+      }
     },
     toggle = null,
     popover = null,
