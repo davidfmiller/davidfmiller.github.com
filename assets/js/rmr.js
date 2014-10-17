@@ -19,8 +19,8 @@ YUI().use(function(Y) {
       'duration' : 0.5
     }),
     styles = {
-      'backdrop' : {},
-      'chinatown' : { 'repeat' : 'repeat-y' },
+      'backdrop' : { 'size' : 'cover' },
+      'chinatown' : { 'repeat' : 'repeat-y', 'size' : 'cover' },
       'evs' : { 'color' : '#fff', 'position' : 'bottom right' },
       'kaos' : { 'position' : '370px top', 'color' : '#000' },
       'ubc' : { 'position' : 'right bottom', 'color' : '#000' },
@@ -28,7 +28,7 @@ YUI().use(function(Y) {
       'stream' : { 'position' : '400px top', 'color' : '#fff' },
       'moma' : { 'position' : 'right top', 'color' : '#000' },
       'lacma' : { 'position' : 'right center', 'color' : '#000' },
-      'getty' : { 'position' : 'left bottom', 'color' : '#000' },
+      'getty' : { 'position' : 'left bottom', 'color' : '#000', 'size' : 'cover' },
       'vegas' : { 'color' : '#000', 'position' : 'right top' },
       'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' }
     },

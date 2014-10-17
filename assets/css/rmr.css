@@ -213,8 +213,8 @@ li.active b {
   z-index: 2;
 
   border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-left: 5px solid #000;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #000;
 }
 
 section:hover li b { 
