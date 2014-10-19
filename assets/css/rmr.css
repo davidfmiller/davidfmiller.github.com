@@ -888,12 +888,12 @@ a[data-popover]:after {
   a[data-popover]:after { content: ""; }
 
   html.error-404 {
-  	background: #000;
+    background: #000;
   }
 
   html.error-404 #doc a {
-  	color: #fff !important;
-  	border-bottom: none;
+    color: #fff !important;
+    border-bottom: none;
   }
 }
 
