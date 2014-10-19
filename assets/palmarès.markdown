@@ -17,11 +17,9 @@ Cat 4
 
 - 2nd/79 (5 pts)
 
-
 [Ontario Series 1-7, Cat 4/5 35+ Crit](https://www.usacycling.org/results/?year=2014&id=48&info_id=72254), January 12, 2014
 
 - 2nd/65 (3 pts)
-
 
 [Poor Kids College Road Race, Cat 4](https://www.usacycling.org/results/?year=2014&id=128&info_id=73560), January 25, 2014
 
@@ -44,7 +42,6 @@ Cat 3
 
 - 3rd/42 (3 pts)
 
-
 [San Luis Rey Road Race, Cat 3](https://www.usacycling.org/results/?year=2014&id=1544&info_id=75418), April 26, 2014
 
 - 1st/53 (10 pts)
@@ -54,11 +51,9 @@ May 4, 2014
 
 - 3rd/67 (35 Cat 3s, 3 pts)
 
-
 Valley of Flowers SCNCA Cat 3 Criterium Championship, May 11, 2014
 
 - 2/44 (4 pts)
-
 
 [Avenue of Flags Cat 3 Criterium](https://www.usacycling.org/results/?year=2014&id=1703&info_id=75618), May 10, 2014
 
@@ -80,11 +75,9 @@ Cat 2
 
 - 3rd/70 (40 Cat 2s, 3pts)
 
-
 [TOAD #3: Grafton Cat 2/3](https://www.usacycling.org/results/?year=2014&id=35&info_id=77646), June 21, 2014
 
 - 1st/100+ (65 Cat 2s, 7 pts)
-
 
 [TOAD #5: Bielton Cat 2/3](https://www.usacycling.org/results/?year=2014&id=35&info_id=77663), June 23, 2014
 
@@ -94,9 +87,6 @@ Cat 2
 
 - 4th/92 (56 Cat 2s, 3pts)
 
-
 [TOAD Omnium](http://www.tourofamericasdairyland.com/pdf/results/2014/overall-cat23.pdf), June 29, 2014
 
 - 5th/49+, 5pts
-
-
