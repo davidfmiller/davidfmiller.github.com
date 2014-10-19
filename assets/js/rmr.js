@@ -30,15 +30,18 @@ YUI().use(function(Y) {
       'lacma' : { 'position' : 'right center', 'color' : '#000' },
       'getty' : { 'position' : 'left bottom', 'color' : '#000', 'size' : 'cover' },
       'vegas' : { 'color' : '#000', 'position' : 'right top' },
-      'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' }
+      'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' },
+      'pink' : { 'color' : '#000000', 'size' : 'cover' }
     },
+
+    // retrieve basename of file from a url (ex: 'http://davidfmiller.github.io/assets/img/backdrop/backdrop.jpg' → 'backdrop')
     parser = function(path) { return path.replace(/^.*[\/\\]/g, '').split(".")[0]; },
     body = Y.one(document.body),
     doc = Y.one('#doc'),
     screen = new Y.Screen({ 'node': body }),
     input = null,
     hash = document.location.hash ? document.location.hash.replace('#', '') : null,
-    first = (hash && styles.hasOwnProperty(hash) ? Y.one('ol li.' + hash + ' a') : Y.one('ol li a')).getAttribute('href'),
+    first = (hash && styles.hasOwnProperty(hash) ? Y.one('ol li.' + hash + ' a') : (Y.one('ol li a') ? Y.one('ol li a').getAttribute('href') : null)),
     bg = function(n) {
       var cls = parser(n.getAttribute('href'));
       document.location = '#' + cls;
@@ -50,17 +53,28 @@ YUI().use(function(Y) {
     title = 'Toggle fullscreen',
     resizer = function() { Y.one('#doc').setStyle('minHeight', (Y.one(document.body).get('winHeight') - 150) + 'px'); };
 
+    if (! first) {
+      first = Y.one('html').getAttribute('data-backdrop');
+    }
+
     Y.on('windowresize', resizer);
     resizer();
 
     dropper.on('start', function(e) {
-      var bg = parser(e.details[0]);
+      var bg = parser(e.details[0]),
+          li = Y.one('ol li.' + bg);
+
       doc.set('className', bg);
       Y.all('ol li').removeClass('active');
-      Y.one('ol li.' + bg).addClass('active');
+
+      if (li) {
+        li.addClass('active');
+      }
     });
 
-    dropper.drop({'url' : first, 'styles' : styles[parser(first)] });
+    if (first) {
+      dropper.drop({'url' : first, 'styles' : styles[parser(first)] });
+    }
 
     Y.all('ol li a').on('click', function(e) {
       e.halt();
@@ -89,11 +103,16 @@ YUI().use(function(Y) {
 
     /* screen */
     if (screen.isSupported()) {
-      toggle = function() { screen.toggle(); };
-      input = Y.Node.create('<button title="' + title + '" class="zoom">' + title + '</button>');
-      Y.one('section.zoom').append(input);
-      input.on('click', toggle);
-      Y.on('key', toggle, body, 'f');
+
+      var section = Y.one('section.zoom');
+
+      if (section) {
+        toggle = function() { screen.toggle(); };
+        input = Y.Node.create('<button title="' + title + '" class="zoom">' + title + '</button>');
+        Y.one('section.zoom').append(input);
+        input.on('click', toggle);
+        Y.on('key', toggle, body, 'f');
+      }
     }
 
     /* focus manager */
