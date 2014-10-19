@@ -886,6 +886,15 @@ a[data-popover]:after {
   ol { display: none; }
 
   a[data-popover]:after { content: ""; }
+
+  html.error-404 {
+  	background: #000;
+  }
+
+  html.error-404 #doc a {
+  	color: #fff !important;
+  	border-bottom: none;
+  }
 }
 
 @media only screen and (device-width: 768px) { /* tablet */
