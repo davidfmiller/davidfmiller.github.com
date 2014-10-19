@@ -1,5 +1,5 @@
-## Cat 4
-
+Cat 4
+-----
 
 [Resume Builder 4A Crit](https://www.usacycling.org/results/?year=2013&id=3387&info_id=71289), November 10, 2013
 
