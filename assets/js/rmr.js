@@ -40,8 +40,6 @@ YUI().use(function(Y) {
     doc = Y.one('#doc'),
     screen = new Y.Screen({ 'node': body }),
     input = null,
-    hash = document.location.hash ? document.location.hash.replace('#', '') : null,
-    first = (hash && styles.hasOwnProperty(hash) ? Y.one('ol li.' + hash + ' a') : (Y.one('ol li a') ? Y.one('ol li a').getAttribute('href') : null)),
     bg = function(n) {
       var cls = parser(n.getAttribute('href'));
       document.location = '#' + cls;
@@ -52,10 +50,6 @@ YUI().use(function(Y) {
     toggle = null,
     title = 'Toggle fullscreen',
     resizer = function() { Y.one('#doc').setStyle('minHeight', (Y.one(document.body).get('winHeight') - 150) + 'px'); };
-
-    if (! first) {
-      first = Y.one('html').getAttribute('data-backdrop');
-    }
 
     Y.on('windowresize', resizer);
     resizer();
@@ -72,9 +66,22 @@ YUI().use(function(Y) {
       }
     });
 
-    if (first) {
-      dropper.drop({'url' : first, 'styles' : styles[parser(first)] });
-    }
+    Y.on('domready', function(e) { 
+
+      var hash = document.location.hash ? document.location.hash.replace('#', '') : null,
+          first = hash && styles.hasOwnProperty(hash) ? Y.one('ol li.' + hash + ' a') : (Y.one('ol li a') ? Y.one('ol li a') : null);
+
+      if (first) {
+        first = first.getAttribute('href');
+      } else {
+        first = Y.one('html').getAttribute('data-backdrop');
+      }
+
+      if (first) {
+        dropper.drop({'url' : first, 'styles' : styles[parser(first)] });
+      }
+    });
+
 
     Y.all('ol li a').on('click', function(e) {
       e.halt();
