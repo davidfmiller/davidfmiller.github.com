@@ -127,29 +127,29 @@ h1 {
 h1 span {
   border-bottom: 1px solid rgba(192,192,192,0.3);
 }
- 
+
 dl, ul {
   border-left: 1px solid #ddd; /*ie*/
   border-left: 1px solid rgba(223,223,223,0.1);
   margin: 10px 0 0 25px;
   -webkit-transition: 0.5s border-color;
 }
- 
+
 dt {
   display: none;
 }
- 
+
 p {
   display: inline-block;
   line-height: 1.25em;
   padding: 10px 0 5px 0;
   text-transform: lowercase;
 }
- 
+
 .follow p {
   text-transform: none;
 }
- 
+
 dd, li {
   padding-bottom: 2px;
   padding-left: 25px;
@@ -765,7 +765,7 @@ ol li.rmr { display: none; }
 
 .rmr-popover {
   background: #000;
-	background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.8);
   position: absolute;
   box-shadow: 1px 1px 5px rgba(0,0,0,1);
   color: #fff;
@@ -797,51 +797,51 @@ ol li.rmr { display: none; }
 
 .rmr-popover b {
   display: block;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
 }
 
 .rmr-popover.top b {
-	top: 100%;
-	left: 10px;
-	border-color: #000;
+  top: 100%;
+  left: 10px;
+  border-color: #000;
   border-bottom: none;  
   border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	border-top: 5px solid black;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
 }
 
 .rmr-popover.bottom b {
-	top: -5px;
-	left: 10px;
-	border-color: #000;
+  top: -5px;
+  left: 10px;
+  border-color: #000;
   border-bottom: 5px solid black;
   border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	border-top: none;
+  border-right: 5px solid transparent;
+  border-top: none;
 }
 
 .rmr-popover.right b {
   top: 50%;
-	left: -5px;
-	border-color: #000;
+  left: -5px;
+  border-color: #000;
   border-right: 5px solid black;
   border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
+  border-bottom: 5px solid transparent;
   border-left: none;
 }
 
 .rmr-popover.left b {
   top: 50%;
-	right: -5px;
-	border-color: #000;
+  right: -5px;
+  border-color: #000;
   border-left: 5px solid black;
   border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
+  border-bottom: 5px solid transparent;
   border-right: none;
 }
 
@@ -918,4 +918,3 @@ a[data-popover]:after {
     background-image: url(../img/thumb-2x.jpg);
   }
 }
-
