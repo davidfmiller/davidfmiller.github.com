@@ -90,3 +90,7 @@ Cat 2
 [TOAD Omnium](http://www.tourofamericasdairyland.com/pdf/results/2014/overall-cat23.pdf), June 29, 2014
 
 - 5th/49+, 5pts
+
+[Ontario GP #1 30+ Cat 1/2/3/4](http://www.usacycling.org/results/index.php?permit=2015-62), January 11, 2015
+
+- 1st/16 (7 Cat 1 & 2s, 3pts)

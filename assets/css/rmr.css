@@ -319,6 +319,60 @@ div:hover ol li a:hover span {
 
 /* @end */
 
+
+/* @group koru */
+
+#doc.koru {
+/*  color: #222;
+  background: #fff; */
+  color: #043268;
+  background: rgba(255,255,255,0.2); 
+  -webkit-transition: 0.5s background-color;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+#doc.koru a {
+  border-bottom-color: #48656b;
+  border-bottom-color: rgba(72,191,107,0.2);
+  color:  #555;
+}
+ 
+#doc.koru a:focus,
+#doc.koru a:hover {
+  border-bottom-color: #48656b;
+}
+ 
+.koru button {
+  background-position: 0 -90px;
+}
+ 
+.koru button:hover {
+  background-position: -15px -90px;
+}
+
+.rmr-screen #doc.koru {
+  background: transparent;
+}
+
+.rmr-screen .koru button {
+  background-position: 0 -105px;
+}
+ 
+.rmr-screen .koru button:hover {
+  background-position: -15px -105px;
+}
+ 
+#doc.koru ol li a,
+#doc.koru dl,
+#doc.koru ul {
+  border-color: rgba(223,223,223,0.5);
+}
+
+#doc.bodhisattva li b { border-left-color: #48656b; }
+
+
+/* @end */
+
 /* @group stream */
 
 #doc.stream {
@@ -725,10 +779,6 @@ div:hover ol li a:hover span {
   height: 300px;
 }
 
-.popover .choklat {
-  background: url(../img/popover/choklat.jpg);
-  background-size: 400px 300px;
-}
 
 /* @end */
 
@@ -742,8 +792,8 @@ ol li.moma a span { background-position: right -100px; }
 ol li.getty a span { background-position: right -125px; }
 ol li.vegas a span { background-position: right -150px; }
 ol li.bodhisattva a span { background-position: right -175px; }
-ol li.chinatown a span { background-position: right -200px; } /* todo */
 ol li.evs a span { background-position: right -225px; }
+ol li.koru a span { background-position: right -250px; }
  
 ol li a:hover {
   border: none;
