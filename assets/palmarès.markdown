@@ -32,7 +32,7 @@ Cat 3
 
 [CBR Criterium #2, Cat 3](https://www.usacycling.org/results/?year=2014&id=304&info_id=73449), February 16, 2014
 
-- 2/73 (5 pts)
+- 2nd/73 (5 pts)
 
 [Redlands Criterium, Cat 3](https://www.usacycling.org/results/?year=2014&id=976&info_id=75707), April 6, 2014
 
@@ -53,7 +53,7 @@ May 4, 2014
 
 Valley of Flowers SCNCA Cat 3 Criterium Championship, May 11, 2014
 
-- 2/44 (4 pts)
+- 2nd/44 (4 pts)
 
 [Avenue of Flags Cat 3 Criterium](https://www.usacycling.org/results/?year=2014&id=1703&info_id=75618), May 10, 2014
 
