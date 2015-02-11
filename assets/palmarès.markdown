@@ -99,9 +99,6 @@ Cat 2 Road
 Cat 5 Track
 -----------
 
-[La Grange LAVRA Winter Classic](http://www.usacycling.org/results/index.php?permit=2015-441), February 6, 2014
+[La Grange LAVRA Winter Classic Omnium](https://www.usacycling.org/results/index.php?year=2015&id=441&info_id=), February 6, 2014
 
-- Omnium: 1st/12
-  - Scratch Race: 1st
-  - Tempo Race: 1st
-  - Points Race: 3rd
+- 1st/14
