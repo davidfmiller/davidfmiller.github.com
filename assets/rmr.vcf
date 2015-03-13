@@ -4,9 +4,9 @@ N:Miller;David;;;
 FN:David Miller
 NICKNAME:dave
 ORG:READMEANSRUN;
-EMAIL;type=INTERNET;type=WORK;type=pref:dave@readmeansrun.com
+EMAIL;type=INTERNET;type=WORK;type=pref:davidfmiller@me.com
 TEL;type=CELL;type=pref:+1 (310) 994-5473
-item2.ADR;type=HOME:;;;Santa Monica;CA;90404;USA
+item2.ADR;type=HOME:;;;Los Angeles;CA;90404;USA
 item2.X-ABADR:us
 item4.URL;type=pref:http://www.readmeansrun.com
 item4.X-ABLabel:_$!<HomePage>!$_
