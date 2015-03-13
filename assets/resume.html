@@ -5,13 +5,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=620">
 
-  <meta property="og:title" content="READMEANSRUN">
-  <meta property="og:description" content="READMEANSRUN makes websites and takes pictures">
-  <meta property="og:type" content="company">
-  <meta property="og:locality" content="Santa Monica">
+  <meta property="og:title" content="Resum&#xE9; of David F Miller">
+  <meta property="og:description" content="David Miller makes websites and takes pictures">
+  <meta property="og:type" content="person">
+  <meta property="og:locality" content="Marina Del Rey">
   <meta property="og:region" content="California">
   <meta property="og:country-name" content="USA">
-  <meta property="og:postal-code" content="90404">
+  <meta property="og:postal-code" content="90292">
   <meta property="og:email" content="dave@readmeansrun.com">
   <meta property="og:url" content="http://readmeansrun.com">
   <meta property="fb:admins" content="eldaverino">
@@ -22,16 +22,26 @@
 html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;font-variant:normal;}sup {vertical-align:text-top;}sub {vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
 
 * { text-shadow: 1px 1px #f0f0f0; -webkit-text-size-adjust:none; }
-h2 { font-size: 12pt; font-weight: bold; margin-top: 2em; margin-bottom: 0.5em; clear: both; border-bottom: 1px solid #eee; }
+h2 { text-transform: uppercase; font-weight: bold; margin-top: 2em; margin-bottom: 0.5em; clear: both; }
 body { padding: 50px 5px 100px 5px; font-family: helvetica, sans-serif; font-size: 10pt; line-height: 1.4em; }
 a { color: blue; text-shadow: none; }
 a.include {display; none; }
 a:hover { color: red; }
 
 span.title { display: block; font-weight: bold; }
-address.vcard { text-align: right; }
-address span { display: block; }
-address span span { display: inline;  }
+/*header { border-bottom: 1px solid #ddd; }*/
+dt { display: inline-block; font-size: 18px; margin-right: 0.1em; }
+h1 { font-weight: bold; }
+
+header dd { display: inline-block; }
+header dd:before {
+  padding-right: 0.3em;
+  content: "–";
+  font-weight: bold;
+}
+address dd { margin-right: 0.3em; }
+dl dd:last-child { margin-right: 0; }
+
 #container { width: 600px; margin: 0 auto; }
 div.vcard { margin-bottom: 1em; }
 div.other ul li, div.education ul li, div.skills ul li { list-style-type: disc; list-style-position: inside; }
@@ -46,7 +56,8 @@ div.desc li { list-style-type: disc; list-style-position: inside; }
 ul { margin-top: 0.5em; }
 p { text-align: justify; }
 div.references p { font-style: italic; } 
-#dfm { font-weight: bold; }
+
+
 
 @media only screen and (max-device-width: 480px) {
   body { font-size: 18pt; }
@@ -55,10 +66,6 @@ div.references p { font-style: italic; }
   div.skills a { text-decoration: underline; color: blue; }
   div.other li, div.skills li, div.education li {float: none; width: auto; padding-left: 30px; }
 }
-
-@media print {
-  div.photo {page-break-after:always}
-}
   </style>
 </head>
 <body>
@@ -66,15 +73,35 @@ div.references p { font-style: italic; }
 
     <header>
       <address class="vcard">
-        <span class="fn n" id="dfm"><span class="given-name">David</span> <span class="middle-name">Francis</span> <span class="family-name">Miller</span></span> <span class="tel">1&ndash;310&ndash;994&ndash;5473</span> <span><a href="mailto:davidfmiller@me.com" title="Email me" class="email">davidfmiller@me.com</a></span> <span><a href="http://readmeansrun.com/" title="Visit my page" class="url">readmeansrun.com</a></span>
+        <dl>
+          <dt class="fn n"><h1><span class="given-name">David</span> <span class="middle-name">Francis</span> <span class="family-name">Miller</span></h1></dt>
+          <dd><span class="tel">310-994-5473</span></dd>
+          <dd><a href="mailto:davidfmiller@me.com" title="Email me" class="email">davidfmiller@me.com</a></span></dd>
+          <dd><a href="http://readmeansrun.com/" title="Visit my page" class="url">http://readmeansrun.com</a></span></dd>
       </address>
     </header>
+
+    <section id="tools">
+    <h2>Software Skills &amp; Tools</h2>
+    <div class="skills">
+      <ul>
+        <li><a href="http://www.w3.org/TR/html5/" title="HTML5">HTML5</a>, <a href="http://developer.mozilla.org/en/docs/About_JavaScript" title="JavaScript">JavaScript</a>, <a href="http://www.w3.org/Style/CSS/" title="Cascading Style Sheets">CSS3</a>, <a href="http://www.w3.org/XML/" title="XML">XML</a></li>
+        <li><a href="http://nodejs.org/" title="Node">Node</a>, <a href="http://www.php.net/" title="PHP">PHP</a>, <a href="https://httpd.apache.org" title="Apache Web Server">Apache 2</a>, <a href="http://www.python.org/" title="Python">Python</a>, <a href="http://www.gnu.org/software/bash/" title="Bash">Bash</a></li>
+        <li><abbr title="Digital Single Lens Reflex">DSLR</abbr>, medium&#x2013; &#x26; large&#x2013;format film cameras</li>
+        <li><a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Objective-C</a>, <a href="https://developer.apple.com/technologies/mac/cocoa.html" title="Cocoa">Cocoa</a>, <a href="https://developer.apple.com/xcode/" title="Xcode">Xcode</a></li>
+        <li><a href="http://git-scm.com/" title="Git">Git</a>, <a href="http://selenic.com/mercurial/" title="Mercurial">Mercurial</a>, <a href="http://subversion.tigris.org/" title="Subversion">Subversion</a></li>
+        <li><a href="http://www.adobe.com/products/photoshop/" title="Adobe Photoshop">Adobe Photoshop</a> &#x26; <a href="http://www.adobe.com/products/photoshoplightroom/" title="Adobe Photoshop Lightroom">Lightroom</a></li>
+        <li><a href="http://www.apple.com/macosx/" title="Mac OS X">Mac OS X</a>, <a href="http://www.linux.org/" title="Linux">Linux</a> &#x26; <a href="http://www.bsd.org/" title="BSD">BSD</a>, <a href="http://www.microsoft.com/windows/" title="Microsoft Windows">Windows</a></li>
+      </ul>
+    </div>
+    </section>
+
 
     <section id="experience">
       <h2>Experience</h2>
 
       <div class="experience vevent vcard yahoo">
-        <a href="#dfm" class="include" title="David F Miller"></a> <span class="title">Senior Front&ndash;End Web Developer</span> <a href="https://sports.yahoo.com/" title="Yahoo Sports" class="org">Yahoo Sports</a> &amp; <a href="https://screen.yahoo.com/" title="Yahoo Video" class="org">Yahoo Video</a> (<span class="location">Santa Monica, <abbr title="California">CA</abbr></span>)
+        <a href="#dfm" class="include" title="David F Miller"></a> <span class="title">Senior Front&ndash;End Engineer</span> <a href="https://sports.yahoo.com/" title="Yahoo Sports" class="org">Yahoo Sports</a> &amp; <a href="https://screen.yahoo.com/" title="Yahoo Video" class="org">Yahoo Video</a> (<span class="location">Santa Monica, <abbr title="California">CA</abbr></span>)
         <div class="duration">
           <ol>
             <li><time class="dtstart" datetime="2007-11-11">November 2007</time> &#x2013; <time class="dtend" datetime="2010-03-31">March 2010</time>,</li>
@@ -83,9 +110,9 @@ div.references p { font-style: italic; }
         </div>
         <div class="desc">
           <ul>
-            <li><em>Collaborating with a team</em> of visual &#x26; experience designers, product managers, editors, back&ndash;end engineers and other front-end engineers&mdash;located locally and world&ndash;wide&mdash;to develop and maintain <em>the web&#x2019;s most popular sports site</em>.</li>
-            <li>Wielding <em>web standards</em> to create <em>attractive</em>, <em>user&ndash;friendly</em>, <em>accessible</em>, <em>global</em> and highly&ndash;trafficked <em>interactive</em>&#x2013;yet&#x2013;<em>low&#x2013;bandwidth</em> pages that are read worldwide on a variety of devices.</li>
-            <li>Mentoring interns &amp; junior employees, participating in all aspects of the hiring pipeline/process, performing code &amp; architecture reviews, and cracking the whip for the team.</li>
+            <li>Developed and maintained the web’s most popular sports site.</li>
+            <li>Wielded web standards to create attractive, user–friendly, accessible, global and highly–trafficked interactive, yet,low–bandwidth pages read worldwide on a variety of devices.</li>
+            <li>Directed front-end engineering team, and training junior employees and interns. Involved in hiring process, code and architecture reviews, team development.</li>
           </ul>
         </div>
       </div>
@@ -97,8 +124,8 @@ div.references p { font-style: italic; }
         </div>
         <div class="desc">
           <ul>
-            <li><em>Photographing</em> musicians, performers, and other personalities for <em>publication in independent arts &#x26; entertainment magazines</em> in addition to other settings such as weddings, portraits, <abbr title="et cetera">etc</abbr>. Clients included: <a href="http://www.ffwdweekly.com/" title="Fast Forward Weekly" class="org">Fast Forward Weekly</a>, <a href="http://www.beatroute.ca" title="BeatRoute" class="org">BeatRoute</a>, &#x26; <a href="http://www.sledisland.com/" title="Sled Island" class="org">Sled Island</a>.</li>
-            <li>Working with small businesses to establish a strong identity &#x26; voice online.</li>
+            <li>Photographing events for publication by independent arts and entertainment organizations, and shooting other subjects such as weddings and portraits. <a href="http://readmeansrun.com">View a complete list of clients</a>.</li>
+            <li>Working with small businesses to establish a strong and unique online presence.</li>
             <li>My photography is viewable at <a href="https://www.flickr.com/photos/davidfmiller/" title="Flickr">Flickr</a>.</li>
           </ul>
         </div>
@@ -111,8 +138,7 @@ div.references p { font-style: italic; }
         </div>
         <div class="desc">
           <ul>
-            <li>Built a site for the art community to discover and share art. Contributed to all aspects of the development process: interviewing, design, implementation, testing, and leadership.</li>
-            <li>Resigned due to differing opinions over the company&#x2019;s direction and working environment.</li>
+            <li>Developed a website for the art community to enhance the discovery, sharing, and selling/purchasing of art. Involved in all aspects of the development process: interviewing candidates, feature & site design and implementation, testing, and leadership within the company.</li>
           </ul>
         </div>
       </div>
@@ -124,24 +150,12 @@ div.references p { font-style: italic; }
         </div>
         <div class="desc">
           <ul>
-            <li>Wrote articles covering <em>web development</em>, general nerdery, and <em>photography</em> for (a) a network of websites maintained by the <em>leading publisher of computer &#x26; technology books</em> and (b) the <em>premier online web development resource</em>.</li>
+            <li>Produced articles covering web development and photography for a network of websites maintained by the leading publisher of computer and technology books and the premier online web development resource.</li>
+
           </ul>
         </div>
       </div>
 
-      <div class="experience vevent vcard photo">
-        <a href="#dfm" class="include" title="David F Miller"></a> <span class="title">Freelance Photographer &amp; Web Developer</span> <a href="http://readmeansrun.com" title="READMEANSRUN">READMEANSRUN</a> (<span class="location">Calgary, AB</span>)
-        <div class="duration">
-          <time class="dtstart" datetime="2006-06-01">June 2006</time> &#x2013; <time class="dtend" datetime="2014-12-31">Present</time>
-        </div>
-        <div class="desc">
-          <ul>
-            <li><em>Photographing</em> musicians, performers, and other personalities for <em>publication in independent arts &#x26; entertainment magazines</em> in addition to other settings such as weddings, portraits, <abbr title="et cetera">etc</abbr>. Clients included: <a href="http://www.ffwdweekly.com/" title="Fast Forward Weekly" class="org">Fast Forward Weekly</a>, <a href="http://www.beatroute.ca" title="BeatRoute" class="org">BeatRoute</a>, &#x26; <a href="http://www.sledisland.com/" title="Sled Island" class="org">Sled Island</a>.</li>
-            <li>Working with small businesses to establish a strong identity &#x26; voice online.</li>
-            <li>My photography is viewable at <a href="https://www.flickr.com/photos/davidfmiller/" title="Flickr">Flickr</a>.</li>
-          </ul>
-        </div>
-      </div>
 
       <div class="experience vevent vcard">
         <a href="#dfm" class="include" title="David F Miller"></a> <span class="title">Senior Web Developer</span> <a href="http://www.istockphoto.com" title="iStockphoto" class="org">iStockphoto</a> (<span class="location">Calgary, AB</span>)
@@ -150,26 +164,13 @@ div.references p { font-style: italic; }
         </div>
         <div class="desc">
           <ul>
-            <li>Worked in a <em>senior role</em> at the <em>web&#x2019;s most popular stock photography sites</em>. Responsible for <em>traditional development tasks</em> (requirements analysis, database design and information architecture, back&ndash;end development, and interface design), in addition to providing input and guidance on <em>development practices &#x26; standards</em>.</li>
+            <li>Responsible for development tasks that included requirements analysis, database design and information architecture, back–end development, and interface design).</li>
+            <li>Key player in establishing development practices and standards.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="tools">
-    <h2>Tools</h2>
-    <div class="skills">
-      <ul>
-        <li><a href="http://www.w3.org/XML/" title="XML">XML</a>, <a href="http://www.w3.org/TR/html5/" title="HTML5">HTML5</a>, <a href="http://developer.mozilla.org/en/docs/About_JavaScript" title="JavaScript">JavaScript</a>, <a href="http://www.w3.org/Style/CSS/" title="Cascading Style Sheets">CSS3</a></li>
-        <li><a href="http://nodejs.org/" title="Node">Node</a>, <a href="http://www.php.net/" title="PHP">PHP</a>, <a href="https://httpd.apache.org" title="Apache Web Server">Apache 2</a>, <a href="http://www.python.org/" title="Python">Python</a>, <a href="http://www.gnu.org/software/bash/" title="Bash">Bash</a></li>
-        <li><abbr title="Digital Single Lens Reflex">DSLR</abbr>, medium&#x2013; &#x26; large&#x2013;format film cameras</li>
-        <li><a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Objective-C</a>, <a href="https://developer.apple.com/technologies/mac/cocoa.html" title="Cocoa">Cocoa</a>, <a href="https://developer.apple.com/xcode/" title="Xcode">Xcode</a></li>
-        <li><a href="http://subversion.tigris.org/" title="Subversion">Subversion</a>, <a href="http://selenic.com/mercurial/" title="Mercurial">Mercurial</a>, <a href="http://git-scm.com/" title="Git">Git</a></li>
-        <li><a href="http://www.adobe.com/products/photoshop/" title="Adobe Photoshop">Adobe Photoshop</a> &#x26; <a href="http://www.adobe.com/products/photoshoplightroom/" title="Adobe Photoshop Lightroom">Lightroom</a></li>
-        <li><a href="http://www.apple.com/macosx/" title="Mac OS X">Mac OS X</a>, <a href="http://www.linux.org/" title="Linux">Linux</a> &#x26; <a href="http://www.bsd.org/" title="BSD">BSD</a>, <a href="http://www.microsoft.com/windows/" title="Microsoft Windows">Windows</a></li>
-      </ul>
-    </div>
-    </section>
 
     <section id="education">
     <h2>Education</h2>
@@ -202,38 +203,9 @@ div.references p { font-style: italic; }
           <p>I am racing with <a href="http://www.monstermediaracing.com" title="Monster Media Racing">Monster Media</a> Elite Masters Team in 2015 as a <a href="https://www.usacycling.org/results/?compid=375508" title="USAC Race Results">USAC</a> <abbr title="Category">Cat</abbr> 2 road, <abbr title="Category">Cat</abbr> 5 track, and <abbr title="Category">Cat</abbr> 2 <abbr title="Cross-country">XC</abbr> <abbr title="Mountain bike">MTB</abbr> racer after being an avid cyclist for many years. View my <a href="palmar&#xE8;s.markdown" title="Palmar&#xE8;s">palmar&#xE8;s</a>.</p>
         </div>
       </div>
-      <div class="vevent vcard">
-        <span class="title">Ultimate (Frisbee) Player</span>
-        <div class="duration">
-          <time class="dtstart" datetime="2000-05-01">Summers 2000</time> &#x2013; <time datetime="2005-09-15" class="dtend">2005</time>
-        </div>
-        <div class="desc">
-          <p>Played recreationally for 5 years, and helped form a competitive men&#x2019;s team based in Calgary that finished <em>9th</em> overall at the <a href="http://www.canadianultimate.com/cuc/2004/" title="2004 Canadian Ultimate Championships">2004 Canadian Ultimate Championships</a>, and <em>5th</em> in <a href="http://www.canadianultimate.com/cuc/2005/" title="2005 Canadian Ultimate Championships">2005</a>.</p>
-        </div>
-      </div>
-      <div class="vevent vcard">
-        <span class="title">Minor Hockey Participant</span>
-        <div class="duration">
-          <time datetime="1984-11-01" class="dtstart">Winters 1985</time> &#x2013; <time datetime="1997-03-30" class="dtend">1997</time>
-        </div>
-        <div class="desc">
-          <p>Learned the importance of leadership and hard work, and voted assistant captain the last two years by my teammates because of my ability, attitude, and leadership skills.</p>
-        </div>
-      </div>
     </div><!-- /community -->
     </section>
 
-    <section id="other">
-      <h2>Other Activities and Interests</h2>
-      <div class="other">
-        <p>When not in front of a computer, behind a camera, or sitting on a bicycle I enjoy&hellip;</p>
-        <ul>
-          <li>weightlifting,</li>
-          <li>playing guitar,</li>
-          <li>and practicing yoga.</li>
-        </ul>
-      </div>
-    </section>
   </div><!-- end container -->
 </body>
 </html>
