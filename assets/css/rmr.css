@@ -19,7 +19,7 @@ body {
   min-height: 100%;
   background: transparent;
 }
- 
+
 button {
   background: rgba(0,0,0,0.1) url(../img/plus.png) 0 0 no-repeat;
   border-radius: 3px;
@@ -81,12 +81,11 @@ button:hover {
   position: relative;
   width: 300px;
   z-index: 1;
-  
+
   transition: 0.5s color; 
   transition: 0.5s background-color; 
   transition: 0.5s opacity;
 }
-
 
 html.error-404 {
 /*  background: url(http://davidfmiller.github.io/assets/img/backdrop/pink.jpg);
@@ -792,6 +791,7 @@ ol li.moma a span { background-position: right -100px; }
 ol li.getty a span { background-position: right -125px; }
 ol li.vegas a span { background-position: right -150px; }
 ol li.bodhisattva a span { background-position: right -175px; }
+ol li.chinatown a span { background-position: right -200px; }
 ol li.evs a span { background-position: right -225px; }
 ol li.koru a span { background-position: right -250px; }
  
@@ -964,7 +964,7 @@ a[data-popover]:after {
 @media only screen and (-webkit-min-device-pixel-ratio: 2) { /* retina */
  
   ol a span {
-    background-size: 25px 250px;
+    background-size: 25px 275px;
     background-image: url(../img/thumb-2x.jpg);
   }
 }
