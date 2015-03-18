@@ -31,8 +31,9 @@ YUI().use(function(Y) {
       'getty' : { 'position' : 'left bottom', 'color' : '#000', 'size' : 'cover' },
       'vegas' : { 'color' : '#000', 'position' : 'right top' },
       'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' },
-      'koru' : { 'color' : '#a2a2a2', 'position' : 'center center', 'size' : 'cover' }
-      
+      'koru' : { 'color' : '#a2a2a2', 'position' : 'center center', 'size' : 'cover' },
+
+      'pink' : { 'size' : 'cover' }
     },
 
     // retrieve basename of file from a url (ex: 'http://davidfmiller.github.io/assets/img/backdrop/backdrop.jpg' → 'backdrop')
