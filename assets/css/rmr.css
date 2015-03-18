@@ -145,6 +145,7 @@ p {
   text-transform: lowercase;
 }
 
+.contact p,
 .follow p {
   text-transform: none;
 }
@@ -162,7 +163,7 @@ a {
   -webkit-transition: 0.1s color;
   -webkit-transition: 0.2s border-bottom-color;
 }
- 
+
 section section a:focus,
 section section a.focus {
   outline: none;
