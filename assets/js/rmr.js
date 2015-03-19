@@ -33,7 +33,7 @@ YUI().use(function(Y) {
       'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' },
       'koru' : { 'color' : '#a2a2a2', 'position' : 'center center', 'size' : 'cover' },
 
-      'archive' : { 'color': '#fafafa', 'position' : 'left bottom' },
+      'archive' : { 'color': '#fafafa', 'size' : 'contain', 'position' : 'left bottom' },
       'pink' : { 'size' : 'cover' }
     },
 
