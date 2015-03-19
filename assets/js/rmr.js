@@ -33,7 +33,7 @@ YUI().use(function(Y) {
       'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' },
       'koru' : { 'color' : '#a2a2a2', 'position' : 'center center', 'size' : 'cover' },
 
-      'archive' : { 'color': '#fafafa', 'size' : 'cover' },
+      'archive' : { 'color': '#fafafa', 'position' : 'left bottom' },
       'pink' : { 'size' : 'cover' }
     },
 
@@ -92,26 +92,6 @@ YUI().use(function(Y) {
       e.halt();
       bg(e.target.ancestor('a', true));
     });
-
-    /* left/right keys */
-    Y.one('body').on('key', function(e) {
-
-      if (e.altKey || e.ctrlKey) { return; }
-
-      var current = Y.one('li.active'),
-          target = null;
-
-      if (e.charCode == 39) { // next 
-        target = current.next();
-        if (! target) { target = current.ancestor('ol').one('li'); }
-      } else if (e.charCode == 37) { // prev
-        target = current.previous();
-        if (! target) { target = current.ancestor('ol').all('li').pop(); }
-      }
-
-      bg(target.one('a'));
-
-    }, 'down:37,39');
 
     /* screen */
     if (screen.isSupported()) {
