@@ -33,6 +33,7 @@ YUI().use(function(Y) {
       'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' },
       'koru' : { 'color' : '#a2a2a2', 'position' : 'center center', 'size' : 'cover' },
 
+      'archive' : { 'color': '#fafafa', 'size' : 'cover' },
       'pink' : { 'size' : 'cover' }
     },
 
@@ -77,7 +78,6 @@ YUI().use(function(Y) {
         first = first.getAttribute('href');
       } else if (window.RMR && window.RMR.backdrop) {
         first = window.RMR.backdrop;
-        console.log(window);
       } else {
         first = Y.one('html').getAttribute('data-backdrop');
       }
