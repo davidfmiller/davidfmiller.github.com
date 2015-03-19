@@ -97,13 +97,14 @@ YUI().use(function(Y) {
     if (screen.isSupported()) {
 
       var section = Y.one('section.zoom');
+      toggle = function() { screen.toggle(); };
+      Y.on('key', toggle, body, 'f');
 
       if (section) {
-        toggle = function() { screen.toggle(); };
         input = Y.Node.create('<button title="' + title + '" class="zoom">' + title + '</button>');
         Y.one('section.zoom').append(input);
         input.on('click', toggle);
-        Y.on('key', toggle, body, 'f');
+
       }
     }
 
