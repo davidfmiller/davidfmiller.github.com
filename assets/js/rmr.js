@@ -75,6 +75,9 @@ YUI().use(function(Y) {
 
       if (first) {
         first = first.getAttribute('href');
+      } else if (window.RMR && window.RMR.backdrop) {
+        first = window.RMR.backdrop;
+        console.log(window);
       } else {
         first = Y.one('html').getAttribute('data-backdrop');
       }
