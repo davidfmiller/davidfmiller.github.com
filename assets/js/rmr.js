@@ -70,7 +70,6 @@ YUI().use(function(Y) {
     });
 
     dropper.on('end', function(e) {
-      console.log(e.details[0]);
       Y.all('img.pin').remove();
       Y.one('body').append('<img src="' + e.details[0] + '" class="pin">');
     });
