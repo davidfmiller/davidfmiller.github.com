@@ -923,6 +923,14 @@ a[data-popover]:after {
 .rmr-popover.block     .bd { background-image: url(http://davidfmiller.github.io/assets/img/popovers/block.jpg); }
 .rmr-popover.moma      .bd { background-image: url(http://davidfmiller.github.io/assets/img/popovers/moma.jpg); }
 
+img.pin {
+  opacity: 0;
+  position: absolute;
+  left: 2000px;
+  top: 2000px;
+  z-index: -1;
+}
+
 /* @end */
 
 @media screen and (max-device-width: 480px) { /* smartphone */
