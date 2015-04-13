@@ -99,6 +99,14 @@ Cat 2 Road
 Cat 5 Track
 -----------
 
-[La Grange LAVRA Winter Classic Omnium](https://www.usacycling.org/results/index.php?year=2015&id=441&info_id=), February 6, 2014
+[La Grange LAVRA Winter Classic Omnium](https://www.usacycling.org/results/index.php?year=2015&id=441&info_id=), February 6, 2015
 
 - 1st/14
+
+Friday Night Racing p/b FWWD Wheels #1, April 3, 2015
+
+- 2nd/23
+
+Friday Night Racing p/b FWWD Wheels #2, April 10, 2015
+
+- 2nd/23
