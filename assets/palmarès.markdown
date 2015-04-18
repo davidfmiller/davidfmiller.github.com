@@ -110,3 +110,7 @@ Friday Night Racing p/b FWWD Wheels #1, April 3, 2015
 Friday Night Racing p/b FWWD Wheels #2, April 10, 2015
 
 - 2nd/23
+
+Friday Night Racing p/b FWWD Wheels #3, April 17, 2015
+
+- 2nd/17
