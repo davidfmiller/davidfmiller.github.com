@@ -7,7 +7,7 @@ SOFTWARE SKILLS & TOOLS
 - Node, PHP, Apache 2,Python, Bash
 - DSLR, medium– & large–format film cameras
 - Objective-C & Swift, Cocoa, Xcode
-- Git, Mercurial, Subversion
+- Git, Mercurial, Subversion, Perforce
 - Adobe Photoshop & Lightroom-
 - Mac OS X, Linux & BSD, Windows
 
