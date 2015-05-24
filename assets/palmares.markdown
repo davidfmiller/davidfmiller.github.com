@@ -146,10 +146,18 @@ Friday Night Racing p/b FWWD Wheels #3, April 17, 2015
 Cat 4 Track
 -----------
 
-Encino Upgrade Omnium (Enduro), May 1 2015
+[Arizona Track Series #1 (Enduro)](https://www.usacycling.org/results/index.php?year=2015&id=1770&info_id=), May 1 2015
 
-- 1st / 12
+- 1st / 12 (5 pts)
 
-Encino Upgrade Omnium (Sprint), May 1 2015
+[Arizona Track Series #1 (Sprint)](https://www.usacycling.org/results/index.php?year=2015&id=1770&info_id=), May 1 2015
 
-- 1st / 11
+- 1st / 11 (5 pts)
+
+[Friday Night Racing p/b FFWD Wheels #4](http://lavelodrome.org/events/20150508_FNR_4%20results.pdf), May 8, 2015
+
+- 2nd / 18 (3 pts)
+
+[Friday Night Racing p/b FFWD Wheels #5](), May 15, 2015
+
+- 1st / 18 (5 pts)
