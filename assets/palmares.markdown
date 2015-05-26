@@ -161,3 +161,7 @@ Cat 4 Track
 [Friday Night Racing p/b FFWD Wheels #5](), May 15, 2015
 
 - 1st / 18 (5 pts)
+- 
+[Friday Night Racing p/b FFFW Wheels #6](http://lavelodrome.org/events/20150522_FNR_6a_results.pdf), May 22, 2015
+
+- 4th / 14 (1 pt)
