@@ -5,9 +5,9 @@ SOFTWARE SKILLS & TOOLS
 
 - HTML5, JavaScript, CSS3, XML
 - Node, PHP, Apache 2,Python, Bash
-- DSLR, medium– & large–format film cameras
+- DSLR, medium- & large-format film cameras
 - Objective-C & Swift, Cocoa, Xcode
-- Git, Mercurial, Subversion
+- Git, Mercurial, Subversion, Perforce
 - Adobe Photoshop & Lightroom-
 - Mac OS X, Linux & BSD, Windows
 
@@ -19,48 +19,48 @@ Edmunds.com (Santa Monica, CA)
 April 2015 - Present
 - Developing web applications with the data analytics and engineering teams to visualize and consume the mountains of data stored/created/mined within the company.
 
-Senior Front–End Engineer
+Senior Front-End Engineer
 Yahoo Sports & Yahoo Video (Santa Monica, CA)
-November 2007 – March 2010,
-June 2011 – March 2015
+November 2007 - March 2010,
+June 2011 - March 2015
 - Developed and maintained the web’s most popular sports site.
-- Wielded web standards to create attractive, user–friendly, accessible, global and highly–trafficked interactive & low–bandwidth pages consumed worldwide on a variety of devices.
+- Wielded web standards to create attractive, user-friendly, accessible, global and highly-trafficked interactive & low-bandwidth pages consumed worldwide on a variety of devices.
 - Directed front-end engineering team and trained junior employees and interns. Involved in hiring process, code and architecture reviews, and team development.
 
 Freelance Photographer & Web Developer
 READMEANSRUN (Calgary, AB)
-June 2006 – Present
+June 2006 - Present
 - Photographing events for publication by independent arts and entertainment organizations, and shooting other subjects such as weddings and portraits. View a complete list of clients.
 - Working with small businesses to establish a strong and unique online presence.
 
 Lead Developer
 Saatchi Online (Los Angeles, CA)
-April 2010 – September 2010
+April 2010 - September 2010
 - Developed a website for the art community to enhance the discovery, sharing, and selling/purchasing of art. Involved in all aspects of the development process: interviewing candidates, feature & site design and implementation, testing, and leadership within the company.
 
 Freelance Writer
-O’Reilly & Associates Inc & A List Apart
-September 2003 – April 2008
+O'Reilly & Associates Inc & A List Apart
+September 2003 - April 2008
 - Produced articles covering web development and photography for a network of websites maintained by the leading publisher of computer and technology books and the premier online web development resource.
 
 Senior Web Developer
 iStockphoto (Calgary, AB)
-May 2005 – October 2007
-- Responsible for development tasks that included requirements analysis, database design and information architecture, back–end development, and interface design.
+May 2005 - October 2007
+- Responsible for development tasks that included requirements analysis, database design and information architecture, back-end development, and interface design.
 - Key player in establishing development practices and standards.
 
 
 EDUCATION
-University of Calgary’s Department of Computer Science
-September 1997 – April 2002
+University of Calgary's Department of Computer Science
+September 1997 - April 2002
 Graduated with a B.Sc. in Computer Science, focusing my studies in the following areas:
- - human–computer interaction
+ - human-computer interaction
  - internet technologies, frameworks, & standards
- - object–oriented programming & software engineering
+ - object-oriented programming & software engineering
  - database design & implementation
 
 
 COMMUNITY INVOLVEMENT
 USAC Licensed Bicycle Racer
-January 2013 – Present
+January 2013 - Present
 I am racing with Monster Media Elite Masters Team in 2015 as a USAC Cat 2 road, Cat 4 track, and Cat 2 XC MTB racer after being an avid cyclist for many years.
