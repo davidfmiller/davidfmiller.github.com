@@ -17,7 +17,7 @@ EXPERIENCE
 Data Visualization Engineer
 Edmunds.com (Santa Monica, CA)
 April 2015 - Present
-- Developing web applications with the data analytics and engineering teams to visualize and consume the mountains of data stored/created/mined within the company.
+- Building web applications alongside the data analytics and engineering teams to visualize and consume the mountains of data stored/created/mined within the company, using both open-source and in-house tools.
 
 Senior Front-End Engineer
 Yahoo Sports & Yahoo Video (Santa Monica, CA)
