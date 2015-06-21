@@ -39,16 +39,17 @@ button {
   -webkit-transition: 0.2s background-color;
   transition: 0.2s opacity;
   transition: 0.2s background-color;
-}
 
-button.focus {
-  opacity: 1;
-}
+  &.focus {
+    opacity: 1;  
+  }
 
-button:hover {
-  background-color: rgba(0,0,0,0.4);
-  background-position: -15px 0;
-  opacity: 1;
+  &:hover {
+    background-color: rgba(0,0,0,0.4);
+    background-position: -15px 0;
+    opacity: 1;
+  }
+
 }
 
 /* @end */
