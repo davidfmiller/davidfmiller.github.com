@@ -806,11 +806,7 @@ ol li.rmr { display: none; }
 
 /* @end */
 
-
-
-
-
-
+/*
 @-webkit-keyframes pop-in {
   0% { opacity: 0; -webkit-transform: scale(0.5); }
   100% { opacity: 1; -webkit-transform: scale(1); }
@@ -909,9 +905,11 @@ a[data-popover]:after {
   content: "∙";
   font-weight: normal;
 }
+*/
 
 /* @group popover images */
 
+/*
 .rmr-popover.evs       .bd { background-image: url(http://davidfmiller.github.io/assets/img/popovers/evs.jpg); }
 .rmr-popover.getty     .bd { background-image: url(http://davidfmiller.github.io/assets/img/popovers/getty.jpg); }
 .rmr-popover.hd        .bd { background-image: url(http://davidfmiller.github.io/assets/img/popovers/hd.jpg); }
@@ -924,6 +922,7 @@ a[data-popover]:after {
 .rmr-popover.forbidden .bd { background-image: url(http://davidfmiller.github.io/assets/img/popovers/forbidden.jpg); }
 .rmr-popover.block     .bd { background-image: url(http://davidfmiller.github.io/assets/img/popovers/block.jpg); }
 .rmr-popover.moma      .bd { background-image: url(http://davidfmiller.github.io/assets/img/popovers/moma.jpg); }
+*/
 
 img.pin {
   opacity: 0;
