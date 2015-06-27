@@ -165,3 +165,7 @@ Cat 4 Track
 [Friday Night Racing p/b FFFW Wheels #6](http://lavelodrome.org/events/20150522_FNR_6a_results.pdf), May 22, 2015
 
 - 4th / 14 (1 pt)
+
+[Arizona Track Series #3](#), June 26, 2015
+
+- 2nd/10 (3pts)
