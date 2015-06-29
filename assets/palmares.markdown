@@ -169,3 +169,8 @@ Cat 4 Track
 [Arizona Track Series #3](#), June 26, 2015
 
 - 2nd/10 (3pts)
+
+[LAVRA Saturday Nights p/b LaGrange #3](#), June 26, 2015
+
+- 4th/21 (1pt)
+
