@@ -170,7 +170,7 @@ Cat 4 Track
 
 - 1nd/10 (5pts)
 
-[LAVRA Saturday Nights p/b LaGrange #3](#), June 26, 2015
+[LAVRA Saturday Nights p/b LaGrange #3](#), June 27, 2015
 
 - 4th/21 (1pt)
 
