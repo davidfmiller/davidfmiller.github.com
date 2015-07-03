@@ -148,29 +148,29 @@ Cat 4 Track
 
 [Arizona Track Series #1 (Enduro)](https://www.usacycling.org/results/index.php?year=2015&id=1770&info_id=), May 1 2015
 
-- 1st / 12 (5 pts)
+- 1st / 12
 
 [Arizona Track Series #1 (Sprint)](https://www.usacycling.org/results/index.php?year=2015&id=1770&info_id=), May 1 2015
 
-- 1st / 11 (5 pts)
+- 1st / 11
 
 [Friday Night Racing p/b FFWD Wheels #4](http://lavelodrome.org/events/20150508_FNR_4%20results.pdf), May 8, 2015
 
-- 2nd / 18 (3 pts)
+- 2nd / 18
 
 [Friday Night Racing p/b FFWD Wheels #5](http://lavelodrome.org/events/20150515_FNR_5_results.pdf), May 15, 2015
 
-- 1st / 18 (5 pts)
+- 1st / 18
 
 [Friday Night Racing p/b FFFW Wheels #6](http://lavelodrome.org/events/20150522_FNR_6a_results.pdf), May 22, 2015
 
-- 4th / 14 (1 pt)
+- 4th / 14
 
 [Arizona Track Series #3](#), June 26, 2015
 
-- 1nd/10 (5pts)
+- 1st/10
 
 [LAVRA Saturday Nights p/b LaGrange #3](#), June 27, 2015
 
-- 4th/21 (1pt)
+- 4th/21
 
