@@ -93,35 +93,35 @@ Cat 2 Road
 
 [Ladera Ranch GP 35+ 1/2/3](https://www.usacycling.org/results/?year=2014&id=1768&info_id=76473), June 1, 2014
 
-- 2nd/30 (25 Cat 1s & 2s, 4pts)
+- 2nd/30
 
 [TOAD #1: Shorewood Cat 2/3](https://www.usacycling.org/results/?year=2014&id=35&info_id=77648), June 19, 2014
 
-- 3rd/70 (40 Cat 2s, 3pts)
+- 3rd/70
 
 [TOAD #3: Grafton Cat 2/3](https://www.usacycling.org/results/?year=2014&id=35&info_id=77646), June 21, 2014
 
-- 1st/100+ (65 Cat 2s, 7 pts)
+- 1st/100+
 
 [TOAD #5: Bielton Cat 2/3](https://www.usacycling.org/results/?year=2014&id=35&info_id=77663), June 23, 2014
 
-- 4th/62 (36 Cat 2s, 2 pts)
+- 4th/62
 
 [TOAD #10: Downer Ave Cat 2/3](https://www.usacycling.org/results/?year=2014&id=35&info_id=77944), June 28, 2014
 
-- 4th/92 (56 Cat 2s, 3pts)
+- 4th/92
 
 [TOAD Omnium](http://www.tourofamericasdairyland.com/pdf/results/2014/overall-cat23.pdf), June 29, 2014
 
-- 5th/49+ (5pts)
+- 5th/49+
 
 [Ontario GP #1 30+ Cat 1/2/3/4](http://www.usacycling.org/results/index.php?permit=2015-62), January 11, 2015
 
-- 1st/16 (7 Cat 1 & 2s, 3pts)
+- 1st/16
 
 [Dana Point GP Cat 2](https://www.usacycling.org/results/index.php?year=2015&id=1381), May 3, 2015
 
-- 1st/36 (5pts)
+- 1st/36
 
 Cat 5 Track
 -----------
