@@ -2,130 +2,682 @@
 /* global YUI,document,window,Image */
 
 
+/* screen */
 !function(){var e,n,t,r=["webkit","moz","o","ms","khtml"],o="rmr-screen";if(e={prefix:"",supported:!1,isFullScreen:function(){return!1},exit:function(){},request:function(){},eventName:null},"undefined"!=typeof document.cancelFullScreen)e.supported=!0;else for(n=0;n<r.length;n++)if(t=r[n],"undefined"!=typeof document[t+"CancelFullScreen"]){e.supported=!0,e.prefix=t;break}e.supported&&(e.eventName=e.prefix+"fullscreenchange",e.request=function(e){return t?e[t+"RequestFullScreen"]():e.requestFullScreen()},e.exit=function(e){return t?document[t+"CancelFullScreen"]():document.cancelFullScreen()},e.isFullScreen=function(){var e=null;switch(t){case"webkit":e=document.webkitIsFullScreen;break;case"moz":e=document.mozFullScreenElement;break;default:document.hasOwnProperty("fullScreen")?e=document.fullScreen:document.hasOwnProperty("fullscreen")&&(e=document.fullscreen),e=document[t+"FullScreen"]}return e}),window.Screen=function(n){this.node=document.querySelector(n),this.events={exit:function(){},fullscreen:function(){}};var t=this;this.listener=function(e){t.isFullScreen()?(t.events.fullscreen(),t.node.classList.add(o)):(t.events.exit(),t.node.classList.remove(o))},"moz"==e.prefix?document.addEventListener("mozfullscreenchange",this.listener):t.node.addEventListener(e.eventName,this.listener)},window.Screen.prototype.isSupported=function(){return e.supported},window.Screen.prototype.request=function(){e.request(this.node)},window.Screen.prototype.isFullScreen=function(){return e.isFullScreen()},window.Screen.prototype.on=function(e,n){this.events[e]=n},window.Screen.prototype.toggle=function(){return this.isFullScreen()?this.exit():this.request()},window.Screen.prototype.exit=function(){e.exit()},window.Screen.prototype.toString=function(){return"Screen <"+this.node+">"}}();
 
 
-YUI.add('backdrop',function(Y){'use strict';var Backdrop=function(config){Backdrop.superclass.constructor.apply(this,arguments);this.set('url',config.hasOwnProperty('url')?config.url:null);this.set('id',config.hasOwnProperty('id')?config.id:null);this.set('duration',config.hasOwnProperty('duration')?config.duration:null);this.set('styles',config.hasOwnProperty('styles')?config.styles:null);if(this.get('url')){this.drop();}return this;},DEFAULT_STYLES={'color':'transparent','position':'top left','repeat':'no-repeat','attachment':'fixed','size':'auto'};Backdrop.ATTRS={url:{value:null},id:{value:null,setter:function(id){return id||'backdrop';},writeOnce:true},styles:{value:null},duration:{value:1,setter:function(i){return(i?parseFloat(i,10):1);}}};Y.Backdrop=Y.extend(Backdrop,Y.Base,{destructor:function(){this.set('id',null);this.set('duration',null);this.set('url',null);this.set('styles',null);},_applyStyles:function(node,styles){for(var s in styles){if(styles.hasOwnProperty(s)){node.setStyle('background'+s.charAt(0).toUpperCase()+s.substr(1),styles[s]);}}},drop:function(config){if(typeof config==='string'){this.set('url',config);this.set('styles',null);}else if(config){if(config.hasOwnProperty('url')){this.set('url',config.url);}if(config.hasOwnProperty('duration')){this.set('duration',config.duration);}this.set('styles',config.hasOwnProperty('styles')?config.styles:null);}var img=new Image(),o={};o.$=this;o.node=Y.Node.create('<div id="'+this.get('id')+'"></div>');img.onload=function(){Y.one('body').append(o.node);var s=Y.merge(DEFAULT_STYLES,o.$.get('styles'));o.$.fire('start',this.src);s.image='url('+this.src+')';o.$._applyStyles(o.node,s);o.$.resize();o.node.transition({'opacity':1,'duration':o.$.get('duration')},function(){o.$.fire('end',o.$.get('url'));var styles=Y.merge(DEFAULT_STYLES,o.$.get('styles')),body=Y.one('body');styles.image='url('+img.src+')';o.$._applyStyles(body,styles);o.node.remove();});Y.on('windowresize',function(){o.$.resize();});};img.src=this.get('url');return this;},resize:function(){var body=Y.one(document.body),region=null,node=Y.one('#'+this.get('id'));body.setStyle('minHeight',body.get('winHeight')+'px');region=body.get('region');if(node){node.setStyles({'width':region.width+'px','height':region.height+'px'});}return this;},toString:function(){return'[Backdrop]';}});},'3.3.1',{requires:['node','base','event','event-resize','transition']});
 
-
-YUI().use(function(Y) {
+// backdrop
+(function() {
 
   'use strict';
 
-  if (Y.UA.mobile) { return false; }
+  var
+  RESIZE_LISTENED = false,
+  DEFAULT_STYLES = { 'color' : 'transparent', 'position' : 'top left', 'repeat' : 'no-repeat', 'attachment' : 'fixed', 'size' : 'cover' },
 
-  Y.use('backdrop', 'screen', 'node-focusmanager', function(Y) {
+  /*
+   * Retrieve an object containing { top : xx, left : xx, bottom: xx, right: xx, width: xx, height: xx }
+   *
+   * @param node (DOMNode)
+   */
+  getRect = function(node) {
 
-    var dropper = new Y.Backdrop({
-      'id' : 'backdrop',
-      'duration' : 0.5
-    }),
-    styles = {
-      'backdrop' : { 'size' : 'cover' },
-      'chinatown' : { 'repeat' : 'repeat-y', 'size' : 'cover' },
-      'evs' : { 'color' : '#fff', 'position' : 'bottom right' },
-      'kaos' : { 'position' : '370px top', 'color' : '#000' },
-      'ubc' : { 'position' : 'right bottom', 'color' : '#000' },
-      'bodhisattva' : { 'position' : 'right bottom', 'color' : '#fff' },
-      'stream' : { 'position' : '400px top', 'color' : '#fff' },
-      'moma' : { 'position' : 'right top', 'color' : '#000' },
-      'lacma' : { 'position' : 'right center', 'color' : '#000' },
-      'getty' : { 'position' : 'left bottom', 'color' : '#000', 'size' : 'cover' },
-      'vegas' : { 'color' : '#000', 'position' : 'right top' },
-      'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' },
-      'koru' : { 'color' : '#a2a2a2', 'position' : 'center center', 'size' : 'cover' },
+    var rect = node.getBoundingClientRect();
 
-      'archive' : { 'color': '#fafafa', 'size' : 'contain', 'position' : 'left bottom' },
-      'pink' : { 'size' : 'cover' }
-    },
+    // create a new object that is not read-only
+    var ret = { top : rect.top, left : rect.left, bottom: rect.bottom, right : rect.right };
 
-    // retrieve basename of file from a url (ex: 'http://davidfmiller.github.io/assets/img/backdrop/backdrop.jpg' → 'backdrop')
-    parser = function(path) { return path.replace(/^.*[\/\\]/g, '').split(".")[0]; },
-    body = Y.one(document.body),
-    doc = Y.one('#doc'),
-    screen = new Screen('body'),
-    input = null,
-    bg = function(n) {
-      var cls = parser(n.getAttribute('href'));
-      document.location = '#' + cls;
-      if (! doc.hasClass(cls)) {
-        dropper.drop({ 'url' : n.getAttribute('href'), 'styles' : styles[cls] });
-      }
-    },
-    toggle = null,
-    title = 'Toggle fullscreen',
-    resizer = function() { Y.one('#doc').setStyle('minHeight', (Y.one(document.body).get('winHeight') - 150) + 'px'); };
+    ret.top += window.pageYOffset;
+    ret.left += window.pageXOffset;
 
-    Y.on('windowresize', resizer);
-    resizer();
+    ret.bottom += window.pageYOffset;
+    ret.right += window.pageYOffset;
 
-    dropper.on('start', function(e) {
-      var bg = parser(e.details[0]),
-          li = Y.one('ol li.' + bg);
+    ret.width = rect.right - rect.left;
+    ret.height = rect.bottom - rect.top;
 
-      doc.set('className', bg);
-      Y.all('ol li').removeClass('active');
+    return ret;
+  },
 
-      if (li) {
-        li.addClass('active');
-      }
-    });
+  /*
+   *
+   * @param a
+   * @param b
 
-    dropper.on('end', function(e) {
-      Y.all('img.pin').remove();
-      Y.one('body').append('<img src="' + e.details[0] + '" class="pin">');
-    });
+   * @return Object
+   */
+  merge = function(a, b) {
+    var o = {};
+    for (var i in a) {
+      o[i] = a[i];
+    }
+    for (i in b) {
+      o[i] = b[i];
+    }
+    return o;
+  },
 
-    Y.on('domready', function(e) {
+  setStyles = function(node, styles) {
+    for (var key in styles) {
+      node.style[key] = styles[key];
+    }
+  },
 
-      var hash = document.location.hash ? document.location.hash.replace('#', '') : null,
-          first = hash && styles.hasOwnProperty(hash) ? Y.one('ol li.' + hash + ' a') : (Y.one('ol li a') ? Y.one('ol li a') : null);
+  _applyStyles = function(node, styles) {
+    for (var s in styles) {
+      if (styles.hasOwnProperty(s)) {
 
-      if (first) {
-        first = first.getAttribute('href');
-      } else if (window.RMR && window.RMR.backdrop) {
-        first = window.RMR.backdrop;
-      } else {
-        first = Y.one('html').getAttribute('data-backdrop');
-      }
+        var key = 'background' + s.charAt(0).toUpperCase() + s.substr(1),
+        style = styles[s];
 
-      if (first) {
-        dropper.drop({'url' : first, 'styles' : styles[parser(first)] });
-      }
-    });
-
-
-    Y.all('ol li a').on('click', function(e) {
-      e.halt();
-      bg(e.target.ancestor('a', true));
-    });
-
-    /* screen */
-    if (screen.isSupported()) {
-
-      var section = Y.one('section.zoom');
-      toggle = function() { screen.toggle(); };
-      Y.on('key', toggle, body, 'f');
-
-      if (section) {
-        input = Y.Node.create('<button title="' + title + '" class="zoom">' + title + '</button>');
-        Y.one('section.zoom').append(input);
-        input.on('click', toggle);
-
+        node.style[key] = style;
       }
     }
+  };
 
-    /* focus manager */
-    Y.all('#doc section section').each(function(n) {
-      n.plug(Y.Plugin.NodeFocusManager, {
-        descendants: 'a, button',
-        keys: {
-          next: 'down:40',
-          previous: 'down:38'
+
+  window.Backdrop = function(config) {
+
+    if (! config) { config = {}; }
+
+    this.events = {
+      'end' : function() { },
+      'start' : function() { }
+    };
+
+    this.id = config.hasOwnProperty('id') ? config.id : 'backdrop';
+    this.url = config.hasOwnProperty('url') ? config.url : null;
+    this.duration = config.hasOwnProperty('duration') ? config.duration :1;
+    this.styles = config.hasOwnProperty('styles') ? config.styles : null;
+
+    if (this.url) {
+      this.drop(this.url);
+    }
+  };
+
+
+   /**
+    * Assign handler for a Screen event
+    *
+    * @param {String} e - event name to attach to, one of 'fullscreen' or 'exit'
+    * @param {Function} func - function to invoke when event occurs
+    * @chainable
+    */
+  window.Backdrop.prototype.on = function(event, func) {
+    this.events[event] = func;
+    return this;
+  };
+
+
+  window.Backdrop.prototype.drop = function(config) {
+
+    if (typeof config === 'string') {
+      this.url = config;
+      this.styles = null;
+    } else if (config) {
+      if (config.hasOwnProperty('url')) { this.url = config.url; }
+      if (config.hasOwnProperty('duration')) { this.duration = config.duration; }
+      if (config.hasOwnProperty('styles')) { this.styles = config.styles; }
+    }
+
+    var img = new Image(), o = {};
+    o.$ = this;
+    o.node = document.createElement('div');
+    o.node.setAttribute('id', this.id);
+
+    o.$.resize();
+
+    img.onload = function() {
+
+      var styles = merge(DEFAULT_STYLES, o.$.styles),
+          body = document.body;
+
+      body.appendChild(o.node);
+      o.$.resize();
+
+      o.$.events.start(o.$.url);
+
+      styles.image = 'url(' + this.src + ')';
+
+      _applyStyles(o.node, styles);
+
+      var val = 0;
+      var anim = function() {
+
+        val += 0.02;
+        o.node.style.opacity = val;
+
+        if (val >= 1) {
+
+          var
+          styles = merge(DEFAULT_STYLES, o.$.styles);
+
+          styles.image = 'url(' + img.src  + ')';
+          o.$.events.end(o.$.url);
+
+          _applyStyles(document.body, styles);
+          o.node.parentNode.removeChild(o.node);
+
+          window.clearInterval(interval);
         }
+      };
+
+      var interval = window.setInterval(anim, o.$.duration / 100);
+
+      if (! RESIZE_LISTENED) {
+        window.addEventListener('resize', function(e) {
+          o.$.resize();
+        });
+      }
+      RESIZE_LISTENED = true;
+    };
+
+    img.src = this.url;
+    return this;
+  };
+
+  window.Backdrop.prototype.resize = function() {
+
+    var
+    body = document.body,
+    rect = null,
+    node = document.getElementById(this.id);
+
+    rect = getRect(document.body);
+
+    document.body.style.minHeight = window.innerHeight + 'px';
+
+    if (node) {
+        setStyles(node, { width : rect.width + 'px',  height : rect.height + 'px' });
+    }
+
+    return this;
+  };
+
+  window.Backdrop.prototype.toString = function() {
+    return '[Backdrop v0.1]';
+  };
+
+}());
+
+// popover
+(function() {
+
+  'use strict';
+
+  var
+
+  //
+  VERSION = '0.1.2',
+
+  // node attribute
+  ATTR = 'data-popover',
+
+  /*
+   * Generate a unique string
+   *
+   * @param basename (String)
+   * @return string
+   */
+  guid = function(basename) {
+    return basename + '-' + parseInt(Math.random() * 100, 10) + '-' + parseInt(Math.random() * 1000, 10);
+  },
+
+  /*
+   *
+   * @param a
+   * @param b
+
+   * @return Object
+   */
+  merge = function(a, b) {
+    var o = {};
+    for (var i in a) {
+      o[i] = a[i];
+    }
+    for (i in b) {
+      o[i] = b[i];
+    }
+    return o;
+  },
+
+  /*
+   *
+   * @param list (array-like thing)
+   * @return Array
+   */
+  arr = function(list) {
+    var ret = [], i = 0;
+    for (i = 0; i < list.length; i++) {
+      ret.push(list[i]);
+    }
+
+    return ret;
+  },
+
+  /*
+   *
+   * @param type (String)
+   * @param attrs
+   */
+  makeElement = function(type, attrs) {
+     var
+     n = document.createElement(type),
+     i = null;
+
+     for (i in attrs) {
+       n.setAttribute(i, attrs[i]);
+     }
+     return n;
+  },
+
+  /*
+   * Retrieve an object containing { top : xx, left : xx, bottom: xx, right: xx, width: xx, height: xx }
+   *
+   * @param node (DOMNode)
+   */
+  getRect = function(node) {
+
+    var rect = node.getBoundingClientRect();
+
+    // create a new object that is not read-only
+    var ret = { top : rect.top, left : rect.left, bottom: rect.bottom, right : rect.right };
+
+    ret.top += window.pageYOffset;
+    ret.left += window.pageXOffset;
+
+    ret.bottom += window.pageYOffset;
+    ret.right += window.pageYOffset;
+
+    ret.width = rect.right - rect.left;
+    ret.height = rect.bottom - rect.top;
+
+    return ret;
+  },
+  timeouts = {},
+  pops = {};
+
+
+  /**
+   *
+   *
+   * @param node (node, optional) - the root element containing all elements with attached popovers
+   * @param options (Object, optional) method to retrieve the popover's data for a given node
+   */
+  window.Popover = function(options) {
+
+    var
+    $ = this,
+    nodes,
+    i = 0,
+    n,
+    node,
+    on,
+    off,
+    over,
+    defaultOptions = {
+      root : document.body,
+      delay : { pop : 100, unpop : 1000 },
+      factory : null
+    };
+
+    if (arguments.length < 1) {
+      options = defaultOptions;
+    } else {
+      options = merge(defaultOptions, options);
+    }
+
+    // two events are fired
+    this.events = {
+      'pop' : function(target, popover) { },
+      'unpop' : function(target, popover) { }
+    };
+    this.enabled = true;
+    this.delay = options.delay;
+
+    node = options.root ? (options.root instanceof HTMLElement ? options.root : document.querySelector(options.root)) : document.body;
+
+    if (! node) {
+      throw Error('Invalid Popover root [' + options.root + ']');
+    }
+
+    nodes = arr(node.querySelectorAll('[' + ATTR + ']'));
+
+    on = function(e, delay) {
+
+      if (! $.enabled) { return; }
+
+      var
+      target = e.target,
+      data = {},
+      n,
+      arrow,
+      targetRect = getRect(target),
+      popoverRect,
+      popoverXY,
+      arrowXY,
+      popper = function() {
+
+        if (n) {
+          n.classList.add('pop');
+          // fire event listener
+          if (pops[n.getAttribute('id')]) {
+            $.events.pop(target, n);
+          }
+        }
+      }
+
+      if (options.hasOwnProperty('factory') && options.factory) {
+        data = options.factory(target);
+      }
+      else  {
+        try {
+          data = JSON.parse(e.target.getAttribute(ATTR));
+        } catch (err) {
+          data = { content : e.target.getAttribute(ATTR) };
+        }
+      }
+
+      data['class'] = (data['class'] ? data['class'] : '') + ' rmr-popover';
+      data.id = target.getAttribute('id') + '-popover';
+
+      n = makeElement('div', {'role' : 'tooltip', 'class' : data['class'], 'id' : data.id });
+
+      if (pops[data.id]) {
+        if (timeouts[target.getAttribute('id')]) {
+          window.clearTimeout(timeouts[target.getAttribute('id')]);
+          delete timeouts[target.getAttribute('id')];
+        }
+        return;
+      }
+
+      n.innerHTML = '<b></b><div class="bd">' + (data.content ? data.content : '') + '</div>';
+
+      arrow = n.querySelector('b');
+
+      window.document.body.appendChild(n);
+
+      popoverRect = getRect(n);
+
+      popoverXY = [
+        targetRect.left + (targetRect.width / 2) - (popoverRect.width / 2),
+        targetRect.top - popoverRect.height - 5
+      ];
+
+      arrowXY = [popoverXY[0], popoverXY[1]];
+      arrowXY[0] = popoverRect.width / 2 - 6;
+
+      target.setAttribute('aria-describedby', data.id);
+      n.setAttribute('style', 'left: ' + parseInt(popoverXY[0], 10) + 'px; top: ' + parseInt(popoverXY[1], 10) + 'px');
+
+      pops[data.id] = n;
+      arrow.setAttribute('style', 'left: ' + parseInt(arrowXY[0], 10) + 'px');
+
+      if (delay) {
+        window.setTimeout(function() { popper(); }, delay);
+      } else {
+        popper();
+      }
+
+      //
+      n.addEventListener('mouseenter', over);
+    };
+
+    /*
+     *
+     * @param e (MouseEvent)
+     */
+    over = function(e) {
+     var n = e.target,
+         id;
+
+      id = n.getAttribute('id').replace('-popover', '');
+
+      n.addEventListener('mouseleave', function(e) {
+        off({ target: document.getElementById(id) });
+      });
+
+      if (timeouts[id]) {
+        window.clearTimeout(timeouts[id]);
+        delete timeouts[id];
+      }
+    };
+
+    /*
+     *
+     * @param e (MouseEvent)
+     */
+    off = function(e, delay) {
+      var target = e.target;
+      timeouts[target.getAttribute('id')] = window.setTimeout(function() {
+        var id = target.getAttribute('id');
+        target.removeAttribute('aria-describedBy');
+        try {
+          var pop = pops[id + '-popover'];
+          pop.parentNode.removeChild(pop);
+          delete pops[id + '-popover'];
+
+          if (pop.classList.contains('pop')) {
+            $.events.unpop(target, pop);
+          }
+
+        } catch (e) { window.console.log('ERROR', e); }
+      }, arguments.length == 1 ? $.delay.unpop : delay);
+
+    };
+
+    // add root node if it has
+    if (node.hasAttribute(ATTR)) {
+      nodes.push(node);
+    }
+
+    for (i = 0; i < nodes.length; i++) {
+      n = nodes[i];
+
+      // ensure target has unique id
+      if (! n.getAttribute('id')) { n.setAttribute('id', guid('popover-target') ); }
+
+      // clear out title since we don't want the tooltip to obscure the popover
+      if (n.hasAttribute('title')) { n.setAttribute('title', ''); }
+
+      n.addEventListener('mouseenter', function(e) {
+        on(e, $.delay.pop);
+      });
+
+      n.addEventListener('focus', function(e) {
+        on(e, $.delay.pop);
+      });
+
+      n.addEventListener('mouseleave', function(e) {
+       off(e, $.delay.unpop);
+      });
+
+      n.addEventListener('blur',  function(e) {
+       off(e, $.delay.unpop);
+      });
+    }
+  };
+
+  /*!
+   *
+   * @param event (string) - one of "pop" or "unpop"
+   * @param method (function) - the method that will be invoked
+   */
+  window.Popover.prototype.on = function(event, method) {
+    this.events[event] = method;
+    return this;
+  };
+
+  /**
+   *
+   *
+   * @return string
+   */
+  window.Popover.prototype.toString = function() {
+    return '[Popover v' + VERSION + ']';
+  };
+
+}());
+
+
+(function() {
+
+  'use strict';
+
+//  if (navigator.appVersion.indexOf("Mobile") == -1) { return; }
+
+  var
+  /*
+   *
+   * @param list (array-like thing)
+   * @return Array
+   */
+  arr = function(list) {
+
+    if (! list || ! list.length) { return []; }
+
+    var ret = [], i = 0;
+    for (i = 0; i < list.length; i++) {
+      ret.push(list[i]);
+    }
+
+    return ret;
+  };
+
+  var dropper = new Backdrop({
+    'id' : 'backdrop',
+    'duration' : 0.2
+  }),
+  styles = {
+    'backdrop' : { 'size' : 'cover' },
+    'chinatown' : { 'repeat' : 'repeat-y', 'size' : 'cover' },
+    'evs' : { 'color' : '#fff', 'position' : 'bottom right', 'size' : 'auto' },
+    'kaos' : { 'position' : '370px top', 'color' : '#000', 'size' : 'auto' },
+    'ubc' : { 'position' : 'right bottom', 'color' : '#000', 'size' : 'auto' },
+    'bodhisattva' : { 'position' : 'right bottom', 'color' : '#fff', 'size' : 'auto' },
+    'stream' : { 'position' : '400px top', 'color' : '#fff', 'size' : 'auto' },
+    'moma' : { 'position' : 'right top', 'color' : '#000', 'size' : 'auto' },
+    'lacma' : { 'position' : 'right center', 'color' : '#000' },
+    'getty' : { 'position' : 'left bottom', 'color' : '#000', 'size' : 'cover' },
+    'vegas' : { 'color' : '#000', 'position' : 'right top', 'size' : 'auto' },
+    'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' },
+    'koru' : { 'color' : '#a2a2a2', 'position' : 'center center', 'size' : 'cover' },
+
+    'archive' : { 'color': '#fafafa', 'size' : 'contain', 'position' : 'left bottom' },
+    'pink' : { 'size' : 'cover' }
+  },
+
+  // retrieve basename of file from a url (ex: 'http://davidfmiller.github.io/assets/img/backdrop/backdrop.jpg' → 'backdrop')
+  parser = function(path) { return path.replace(/^.*[\/\\]/g, '').split(".")[0]; },
+  body = document.body,
+  doc = document.querySelector('#doc'),
+  screen = new Screen('body'),
+  input = null,
+  bg = function(n) {
+    var cls = parser(n.getAttribute('href'));
+    document.location = '#' + cls;
+
+    window.console.log(n);
+
+    if (! doc.classList.contains(cls)) {
+      dropper.drop({ 'url' : n.getAttribute('href'), 'styles' : styles[cls] });
+    }
+  },
+  toggle = null,
+  title = 'Toggle fullscreen';
+//    resizer = function() { Y.one('#doc').setStyle('minHeight', (Y.one(document.body).get('winHeight') - 150) + 'px'); };
+
+//    Y.on('windowresize', resizer);
+//    resizer();
+
+  dropper.on('start', function(url) {
+    var bg = parser(url),
+        li = document.querySelector('ol li.' + bg);
+
+    doc.className = bg;
+
+    arr(document.querySelectorAll('ol li')).forEach(function(li) {
+      li.classList.remove('active');
+    });
+
+    if (li) {
+      li.classList.add('active');
+    }
+  });
+
+  dropper.on('end', function(url) {
+
+    arr(document.querySelectorAll('img.pin')).forEach(function(img) {
+      if (img) {
+        img.parentNode.removeChild(img);
+      }
+    });
+
+    var img = document.createElement('img');
+    img.classList.add('pin');
+    img.src = url;
+
+    body.appendChild(img);
+  });
+
+  window.onload = function() {
+
+    new Popover({
+      delay : { pop : 0, unpop : 0 }
+    });
+
+    var hash = document.location.hash ? document.location.hash.replace('#', '') : null,
+        first = hash && styles.hasOwnProperty(hash) ? document.querySelector('ol li.' + hash + ' a') : (document.querySelector('ol li a') ? document.querySelector('ol li a') : null);
+
+    if (first) {
+      first = first.getAttribute('href');
+    } else if (window.RMR && window.RMR.backdrop) {
+      first = window.RMR.backdrop;
+    } else {
+      first = document.querySelector('html').getAttribute('data-backdrop');
+    }
+
+    if (first) {
+      dropper.drop({'url' : first, 'styles' : styles[parser(first)] });
+    }
+
+    arr(document.querySelectorAll('ol li a')).forEach(function(n) {
+
+      n.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var ancestor = e.target
+        while (ancestor.tagName != 'A') {
+          ancestor = ancestor.parentNode;
+        }
+
+        bg(ancestor);
       });
     });
 
+  /* screen */
+    if (screen.isSupported()) {
+
+      var section = document.querySelector('section.zoom');
+      toggle = function() { screen.toggle(); };
+//      Y.on('key', toggle, body, 'f');
+
+      if (section) {
+
+        input = document.createElement('button');
+        input.setAttribute('title', title);
+        input.classList.add('zoom');
+        input.innerHTML = title;
+        document.querySelector('section.zoom').appendChild(input);
+
+        input.addEventListener('click', toggle);
+      }
+    }
+
+  };
+
+/*
     Y.one(document.body).on('key', function(e) {
 
       var code = e.keyCode,
@@ -137,6 +689,7 @@ YUI().use(function(Y) {
       bg(li.item(code).one('a'));
 
     }, '48,49,50,51,52,53,54,55,56,57');
+*/
 
-  });
-});
+}());
+
