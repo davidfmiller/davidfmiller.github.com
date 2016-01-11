@@ -205,10 +205,16 @@
   var
 
   //
-  VERSION = '0.1.5',
+  VERSION = '0.1.7',
 
   // attribute on target nodes that will be inspected for popover data
   ATTR = 'data-popover',
+
+  // default color
+  COLOR = 'rgba(0,0,0,0.8)',
+
+  // default color
+  MARGIN = 0,
 
   /*
    * Generate a unique string suitable for id attributes
@@ -259,7 +265,7 @@
   },
 
   /*
-   * Make
+   * Create an element with a set of attributes/values
    *
    * @param type (String)
    * @param attrs {Object}
@@ -309,16 +315,31 @@
    */
   getDataForNode = function(scope, node) {
 
-    var val = '', data = {};
-    val = scope.factory ? scope.factory(node) : node.getAttribute(ATTR);
+    var
+    val = scope.factory ? scope.factory(node) : node.getAttribute(ATTR),
+    data = scope.defaults;
 
-    try {
-      data = JSON.parse(val);
-    } catch (err) {
-      data = { content : val };
+    if (typeof val != "object") {
+      try {
+        val = JSON.parse(val);
+      } catch (err) {
+        val = { content : val };
+      }
     }
 
-    return data;
+    return merge(data, val);
+  },
+
+
+  /*
+   *
+   * @param node {HTMLElement}
+   * @param styles {Object}
+   */
+  setStyles  = function(node, styles) {
+    for (var i in styles) {
+      node.style[i] = styles[i];
+    }
   },
 
   /*
@@ -335,17 +356,19 @@
     popoverRect = getRect(popover),
     popoverXY,
     arrowXY,
-    arrow = popover.querySelector('b');
+    arrow = popover.querySelector('.arrow');
 
     popoverXY = [
       targetRect.left + (targetRect.width / 2) - (popoverRect.width / 2),
-      targetRect.top - popoverRect.height - 5
+      targetRect.top - popoverRect.height - 5 - data.margin
     ];
 
     arrowXY = [popoverXY[0], popoverXY[1]];
-    arrowXY[0] = popoverRect.width / 2 - 6;
+    arrowXY[0] = popoverRect.width / 2 - 5;
 
     if (! data.position || data.position !== "side") { // top of target
+
+      arrow.style.borderTopColor = data.color;
 
       if (popoverXY[0] < 0) { // are we clipped on the left of the browser window ?
         popoverXY[0] = 5;
@@ -364,21 +387,27 @@
 
     } else { // right-side of target
 
-      popoverXY[0] = targetRect.left + targetRect.width + 10;
+      popoverXY[0] = targetRect.left + targetRect.width + 5 + data.margin;
       popoverXY[1] = targetRect.top + targetRect.height / 2 - popoverRect.height / 2;
+
+      arrow.style.borderRightColor = data.color;
 
       arrowXY[0] = -10;
       arrowXY[1] = popoverRect.height / 2 - 5;
 
-      if (popoverXY[0] + popoverRect.width > window.innerWidth) { // if clipped on right side
-        popoverXY[0] = targetRect.left - popoverRect.width - 5;
+      if (popoverXY[0] + popoverRect.width > window.innerWidth) { // if clipped on right side, move to the left
+        popoverXY[0] = targetRect.left - popoverRect.width - 5 - data.margin;
         popover.classList.add('left');
         arrowXY[0] = popoverRect.width;
+
+        arrow.style.borderRightColor = 'transparent';
+        arrow.style.borderLeftColor = data.color;
+
       }
     }
 
-    popover.setAttribute('style', 'left: ' + parseInt(popoverXY[0], 10) + 'px; top: ' + parseInt(popoverXY[1], 10) + 'px');
-    arrow.setAttribute('style', 'left: ' + parseInt(arrowXY[0], 10) + 'px; top:' + parseInt(arrowXY[1], 10) + 'px');
+    setStyles(popover, { "left" : parseInt(popoverXY[0], 10) + 'px', top : parseInt(popoverXY[1], 10) + 'px', backgroundColor : data.color });
+    setStyles(arrow, { "left" : parseInt(arrowXY[0], 10) + 'px', top : parseInt(arrowXY[1], 10) + 'px' });
   },
   timeouts = {}, // store window.setTimeout handles for popover hiding
   pops = {};     // store popover HTMLElements keyed by their id attribute
@@ -389,7 +418,7 @@
    * @param node (node, optional) - the root element containing all elements with attached popovers
    * @param options (Object, optional) method to retrieve the popover's data for a given node
    */
-  window.Popover = function(options) {
+  window.Popover = function(config, defaults) {
 
     var
     $ = this,
@@ -402,14 +431,20 @@
     data,
     off,
     over,
-    defaultOptions = {
+    defaultConfig = {
       debug : false,
       root : document.body,
       delay : { pop : 200, unpop : 300 },
       factory : null
+    },
+    defaultProperties = {
+      'color' : COLOR,
+      'margin' : MARGIN,
+      'class' : ''
     };
 
-    options= merge(defaultOptions, options);
+    config = merge(defaultConfig, config);
+    this.defaults = merge(defaultProperties, defaults);
 
     // two events are fired
     this.events = {
@@ -417,12 +452,12 @@
       'unpop' : function(target, popover) { }
     };
     this.enabled = true;
-    this.delay = options.delay;
-    this.factory = options.factory;
-    this.debug = options.debug;
+    this.delay = config.delay;
+    this.factory = config.factory;
+    this.debug = config.debug;
     this.listeners = {};
 
-    node = options.root ? (options.root instanceof HTMLElement ? options.root : document.querySelector(options.root)) : document.body;
+    node = config.root ? (config.root instanceof HTMLElement ? config.root : document.querySelector(config.root)) : document.body;
 
     if (! node) {
       throw Error('Invalid Popover root [' + options.root + ']');
@@ -462,14 +497,13 @@
 
       data = getDataForNode($, target);
 
+      if ($.debug) { window.console.log(data); }
+
       // if there's no content and no specific class, abort since it's an empty popover
       if (! data.content && ! data['class']) { return; }
 
       data['class'] = (data['class'] ? data['class'] : '') + (data.position == "side" ? ' side' : ' top')  +' rmr-popover' + (data.persist ? ' persist' : '');
       data.id = target.getAttribute('id') + '-popover';
-
-      // popover already exists
-//      if (document.getElementById(data.id)) { return; }
 
       n = makeElement('div', {'data-target' : target.getAttribute('id'), 'role' : 'tooltip', 'class' : data['class'], 'id' : data.id });
 
@@ -554,6 +588,8 @@
     for (i = 0; i < nodes.length; i++) {
       n = nodes[i];
 
+      if (this.debug) { window.console.log('Attaching popover listener', n); }
+
       // ensure target has unique id
       if (! n.getAttribute('id')) { n.setAttribute('id', guid('popover-target') ); }
 
@@ -570,7 +606,6 @@
         'pop' : l.on,
         'unpop' : l.off
       };
-
 
       if (data.persist) { // if this is a persistent popover, create it immediately
         l.on({ target : n });
@@ -591,18 +626,26 @@
      * Re-position all persistent popovers on window resize
      */
     this.windowResizer = function() {
-      var $ = this;
-      var persists = arr(document.querySelectorAll('.rmr-popover.persist'));
+
+      var persists = arr(document.querySelectorAll('.rmr-popover.persist')),
+          target = null;
+
       for (var i = 0; i < persists.length; i++) {
+
+        target = document.getElementById(persists[i].getAttribute('data-target'));
+
         positionPopover(
           persists[i],
-          document.getElementById(persists[i].getAttribute('data-target')),
-          getDataForNode($, persists[i])
+          target,
+          getDataForNode(this, target)
         );
       }
     };
 
-    window.addEventListener('resize', this.windowResizer);
+    window.addEventListener(
+      'resize',
+      function() { $.windowResizer(); }
+    );
 
     this.destroy = function() {
 
@@ -653,6 +696,7 @@
   };
 
 }());
+
 
 // rmr
 (function() {
@@ -759,10 +803,29 @@
   window.onload = function() {
 
     new Popover({
-      delay : { pop : 200, unpop : 0 },
+      root : '#doc section:first-child',
+      delay : { pop : 100, unpop : 0 },
       debug : false
-    });
+    },
+    { "position" : "side" });
 
+/*
+    new Popover({
+      root : '#doc section.zoom',
+      delay : { pop : 100, unpop : 0 },
+      factory : function(node) {
+        return {
+          content : node.getAttribute('data-name'),
+          'class' : 'thumb ' + node.getAttribute('data-name'),
+          margin : node.classList.contains('active') ? 0 : 10
+        };
+      },
+      debug : true
+    },
+    {
+      position : "side",
+    });
+*/
     var hash = document.location.hash ? document.location.hash.replace('#', '') : null,
         first = hash && styles.hasOwnProperty(hash) ? document.querySelector('ol li.' + hash + ' a') : (document.querySelector('ol li a') ? document.querySelector('ol li a') : null);
 
