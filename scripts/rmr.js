@@ -764,11 +764,12 @@
     }
   },
   toggle = null,
-  title = 'Toggle fullscreen';
-//    resizer = function() { Y.one('#doc').setStyle('minHeight', (Y.one(document.body).get('winHeight') - 150) + 'px'); };
+  title = 'Toggle fullscreen',
+  resizer = function() { document.querySelector('#doc').style.minHeight = window.innerHeight - 150 + 'px'; };
 
-//    Y.on('windowresize', resizer);
-//    resizer();
+  window.addEventListener('resize', resizer);
+
+  resizer();
 
   dropper.on('start', function(url) {
     var bg = parser(url),
@@ -807,9 +808,9 @@
       delay : { pop : 100, unpop : 0 },
       debug : false
     },
-    { "position" : "side" });
+    { "position" : "side", "margin" : 5 });
 
-/*
+/* for thumbnails
     new Popover({
       root : '#doc section.zoom',
       delay : { pop : 100, unpop : 0 },
