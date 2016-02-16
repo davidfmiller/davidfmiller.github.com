@@ -179,5 +179,5 @@ Cat 3 Track
 
 [LAVRA Friday Night Racing p/b LaGrange #1, P123](#), Feb 12, 2016
 
-- 3rd/11
+- 3rd/14 (1st of 8 Cat 3s)
 
