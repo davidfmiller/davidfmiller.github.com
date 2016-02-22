@@ -177,7 +177,7 @@ LAVRA Saturday Nights p/b LaGrange #3, June 27, 2015
 Cat 3 Track
 -----------
 
-[LAVRA Friday Night Racing p/b La Grange #1, P123](#), Feb 12, 2016
+[LAVRA Friday Night Racing p/b La Grange #1, P123](http://www.usacycling.org/results/index.php?year=2016&id=544&info_id=), Feb 12, 2016
 
 - 3rd/14 (1st of 8 Cat 3s)
 
