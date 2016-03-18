@@ -460,7 +460,7 @@
     node = config.root ? (config.root instanceof HTMLElement ? config.root : document.querySelector(config.root)) : document.body;
 
     if (! node) {
-      throw Error('Invalid Popover root [' + options.root + ']');
+      throw Error('Invalid Popover root [' + config.root + ']');
     }
 
     this.root = node;
@@ -803,12 +803,18 @@
 
   window.onload = function() {
 
-    new Popover({
-      root : '#doc section:first-child',
-      delay : { pop : 100, unpop : 0 },
-      debug : false
-    },
-    { "position" : "side", "margin" : 5 });
+    var hash = document.location.hash ? document.location.hash.replace('#', '') : null,
+        first = hash && styles.hasOwnProperty(hash) ? document.querySelector('ol li.' + hash + ' a') : (document.querySelector('ol li a') ? document.querySelector('ol li a') : null),
+        popoverRoot = document.querySelector('#doc section:first-child');
+
+    if (popoverRoot) {
+      new Popover({
+        root : popoverRoot,
+        delay : { pop : 100, unpop : 0 },
+        debug : false
+      },
+      { "position" : "side", "margin" : 5 });
+    }
 
 /* for thumbnails
     new Popover({
@@ -827,8 +833,6 @@
       position : "side",
     });
 */
-    var hash = document.location.hash ? document.location.hash.replace('#', '') : null,
-        first = hash && styles.hasOwnProperty(hash) ? document.querySelector('ol li.' + hash + ' a') : (document.querySelector('ol li a') ? document.querySelector('ol li a') : null);
 
     if (first) {
       first = first.getAttribute('href');
