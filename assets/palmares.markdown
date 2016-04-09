@@ -181,3 +181,7 @@ Cat 3 Track
 
 - 3rd/14 (1st of 8 Cat 3s)
 
+[LAVRA Friday Night Racing p/b Beachbody, Cat 3](#), Apr 8, 2016
+
+- 3rd/13
+
