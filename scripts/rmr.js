@@ -14,7 +14,7 @@
   RESIZE_LISTENED = false,
   DEFAULT_STYLES = { 'color' : 'transparent', 'position' : 'top left', 'repeat' : 'no-repeat', 'attachment' : 'fixed', 'size' : 'cover' },
 
-    /*
+  /*
    * Retrieve an object containing { top : xx, left : xx, bottom: xx, right: xx, width: xx, height: xx }
    *
    * @param node (DOMNode)
