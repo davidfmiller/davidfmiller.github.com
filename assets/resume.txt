@@ -14,6 +14,13 @@ SOFTWARE SKILLS & TOOLS
 
 EXPERIENCE
 
+Freelance Photographer & Web/Software Developer
+READMEANSRUN (Calgary, AB)
+June 2006 - Present
+- Photographing events for publication by independent arts and entertainment organizations, and shooting other subjects such as weddings and portraits. View a complete list of clients.
+- Working with small businesses to establish a strong and unique online presence.
+- Building software that will be publicly available soon.
+
 Data Visualization Engineer
 Edmunds.com (Santa Monica, CA)
 April 2015 - February 2016
@@ -26,12 +33,6 @@ June 2011 - March 2015
 - Developed and maintained the web’s most popular sports site.
 - Wielded web standards to create attractive, user-friendly, accessible, global and highly-trafficked interactive & low-bandwidth pages consumed worldwide on a variety of devices.
 - Directed front-end engineering team and trained junior employees and interns. Involved in hiring process, code and architecture reviews, and team development.
-
-Freelance Photographer & Web Developer
-READMEANSRUN (Calgary, AB)
-June 2006 - Present
-- Photographing events for publication by independent arts and entertainment organizations, and shooting other subjects such as weddings and portraits. View a complete list of clients.
-- Working with small businesses to establish a strong and unique online presence.
 
 Lead Developer
 Saatchi Online (Los Angeles, CA)
