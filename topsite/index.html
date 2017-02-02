@@ -106,10 +106,18 @@
 
       if (this.icon) {
 
-        this.icon.node.style.width = this.icon.width + 'px'; //(window.innerWidth * 0.9) + 'px';
-        this.icon.node.style.left = (window.innerWidth - this.icon.width) / 2 + 'px';
-        this.icon.node.style.height = this.iconheight + 'px'; //(window.innerHeight * 0.9) + 'px';
-        this.icon.node.style.top = this.icon.height / 2 + /*(window.innerHeight - this.icon.height) / 2 +*/ 'px';
+        var factor = 1;
+        if (window.innerWidth < this.icon.width) {
+          factor = window.innerWidth / this.icon.width;
+        }
+        else if (window.innerHeight < this.icon.height) {
+          factor = window.innerHeight / this.icon.height;
+        }
+
+        this.icon.node.style.width = this.icon.width * factor + 'px'; //(window.innerWidth * 0.9) + 'px';
+        this.icon.node.style.left = (window.innerWidth - this.icon.width * factor) / 2 + 'px';
+        this.icon.node.style.height = this.iconheight * factor + 'px'; //(window.innerHeight * 0.9) + 'px';
+        this.icon.node.style.top = this.icon.height * factor / 3 + /*(window.innerHeight - this.icon.height) / 2 +*/ 'px';
 
         return;
       }
@@ -117,8 +125,8 @@
       var n = document.getElementById('icon');
       this.icon = {
         node : n,
-        height : 400,
-        width: 400
+        height : 600,
+        width: 600
       };
 
       this.size();
