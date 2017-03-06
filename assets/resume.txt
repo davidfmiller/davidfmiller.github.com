@@ -4,7 +4,7 @@ David Francis Miller
 SOFTWARE SKILLS & TOOLS
 
 - HTML5, JavaScript, CSS3, XML
-- Node, PHP, Apache 2,Python, Bash
+- Node, PHP, Apache 2, NGINX, Python, Bash
 - DSLR, medium- & large-format film cameras
 - Objective-C & Swift, Cocoa, Xcode
 - Git, Mercurial, Subversion, Perforce
