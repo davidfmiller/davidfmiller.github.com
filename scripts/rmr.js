@@ -1,9 +1,194 @@
-/* jshint undef: true,strict:true,trailing:true */
-/* global YUI,document,window,Image */
-
+/* jshint undef: true,strict:true,trailing:true,loopfunc:true */
+/* global YUI,document,window,Image, Backdrop,navigator,Popover,HTMLElement,Element,FullScreen */
 
 /* screen */
-!function(){var e,n,t,r=["webkit","moz","o","ms","khtml"],o="rmr-screen";if(e={prefix:"",supported:!1,isFullScreen:function(){return!1},exit:function(){},request:function(){},eventName:null},"undefined"!=typeof document.cancelFullScreen)e.supported=!0;else for(n=0;n<r.length;n++)if(t=r[n],"undefined"!=typeof document[t+"CancelFullScreen"]){e.supported=!0,e.prefix=t;break}e.supported&&(e.eventName=e.prefix+"fullscreenchange",e.request=function(e){return t?e[t+"RequestFullScreen"]():e.requestFullScreen()},e.exit=function(e){return t?document[t+"CancelFullScreen"]():document.cancelFullScreen()},e.isFullScreen=function(){var e=null;switch(t){case"webkit":e=document.webkitIsFullScreen;break;case"moz":e=document.mozFullScreenElement;break;default:document.hasOwnProperty("fullScreen")?e=document.fullScreen:document.hasOwnProperty("fullscreen")&&(e=document.fullscreen),e=document[t+"FullScreen"]}return e}),window.Screen=function(n){this.node=document.querySelector(n),this.events={exit:function(){},fullscreen:function(){}};var t=this;this.listener=function(e){t.isFullScreen()?(t.events.fullscreen(),t.node.classList.add(o)):(t.events.exit(),t.node.classList.remove(o))},"moz"==e.prefix?document.addEventListener("mozfullscreenchange",this.listener):t.node.addEventListener(e.eventName,this.listener)},window.Screen.prototype.isSupported=function(){return e.supported},window.Screen.prototype.request=function(){e.request(this.node)},window.Screen.prototype.isFullScreen=function(){return e.isFullScreen()},window.Screen.prototype.on=function(e,n){this.events[e]=n},window.Screen.prototype.toggle=function(){return this.isFullScreen()?this.exit():this.request()},window.Screen.prototype.exit=function(){e.exit()},window.Screen.prototype.toString=function(){return"Screen <"+this.node+">"}}();
+(function() {
+  'use strict';
+
+  if (window.FullScreen) { return; }
+
+  var _bridge,
+      i,
+      prefix,
+      extensions = ['webkit','moz','o','ms','khtml'],
+      CLASSNAME = 'rmr-screen';
+
+      _bridge = {
+        prefix : '',
+        supported : false,
+        isFullScreen : function() { return false; },
+        exit : function() { },
+        request : function() { },
+        eventName : null
+      };
+
+  if (typeof document.cancelFullScreen != 'undefined') { // check for native support
+    _bridge.supported = true;
+  }
+  else {
+    for (i = 0; i < extensions.length; i++ ) { // check for fullscreen support by vendor prefix
+
+      prefix = extensions[i];
+      if (typeof document[prefix + 'CancelFullScreen' ] != 'undefined') {
+        _bridge.supported = true;
+        _bridge.prefix = prefix;
+        break;
+      }
+    }
+  }
+
+  if (_bridge.supported) {
+    _bridge.eventName = _bridge.prefix + 'fullscreenchange';
+    _bridge.request = function(node) {
+      return ! prefix ? node.requestFullScreen() : node[prefix + 'RequestFullScreen']();
+    };
+
+    // normalize method to exit out of fullscreen mode
+    _bridge.exit = function(node) { return ! prefix ? document.cancelFullScreen() : document[prefix + 'CancelFullScreen'](); };
+
+    // normalize method to determine if we're currently in fullscreen mode
+    _bridge.isFullScreen = function() {
+      var r = null;
+      switch (prefix) {
+        case 'webkit':
+          r = document.webkitIsFullScreen;
+          break;
+        case 'moz':
+          r = document.mozFullScreenElement;
+          break;
+        default:
+          if (document.hasOwnProperty('fullScreen')) {
+            r = document.fullScreen;
+          } else if (document.hasOwnProperty('fullscreen')) {
+            r = document.fullscreen;
+          }
+
+          r = document[prefix + 'FullScreen'];
+      }
+
+      return r;
+    };
+  }
+
+
+   /**
+    * Create a new Screen instance
+    *
+    * @param {String} selector
+    */
+  window.FullScreen = function(node) {
+
+    this.node = typeof node == 'string' ? document.querySelector(node) : node;
+
+    if (! (this.node instanceof HTMLElement)) {
+      throw Error('Invalid FullScreen node <' + node + '>');
+    }
+
+    this.events = {
+      'exit' : function() { },
+      'fullscreen' : function() { }
+    };
+
+    var $ = this;
+
+    var listener = function(e) {
+
+      if ($.isFullScreen()) {
+        $.events.fullscreen();
+        $.node.classList.add(CLASSNAME);
+
+      } else {
+        $.events.exit();
+        $.node.classList.remove(CLASSNAME);
+      }
+    };
+
+    if (_bridge.prefix == 'moz') {
+      document.addEventListener('mozfullscreenchange', listener);
+    } else {
+      $.node.addEventListener(_bridge.eventName, listener);
+    }
+
+    return this;
+  };
+
+
+   /**
+    * Determine whether or not the browser has full-screen support
+    *
+    * @return {Boolean}
+    */
+  window.FullScreen.prototype.isSupported = function() {
+    return _bridge.supported;
+  };
+
+   /**
+    * Request full-screen mode
+    *
+    * @chainable
+    */
+  window.FullScreen.prototype.request = function() {
+      _bridge.request(this.node);
+      return this;
+  };
+
+
+   /**
+    * Determine if the node is in full-screen mode
+    *
+    * @return {Boolean}
+    */
+  window.FullScreen.prototype.isFullScreen = function() {
+    return _bridge.isFullScreen();
+  };
+
+
+   /**
+    * Assign handler for a Screen event
+    *
+    * @param {String} e - event name to attach to, one of 'fullscreen' or 'exit'
+    * @param {Function} func - function to invoke when event occurs
+    * @chainable
+    */
+  window.FullScreen.prototype.on = function(event, func) {
+    this.events[event] = func;
+    return this;
+  };
+
+  /**
+    * Exits full-screen mode if enabled, or requests the screen if not
+    *
+    * @chainable
+    */
+  window.FullScreen.prototype.toggle = function() {
+    if (this.isFullScreen()) {
+      this.exit();
+    } else {
+      this.request();
+    }
+    return this;
+  };
+
+  /**
+    * Exit full-screen mode
+    *
+    * @chainable
+    */
+  window.FullScreen.prototype.exit = function() {
+    _bridge.exit();
+    return this;
+  };
+
+  /**
+    * Return a String instance
+    *
+    * @return {String}
+    */
+  window.FullScreen.prototype.toString = function() {
+    return 'Screen <' + this.node.toString() + '>';
+  };
+
+}());
 
 // backdrop
 (function() {
@@ -202,18 +387,21 @@
 
   'use strict';
 
+  // prevent duplicate declaration
+  if (window.Popover) { return; }
+
   var
 
   //
-  VERSION = '0.1.7',
+  VERSION = '0.1.9',
 
-  // attribute on target nodes that will be inspected for popover data
+  // default attribute on target nodes that will be inspected for popover data
   ATTR = 'data-popover',
 
-  // default color
+  // default background color for popovers
   COLOR = 'rgba(0,0,0,0.8)',
 
-  // default color
+  // offset of popover from target node
   MARGIN = 0,
 
   /*
@@ -316,12 +504,17 @@
   getDataForNode = function(scope, node) {
 
     var
-    val = scope.factory ? scope.factory(node) : node.getAttribute(ATTR),
+    val = scope.factory ? scope.factory(node) : node.getAttribute(scope.attribute),
     data = scope.defaults;
 
     if (typeof val != "object") {
       try {
         val = JSON.parse(val);
+
+        if (typeof val === 'number') {
+          val = { content : val };
+        }
+
       } catch (err) {
         val = { content : val };
       }
@@ -368,7 +561,17 @@
 
     if (! data.position || data.position !== "side") { // top of target
 
-      arrow.style.borderTopColor = data.color;
+      if (popoverXY[1] - window.pageYOffset < 0) { // clipped at top of browser?
+        arrowXY[1] = -10;
+        popoverXY[1] = targetRect.bottom + 5 + data.margin;
+
+        arrow.style.borderBottom = '5px solid ' + data.color;
+        popover.classList.add('bottom');
+
+      } else { // top
+        arrowXY[1] = popoverRect.height;
+        arrow.style.borderTopColor = data.color;
+      }
 
       if (popoverXY[0] < 0) { // are we clipped on the left of the browser window ?
         popoverXY[0] = 5;
@@ -383,8 +586,6 @@
         arrowXY[0] = popoverRect.width - targetRect.width / 2;
       }
 
-      arrowXY[1] = popoverRect.height;
-
     } else { // right-side of target
 
       popoverXY[0] = targetRect.left + targetRect.width + 5 + data.margin;
@@ -392,8 +593,15 @@
 
       arrow.style.borderRightColor = data.color;
 
+      if (popoverXY[1] - window.pageYOffset < 0) {
+        popoverXY[1] = window.pageYOffset + data.margin;
+        arrowXY[1] = 5;
+      } else {
+        arrowXY[1] = popoverRect.height / 2 - 5;
+      }
+
       arrowXY[0] = -10;
-      arrowXY[1] = popoverRect.height / 2 - 5;
+
 
       if (popoverXY[0] + popoverRect.width > window.innerWidth) { // if clipped on right side, move to the left
         popoverXY[0] = targetRect.left - popoverRect.width - 5 - data.margin;
@@ -402,7 +610,6 @@
 
         arrow.style.borderRightColor = 'transparent';
         arrow.style.borderLeftColor = data.color;
-
       }
     }
 
@@ -432,6 +639,7 @@
     off,
     over,
     defaultConfig = {
+      attribute : ATTR,
       debug : false,
       root : document.body,
       delay : { pop : 200, unpop : 300 },
@@ -452,12 +660,13 @@
       'unpop' : function(target, popover) { }
     };
     this.enabled = true;
+    this.attribute = config.attribute;
     this.delay = config.delay;
     this.factory = config.factory;
     this.debug = config.debug;
     this.listeners = {};
 
-    node = config.root ? (config.root instanceof HTMLElement ? config.root : document.querySelector(config.root)) : document.body;
+    node = config.root ? (config.root instanceof Element ? config.root : document.querySelector(config.root)) : document.body;
 
     if (! node) {
       throw Error('Invalid Popover root [' + config.root + ']');
@@ -466,10 +675,10 @@
     this.root = node;
 
     //
-    nodes = arr(node.querySelectorAll('[' + ATTR + ']'));
+    nodes = arr(node.querySelectorAll('[' + this.attribute + ']'));
 
     // add root node if it has the data-popover attribute
-    if (node.hasAttribute(ATTR)) {
+    if (node.hasAttribute(this.attribute)) {
       nodes.push(node);
     }
 
@@ -505,8 +714,7 @@
       data['class'] = (data['class'] ? data['class'] : '') + (data.position == "side" ? ' side' : ' top')  +' rmr-popover' + (data.persist ? ' persist' : '');
       data.id = target.getAttribute('id') + '-popover';
 
-      n = makeElement('div', {'data-target' : target.getAttribute('id'), 'role' : 'tooltip', 'class' : data['class'], 'id' : data.id });
-
+      // if a popover with this id already exists, don't display the one we just created
       if (pops[data.id]) {
         if (timeouts[target.getAttribute('id')]) {
           window.clearTimeout(timeouts[target.getAttribute('id')]);
@@ -514,6 +722,8 @@
         }
         return;
       }
+
+      n = makeElement('div', {'data-target' : target.getAttribute('id'), 'role' : 'tooltip', 'class' : data['class'], 'id' : data.id, 'title' : data.title });
 
       n.innerHTML = '<b class="arrow"></b><div class="bd">' + (data.content ? data.content : '') + '</div>';
       window.document.body.appendChild(n);
@@ -587,8 +797,6 @@
 
     for (i = 0; i < nodes.length; i++) {
       n = nodes[i];
-
-      if (this.debug) { window.console.log('Attaching popover listener', n); }
 
       // ensure target has unique id
       if (! n.getAttribute('id')) { n.setAttribute('id', guid('popover-target') ); }
@@ -707,7 +915,7 @@
   if (
     (function() {
     var check = false;
-    (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+    (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true;})(navigator.userAgent||navigator.vendor||window.opera);
     return check;}())
   ) { return; }
 
@@ -744,8 +952,7 @@
     'vegas' : { 'color' : '#000', 'position' : 'right top', 'size' : 'auto' },
     'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' },
     'koru' : { 'color' : '#a2a2a2', 'position' : 'center center', 'size' : 'cover' },
-
-    'archive' : { 'color': '#fafafa', 'size' : 'contain', 'position' : 'left bottom' },
+    'archive' : { 'color' : '#ddd', 'position' : 'right top', 'size' : 'cover' },
     'pink' : { 'size' : 'cover' }
   },
 
@@ -753,7 +960,7 @@
   parser = function(path) { return path.replace(/^.*[\/\\]/g, '').split(".")[0]; },
   body = document.body,
   doc = document.querySelector('#doc'),
-  screen = new Screen('body'),
+  screen = new FullScreen('body'),
   input = null,
   bg = function(n) {
     var cls = parser(n.getAttribute('href'));
@@ -851,7 +1058,7 @@
       n.addEventListener('click', function(e) {
         e.preventDefault();
 
-        var ancestor = e.target
+        var ancestor = e.target;
         while (ancestor.tagName != 'A') {
           ancestor = ancestor.parentNode;
         }
