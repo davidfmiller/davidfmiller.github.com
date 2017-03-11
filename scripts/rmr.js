@@ -950,7 +950,6 @@
     'lacma' : { 'position' : 'right center', 'color' : '#000' },
     'getty' : { 'position' : 'left bottom', 'color' : '#000', 'size' : 'cover' },
     'vegas' : { 'color' : '#000', 'position' : 'right top', 'size' : 'auto' },
-    'rmr' : { 'color' : '#a2a2a2', 'position' : 'center center' },
     'koru' : { 'color' : '#a2a2a2', 'position' : 'center center', 'size' : 'cover' },
     'archive' : { 'color' : '#ddd', 'position' : 'right top', 'size' : 'cover' },
     'pink' : { 'size' : 'cover' }
