@@ -2,3 +2,7 @@ node_modules
 .sass-cache/
 assets/css/*.css
 assets/js/*.js
+
+# jekyll cache/metadata
+*_site
+*.jekyll-metadata
