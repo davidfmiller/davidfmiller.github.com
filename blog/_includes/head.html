@@ -3,6 +3,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/favicon.svg" color="rgba(233,0,6,1.0)">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <script>
+    if (window.navigator && window.navigator.loadPurpose === 'preview') { window.location.href = '//readmeansrun.com/topsite/'; }
+  </script>
+
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
