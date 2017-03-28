@@ -33,7 +33,7 @@ layout: default
     {{ post.content }}
   </div>
 
-  <a href="{{ post.url | relative_url }}">#</a>
+  <a href="{{ post.url | relative_url }}">{{ post.date | date: "%b %-d, %Y" }}</a>
 </article>
 
 {% endfor %}
