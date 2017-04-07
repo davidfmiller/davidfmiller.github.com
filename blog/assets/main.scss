@@ -27,6 +27,18 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+
+@mixin clearFloat {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  width: 0;
+}
+
+
 // Minima also includes a mixin for defining media queries.
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -40,9 +52,46 @@ $on-laptop:        800px;
 //@import "minima";
 
 body {
-  font-family: courier, monospace;
+/*  font-family: monaco, courier, monospace;
+  font-size: 12px; */
+}
+
+article.post {
+  margin-top: 15px;
+}
+
+section.index {
+  margin-top: 30px;
+  h2 {
+
+  }
+}
+
+pre code {
+  line-height: 1.4em;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.post-nav {
+  .prev { float: left; }
+  .next { float: right; }
+
+  &:after {
+    @include clearFloat;
+  }
+}
+
+footer {
+  text-align: right;
 }
 
 figure {
   margin: 0;
+}
+
+pre {
+  font-size: 11px;
 }

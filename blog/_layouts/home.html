@@ -4,36 +4,31 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
-
-  {{ content }}
-
-  <ul class="post">
-    {% for post in site.posts %}
-      <li>
-        {% comment %}
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        {% endcomment %}
-        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      </li>
-    {% endfor %}
-  </ul>
 </div>
 
 {% for post in site.posts limit:1 %}
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <p class="post-meta">
-      <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
-    </p>
-  </header>
-
   <div class="post-content" itemprop="articleBody">
     {{ post.content }}
   </div>
 
-  <a href="{{ post.url | relative_url }}">{{ post.date | date: "%b %-d, %Y" }}</a>
+  <a href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></a>
 </article>
 
 {% endfor %}
+
+<section class="index">
+  <h2>All posts</h2>
+  <ul class="post">
+    {% for post in site.posts %}
+      <li>
+        {% comment %}
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        
+        {% endcomment %}
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> - <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

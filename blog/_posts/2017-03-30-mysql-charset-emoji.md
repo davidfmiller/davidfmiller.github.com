@@ -1,24 +1,22 @@
 ---
 layout: post
-title:  "Modifying MySQL’s Default Character Set to Support Emoji"
+title:  "Modify MySQL’s Character Set to Support Emoji"
 date:   2017-03-30 00:00:00 -0700
 categories: mysql emoji
 ---
 
+# Modify MySQL’s Character Set to Support Emoji
 
+[MySQL](https://www.mysql.com)’s stock configuration is tuned for space & performance considerations. An unfortunate side-effect of this priority is that trying to insert emoji into your tables will likely fail:
 
-# Modifying MySQL’s Default Character Set to Support Emoji
-
-[MySQL](https://www.mysql.com)’s stock configuration is tuned for space & performance considerations. An unfortunate side-effect of this state is that trying to insert emoji into your tables will likely fail:
-
-{% highlight shell %}
+{% highlight sql %}
 mysql> INSERT INTO Person(name, bio) VALUES('dave', '🇨🇦☕️🚲🏁🏋🏻☀️🍗🍖🍔🌮🌯🍣📷🖌💻📖🍺🍷😴😴😴');
 ERROR 1366 (HY000): Incorrect string value: '\xF0\x9F\x9A\xB2\xF0\x9F...' for column 'bio' at row 1
 {% endhighlight %}
 
-A quick scan of MySQL’s configuration reveals the non-UTF8 culprits:
+A quick scan of MySQL’s configuration reveals the non-`utf8` culprits:
 
-{% highlight shell %}
+{% highlight sql %}
 mysql> SHOW VARIABLES WHERE Variable_name LIKE 'character\_set\_%' OR Variable_name LIKE 'collation%';
 +--------------------------+-------------------+
 | Variable_name            | Value             |
@@ -36,7 +34,7 @@ mysql> SHOW VARIABLES WHERE Variable_name LIKE 'character\_set\_%' OR Variable_n
 +--------------------------+-------------------+
 {% endhighlight %}
 
-Because it’s 2017 and not supporting emoji is a pretty heinous crime, we’ll need to update MySQL’s configuration to use 4-byte `utf8`. Fire up your text editor and edit your MySQL configuration file to include the following:
+Because it’s 2017 and not supporting emoji has become a pretty heinous crime, let’s update MySQL’s configuration (the standard distribution for [macOS Sierra](http://www.apple.com/macos/sierra/) is located at `/usr/local/mysql/etc/my.cnf`; [Ubuntu](https://www.ubuntu.com)’s is at `/etc/mysql/mysql.conf.d/mysqld.cnf`) to use 4-byte `utf8` and deal with the storage/performance tradeoffs. Fire up your text editor & edit your MySQL configuration file to include the following key/value pairs:
 
 {% highlight shell %}
 [client]
@@ -51,11 +49,9 @@ character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 {% endhighlight %}
 
-(MySQL’s standard distribution for [macOS Sierra](http://www.apple.com/macos/sierra/) is located at `/usr/local/mysql/etc/my.cnf`, and on [Ubuntu](https://www.ubuntu.com) it’s found at `/etc/mysql/mysql.conf.d/mysqld.cnf`.)
+Restart `mysqld`, reconnect your client and the character set preferences will be reflected:
 
-Restart `mysqld`, reconnect the client and the changes should have taken effect:
-
-{% highlight shell  %}
+{% highlight sql  %}
 mysql> SHOW VARIABLES WHERE Variable_name LIKE 'character\_set\_%' OR Variable_name LIKE 'collation%';
 +--------------------------+--------------------+
 | Variable_name            | Value              |
@@ -73,9 +69,9 @@ mysql> SHOW VARIABLES WHERE Variable_name LIKE 'character\_set\_%' OR Variable_n
 +--------------------------+--------------------+
 {% endhighlight %}
 
-… and the `INSERT` will now work as expected:
+… and the `INSERT` will work as expected:
 
-{% highlight shell %}
+{% highlight sql %}
 mysql> INSERT INTO Person(name, bio) VALUES('dave', '🇨🇦☕️🚲🏁🏋🍗🍖🍔🌮🌯🍣📷🖌💻📖🍺🍷😴😴😴');
 Query OK, 1 row affected (0.00 sec)
 {% endhighlight %}
