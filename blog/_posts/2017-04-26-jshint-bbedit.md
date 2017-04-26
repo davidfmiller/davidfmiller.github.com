@@ -5,7 +5,7 @@ date:   2017-04-26 00:00:00 -0700
 categories: jshint bbedit applescript
 ---
 
-# Terminal.app Profiles
+# JSHint & BBEdit
 
 [BBEdit](https://www.barebones.com/products/bbedit/)’s [`bbresults`](https://www.barebones.com/support/bbedit/notes-11.6.html) utility makes it easy to pipe output from shell commands into an easy-to-navigate results/search window.
 
