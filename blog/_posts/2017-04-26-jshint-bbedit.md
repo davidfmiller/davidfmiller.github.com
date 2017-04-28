@@ -12,3 +12,5 @@ categories: jshint bbedit applescript
 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) developers who still write their code in BBEdit (as opposed to [Sublime](https://www.sublimetext.com), [Atom](https://atom.io), [Textmate](https://macromates.com), [Visual Studio Code](https://code.visualstudio.com) or whatever the text editor du jour is) will find the following [AppleScript](https://developer.apple.com/library/content/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html) invaluable:
 
 <script src="https://gist.github.com/davidfmiller/1790b90dfbc7781df757e85ff5cc9ac4.js"></script>
+
+Save the script in `~/Library/Application Support/BBEdit/Scripts` (and you’ll probably want to assign a keyboard shortcut via the Scripts palette, too).
