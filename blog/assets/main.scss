@@ -105,6 +105,26 @@ pre {
   section.index li span {
     display: none;
   }
+  
+  .post-nav {
+
+    a {
+      display: block;
+
+      &.prev {
+        float: none;
+      }
+
+      &.next {
+        text-align: left;
+        float: none;
+      }
+
+      & + a {
+        margin-top: 20px;
+      }
+    }
+  }
 
 
 }
