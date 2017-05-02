@@ -111,13 +111,8 @@ pre {
     a {
       display: block;
 
-      &.prev {
-        float: none;
-      }
-
       &.next {
-        text-align: left;
-        float: none;
+        float: left;
       }
 
       & + a {
