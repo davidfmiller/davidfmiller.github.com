@@ -7,7 +7,7 @@ categories: router macos gps
 
 # Router - a GPS route viewer for your Mac
 
-For the last few years I’ve been an avid cyclist and have amassed a pile of `.FIT` files on my computer’s hard drive that have been created & saved from my [Garmin](http://www.garmin.com) GPS device. As a reasonably competitive person I signed up for a [Strava](https://www.strava.com) account years ago, but I’ve never had a good way of viewing the GPS routes on my computer… until now:
+As an avid cyclist for several years I’ve amassed a pile of `.FIT` files on my computer that have been created & saved from my [Garmin](http://www.garmin.com) GPS dingus. As a reasonably competitive person I signed up for a [Strava](https://www.strava.com) account years ago, but I’ve never had a good way of viewing the GPS routes on my computer… until now:
 
   <img src="https://readmeansrun.com/router/assets/screen.png" alt="Router screenshot" width="640" height="400">
 
