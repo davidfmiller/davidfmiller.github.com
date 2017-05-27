@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Router - a GPS route viewer for your Mac"
+title:  "Router — a GPS route viewer for your Mac"
 date:   2017-05-24 00:00:00 -0700
 categories: router macos gps
 ---
 
-# Router - a GPS route viewer for your Mac
+# Router — a GPS route viewer for your Mac
 
 As an avid cyclist for several years I’ve amassed a pile of `.FIT` files on my computer that have been created & saved from my [Garmin](http://www.garmin.com) GPS dingus. As a reasonably competitive person I signed up for a [Strava](https://www.strava.com) account years ago, but I’ve never had a good way of viewing the GPS routes on my computer… until now:
 
