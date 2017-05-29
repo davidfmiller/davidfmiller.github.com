@@ -12,3 +12,5 @@ A few months ago the [mainframe](https://readmeansrun.com) started serving conte
     sudo letsencrypt certonly --renew-by-default --email {email} -a manual -d {domain} --agree-tos
 
 (Substitute your email address & domain as appropriate, and follow the steps necessary to confirm ownership of the domain being renewed.) 
+
+Browse the [documentation](https://letsencrypt.org/docs/) for more information.
