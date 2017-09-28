@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="560px" height="560px" viewBox="0 0 560 560" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-    <title>Path 2</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M1.54045665e-11,240 L120,360 L280,200 C280,200 320,160 359.864465,201.799766 C399.728931,243.599531 360,280 360,280 L200,440 L320,560 C320,560 480,400 520,360 C560,320 600,200 480,80 C360,-40 240,1.67147545e-06 200,40 C160,79.9999983 1.54045665e-11,240 1.54045665e-11,240 Z" id="Path-2" fill="#000000"></path>
-    </g>
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M1.54045665e-11,240 L120,360 L280,200 C280,200 320,160 359.864465,201.799766 C399.728931,243.599531 360,280 360,280 L200,440 L320,560 C320,560 480,400 520,360 C560,320 600,200 480,80 C360,-40 240,1.67147545e-06 200,40 C160,79.9999983 1.54045665e-11,240 1.54045665e-11,240 Z" id="Path-2" fill="#000000"></path>
+</g>
 </svg>
