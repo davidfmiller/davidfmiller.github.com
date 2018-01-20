@@ -2,7 +2,7 @@
 layout: post
 title:  "ESLint & BBEdit"
 date:   2018-01-19 00:00:00 -0700
-categories: eslint bbedit applescript
+categories: eslint javascript bbedit applescript
 ---
 
 # ESLint & BBEdit
@@ -11,7 +11,7 @@ In a [previous post](/blog/jshint/bbedit/applescript/2017/04/26/jshint-bbedit.ht
 
 <script src="https://gist.github.com/davidfmiller/436c5e60a9a98f6adc31ce1ee008f332.js"></script>
 
-Save the AppleScript under `~/Library/Application Support/BBEdit/Scripts` (create the folder if it doesn't exist), after which you can invoke the script via BBEdit's Scripts menu and/or palette.
+Save the AppleScript under `~/Library/Application Support/BBEdit/Scripts` (create the folder if it doesn't exist), after which you can invoke the script via BBEdit's Scripts menu (Window → Palettes → Scripts) and/or palette.
 
 
 Install ESLint via...

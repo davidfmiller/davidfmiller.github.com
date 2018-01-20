@@ -2,7 +2,7 @@
 layout: post
 title:  "JSHint & BBEdit"
 date:   2017-04-26 00:00:00 -0700
-categories: jshint bbedit applescript
+categories: jshint javascript bbedit applescript
 ---
 
 # JSHint & BBEdit
