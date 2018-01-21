@@ -15,14 +15,14 @@ The only knock against changing profiles for your Terminal window is having your
 
 [`terminal-profile`](https://github.com/davidfmiller/apples/blob/master/terminal-profile) is a simple shell script to change the current tab’s profile without your hands leaving the keyboard:
 
-    $ terminal-profile Pro
+<pre>$ terminal-profile Pro</pre>
 
 … where the argument is the name of the profile as defined in Terminal’s preferences (if no argument is provided the default profile is “Pro”).
 
 For even more keyboard convenience, create an alias in `~/.profile`:
 
-    alias tp='terminal-profile'
+<pre>alias tp='terminal-profile'</pre>
 
 … and change your Terminal profile with ease:
 
-    $ tp "Red Sands"
+<pre>$ tp "Red Sands"</pre>
