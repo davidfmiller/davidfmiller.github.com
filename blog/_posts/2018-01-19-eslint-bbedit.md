@@ -7,7 +7,7 @@ categories: eslint javascript bbedit applescript
 
 # ESLint & BBEdit
 
-In a [previous post](/blog/jshint/bbedit/applescript/2017/04/26/jshint-bbedit.html) I showed how to run [BBEdit]((https://www.barebones.com/products/bbedit/))'s active document through [`jshint`](http://jshint.com). Since then I've made the switch to the newer & shinier [`eslint`](https://eslint.org), and so comes a new AppleScript to lint your JavaScript:
+In a [previous post](/blog/jshint/javascript/bbedit/applescript/2017/04/26/jshint-bbedit.html) I showed how to run [BBEdit]((https://www.barebones.com/products/bbedit/))'s active document through [`jshint`](http://jshint.com). Since then I've switched to the newer & shinier [`eslint`](https://eslint.org), and so comes a new [AppleScript](https://developer.apple.com/library/content/documentation/AppleScript/Conceptual/AppleScriptX/AppleScriptX.html) to lint your JavaScript:
 
 <pre><span class="cm">(* Pipe eslint output into a BBEdit results window  *)</span>
 <span class="k">try</span>
@@ -21,15 +21,14 @@ In a [previous post](/blog/jshint/bbedit/applescript/2017/04/26/jshint-bbedit.ht
     <span class="nb">beep</span>
 <span class="k">end</span> <span class="k">try</span></pre>
 
-Save the AppleScript under `~/Library/Application Support/BBEdit/Scripts` (create the folder if it doesn't exist), after which you can invoke the script via BBEdit's Scripts menu (Window → Palettes → Scripts) and/or palette.
+Save the AppleScript under `~/Library/Application Support/BBEdit/Scripts` (create the folder if it doesn't exist), after which you can invoke the script via BBEdit's Scripts menu and/or palette (Window → Palettes → Scripts).
 
-Install ESLint via...
+Install ESLint via…
 
 <pre>⚡ npm i eslint -g</pre>
 
-Grab an ESLint configuration file via...
+… grab an ESLint configuration file via...
 
 <pre>⚡ curl "https://raw.githubusercontent.com/davidfmiller/configs/master/doteslintrc.js" > ~/.eslintrc.js</pre>
 
-
-... and [customize it](https://eslint.org/docs/rules/) to suit your preferences.
+… and [customize it](https://eslint.org/docs/rules/) to suit your preferences.
