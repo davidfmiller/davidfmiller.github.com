@@ -7,7 +7,15 @@ layout: default
     {{ content }}
   </div>
 
+
   <p class="post-meta">
+
+    <ul class="categories">
+    {% for cat in page.categories %}
+      <li>{{ cat }} </li>
+    {% endfor %}
+    </ul>
+
     <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
     {% if page.author %}
       • <span itemprop="author" itemscope itemtype="http://schema.org/Person">

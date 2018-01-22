@@ -14,18 +14,24 @@
   width: 0;
 }
 
-body {
-
-}
-
 article.post {
-  margin-top: 15px;
+  margin: 0 0 60px 0;
 }
 
 section.index {
   margin-top: 30px;
   h2 {
 
+  }
+}
+
+ul.categories {
+  padding: 0 0 15px 0;
+  li {
+    display: inline;
+    &:first-child {
+      padding-left: 0;
+    }
   }
 }
 
@@ -52,12 +58,9 @@ footer {
   margin-top: 50px;
 }
 
-figure {
+figure.hightlight {
   margin: 0;
-}
-
-pre {
-  font-size: 11px;
+  padding: 0;
 }
 
 
@@ -81,7 +84,7 @@ pre {
   section.index li span {
     display: none;
   }
-  
+
   .post-nav {
 
     a {
