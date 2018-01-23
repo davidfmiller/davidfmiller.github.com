@@ -1,12 +1,11 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post">
 
-  <div class="post-content" itemprop="articleBody">
+  <div class="post-content">
     {{ content }}
   </div>
-
 
   <p class="post-meta">
 
@@ -16,7 +15,7 @@ layout: default
     {% endfor %}
     </ul>
 
-    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
     {% if page.author %}
       • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
           <span itemprop="name">
@@ -35,3 +34,33 @@ layout: default
   </div>
 
 </article>
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"BlogPosting",
+  "@id":"{{ site.url }}{{ page.url }}",
+  "datePublished":"{{ page.date | date_to_xmlschema }}",
+  "dateModified":"{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "David Miller"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "contentUrl": "https://readmeansrun.com/apple-touch-icon.png",
+    "url": "https://readmeansrun.com/apple-touch-icon.png"
+  },
+  "mainEntityOfPage" : "https://readmeansrun.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "READMEANSRUN",
+    "url": "https://readmeansrun.com",
+    "logo": {
+      "@type": "ImageObject",
+      "contentUrl": "https://readmeansrun.com/apple-touch-icon.png",
+      "url": "https://readmeansrun.com/apple-touch-icon.png"
+    }
+  },
+  "headline":"{{ page.title }}"
+}
+</script>
