@@ -15,7 +15,7 @@ The goods news: as of 10.12 text clippings are plain old files saved in Apple’
 
 [text-clipping](https://github.com/davidfmiller/bin/blob/master/text-clipping) is a simple [Swift](https://swift.org) script that will echo the plain-text contents of clippings to standard out:
 
-<pre>$ text-clipping ~/Desktop/hashtags.textClipping
+<pre><div>$ text-clipping ~/Desktop/hashtags.textClipping
 #Z7
 #raw
 #RPE11
@@ -27,6 +27,6 @@ The goods news: as of 10.12 text clippings are plain old files saved in Apple’
 #squatsarefree
 #fromwhereilift
 #bulkingseason
-#ysesucksforlifting</pre>
+#ysesucksforlifting</div></pre>
 
 [Clone it](https://github.com/davidfmiller/bin/blob/master/text-clipping) on [GitHub](https://github.com/davidfmiller/bin/).

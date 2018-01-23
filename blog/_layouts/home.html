@@ -13,7 +13,18 @@ layout: default
     {{ post.content }}
   </div>
 
-  <a href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></a>
+  <p class="post-meta">
+
+    <ul class="categories">
+    {% for cat in post.categories %}
+      <li>{{ cat }} </li>
+    {% endfor %}
+    </ul>
+
+    <a href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></a>
+
+  </p>
+
 </article>
 
 {% endfor %}

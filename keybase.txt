@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/davidfmiller
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://readmeansrun.com
+  * I am davidfmiller (https://keybase.io/davidfmiller) on keybase.
+  * I have a public key ASAgTW_t_wT0QgKwfHaHdKfDho9YtpploXBeIIKgRckrzAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120204d6fedff04f44202b07c768774a7c3868f58b69a65a1705e2082a045c92bcc0a",
+            "host": "keybase.io",
+            "kid": "0120204d6fedff04f44202b07c768774a7c3868f58b69a65a1705e2082a045c92bcc0a",
+            "uid": "ff34b0b7b03c102b72481a7a28eadf19",
+            "username": "davidfmiller"
+        },
+        "service": {
+            "hostname": "readmeansrun.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.22"
+    },
+    "ctime": 1494908570,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1494908546,
+        "hash": "7e9de537c6024ec6a1b174a102f1162bda7b5f20c51135d4a0dda8b4f86dbcb03826ba7ced8f6618b48007f7ece12f3eaf68353be336fe59114de5d4e2347365",
+        "seqno": 1086397
+    },
+    "prev": "6ec9c59f319cbfe0bf303c84abb5c303dcce6b2adba3bb1a1b18c29fb61d3100",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgIE1v7f8E9EICsHx2h3Snw4aPWLaaZaFwXiCCoEXJK8wKp3BheWxvYWTFAv17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMjA0ZDZmZWRmZjA0ZjQ0MjAyYjA3Yzc2ODc3NGE3YzM4NjhmNThiNjlhNjVhMTcwNWUyMDgyYTA0NWM5MmJjYzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMjA0ZDZmZWRmZjA0ZjQ0MjAyYjA3Yzc2ODc3NGE3YzM4NjhmNThiNjlhNjVhMTcwNWUyMDgyYTA0NWM5MmJjYzBhIiwidWlkIjoiZmYzNGIwYjdiMDNjMTAyYjcyNDgxYTdhMjhlYWRmMTkiLCJ1c2VybmFtZSI6ImRhdmlkZm1pbGxlciJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoicmVhZG1lYW5zcnVuLmNvbSIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjIyIn0sImN0aW1lIjoxNDk0OTA4NTcwLCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0OTQ5MDg1NDYsImhhc2giOiI3ZTlkZTUzN2M2MDI0ZWM2YTFiMTc0YTEwMmYxMTYyYmRhN2I1ZjIwYzUxMTM1ZDRhMGRkYThiNGY4NmRiY2IwMzgyNmJhN2NlZDhmNjYxOGI0ODAwN2Y3ZWNlMTJmM2VhZjY4MzUzYmUzMzZmZTU5MTE0ZGU1ZDRlMjM0NzM2NSIsInNlcW5vIjoxMDg2Mzk3fSwicHJldiI6IjZlYzljNTlmMzE5Y2JmZTBiZjMwM2M4NGFiYjVjMzAzZGNjZTZiMmFkYmEzYmIxYTFiMThjMjlmYjYxZDMxMDAiLCJzZXFubyI6NSwidGFnIjoic2lnbmF0dXJlIn2jc2lnxED0hKGRpdv21Boz0jDvfaRkO6j4Ks5hGfwatR1PRudbPH5KK215g3l6kdqKzaLrWzq8GJqaKRoIqfS06alzu4kNqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgwjYstuHdubYP5vBNm3e8mR9ETvZrg0EI3oXUKBUNWrijdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/davidfmiller
+
+==================================================================

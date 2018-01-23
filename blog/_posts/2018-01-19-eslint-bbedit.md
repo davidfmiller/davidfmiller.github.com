@@ -25,10 +25,10 @@ Save the AppleScript under `~/Library/Application Support/BBEdit/Scripts` (creat
 
 Install ESLint via…
 
-<pre>⚡ npm i eslint -g</pre>
+<pre><div>⚡ npm i eslint -g</div></pre>
 
 … grab an ESLint configuration file via...
 
-<pre>⚡ curl "https://raw.githubusercontent.com/davidfmiller/configs/master/doteslintrc.js" > ~/.eslintrc.js</pre>
+<pre><div>⚡ curl "https://raw.githubusercontent.com/davidfmiller/configs/master/doteslintrc.js" > ~/.eslintrc.js</div></pre>
 
 … and [customize it](https://eslint.org/docs/rules/) to suit your preferences.

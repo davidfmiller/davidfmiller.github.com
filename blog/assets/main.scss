@@ -27,7 +27,8 @@ section.index {
 
 
 ul.categories {
-  padding: 0 0 15px 0;
+  color: #444;
+  margin: 20px 0;
   li {
     display: inline;
     &:first-child {
@@ -56,7 +57,7 @@ header {
 
 footer {
   text-align: right;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 figure.hightlight {

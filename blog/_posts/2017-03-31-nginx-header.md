@@ -9,10 +9,10 @@ categories: nginx emoji
 
 Modify your site’s [`nginx`](http://nginx.org/en/)’s configuration file (the default is located at `/etc/nginx/sites-enabled/default` on [Ubuntu](http://ubuntu.com)) to cloak your infrastructure & have some fun with your `Server` response header:
 
-<pre>server {
+<pre><div>server {
     # …
     more_set_headers 'Server: 💥';
     # …
-}</pre>
+}</div></pre>
 
 (The irony in revealing some of the mainframe's infrastructure should be duly noted.)
