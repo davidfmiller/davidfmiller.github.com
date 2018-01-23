@@ -16,8 +16,8 @@ layout: default
   <p class="post-meta">
 
     <ul class="categories">
-    {% for cat in post.categories %}
-      <li>{{ cat }} </li>
+    {% for cat in page.categories %}
+      <li><a href="/blog/category/{{ cat }}">{{ cat }}</a></li>
     {% endfor %}
     </ul>
 
