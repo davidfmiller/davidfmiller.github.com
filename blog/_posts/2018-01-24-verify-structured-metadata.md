@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Make Your Structured Data a Little Easier to Verify"
+title: "Verify Your Structured Data"
 date:  2018-01-25 00:00:00 -0700
 categories: schema seo
 ---
 
-# Make Your Structured Data a Little Easier to Verify
+# Verify Your Structured Data
 
 Recently the time came to update a few projects with metadata per [Schema.org](http://schema.org)’s guidelines. I will leave the arguments for _why_ you should use structured data to [the experts](https://duckduckgo.com/?q=why+use+structured+data&t=osx&ia=web), I will merely share one way to easily  to validate that your structured data is working as intended.
 
@@ -15,7 +15,7 @@ Recently the time came to update a few projects with metadata per [Schema.org](h
 
 … a bookmarklet that will accomplish just that. Drag it to your browser’s bookmarks/toolbar to easily view the validation tool’s results for the current page.
 
-(And for the curious, you can view the data extracted from the testing tool <a href="https://search.google.com/structured-data/testing-tool/u/0/#url=https%3A%2F%2Freadmeansrun.com%2Fblog%2Fschema%2Fseo%2F2018%2F01%2F25%2Fschema-seo.html">for this post</a>.)
+(And for the curious, you can view the data extracted from the testing tool <a href="https://search.google.com/structured-data/testing-tool/u/0/#url=https%3A%2F%2Freadmeansrun.com%2Fblog%2Fschema%2Fseo%2F2018%2F01%2F25%2Fverify-structured-metadata.html">for this post</a>.)
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
