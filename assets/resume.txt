@@ -35,7 +35,7 @@ Senior Front-End Engineer
 Yahoo Sports & Yahoo Video (Santa Monica, CA)
 November 2007 - March 2010,
 June 2011 - March 2015
-- Developed and maintained the web’s most popular sports site.
+- Developed and maintained the web’s most popular sports site (at the time).
 - Wielded web standards to create attractive, user-friendly, accessible, global and highly-trafficked interactive & low-bandwidth pages consumed worldwide on a variety of devices.
 - Directed front-end engineering team and trained junior employees and interns. Involved in hiring process, code and architecture reviews, and team development.
 
