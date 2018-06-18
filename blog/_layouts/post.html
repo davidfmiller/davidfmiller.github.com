@@ -15,7 +15,7 @@ layout: default
     {% endfor %}
     </ul>
 
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+    <time datetime="{{ page.date | date_to_xmlschema }}"  itemprop="pubdate">{{ page.date | date: "%b %-d, %Y" }}</time>
     {% if page.author %}
       • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
           <span itemprop="name">

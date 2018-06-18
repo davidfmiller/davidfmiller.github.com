@@ -21,7 +21,7 @@ layout: default
     {% endfor %}
     </ul>
 
-    <a href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></a>
+    <a href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="pubdate">{{ post.date | date: "%b %-d, %Y" }}</time></a>
 
   </p>
 
