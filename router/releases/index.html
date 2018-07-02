@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=440">
+  <title>Router</title>
+  <script>
+    if (window.navigator && window.navigator.loadPurpose === 'preview') { window.location.href = '//readmeansrun.com/topsite/'; }
+  </script>
+
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!--
+  <link rel="shortcut icon" href="assets/favicon.png">
+-->
+  <meta name="keywords" content="gps, gpx, tcx, kml, fit, garmin, pioneer, exif, geocache, maps, routes, directions, trails, GPSBabel">
+  <meta property="og:title" content="Router">
+  <meta property="og:description" content="Router is the best way to view &amp; edit .GPX, .TCX, .KML, .LOC, Garmin (.FIT), and Pioneer (.DB) GPS route files on your Mac">
+  <meta property="og:type" content="product">
+  <meta property="og:locality" content="Calgary">
+  <meta property="og:region" content="Alberta">
+  <meta property="og:country-name" content="Canada">
+  <meta property="og:email" content="davidfmiller@me.com">
+  <meta property="og:url" content="https://readmeansrun.com/router">
+  <meta property="fb:admins" content="eldaverino">
+
+  <meta property="og:image" content="https://readmeansrun.com/router/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <link rel="stylesheet" type="text/css" href="https://davidfmiller.github.io/man/man.css">
+</head>
+<body>
+
+<div id="man">
+
+<h1><a href="https://readmeansrun.com/router/">Router</a></h1>
+
+<dl>
+
+  <dt>v1.6.6</dt>
+  <dd>Updated FIT SDK</dd>
+  <dd>CSV export</dd>
+
+  <dt>v1.6.5</dt>
+  <dd>Modify trackpoint velocity &amp; elevation</dd>
+  <dd>Remove print &amp; share menu items</dd>
+  <dd>TCX serialization improvements</dd>
+  <dd>High Sierra</dd>
+
+
+  <dt>v1.6.3</dt>
+  <dd>Heartrate, power, cadence, latitude &amp; longitude values editable</dd>
+  <dd>TCX parsing/serializing improvements</dd>
+  <dd>Improvements to deleting columns/properties</dd>
+
+  <dt>v.1.6.0</dt>
+  <dd>Fade welcome window in & out; fade document windows out</dd>
+  <dd>Fix POI for single-point routes</dd>
+  <dd>Add welcome, help, & contact to dock menu</dd>
+  <dd>Extend selection by... 250m / 500m / 1km..., 15 seconds, 1 minute, 5 minutes...</dd>
+
+  <dt>v.1.5.9</dt>
+  <dd>Modify route title via info popover</dd>
+  <dd>Lock icon in info popover for non-editable routes</dd>
+  <dd>Close welcome window with `cmd+W`</dd>
+  <dd>`.loc` files are now editable</dd>
+  <dd>Improve handling wonky characters in route title</dd>
+  <dd>Better properties for single-point "routes"</dd>
+  <dd>Heart rate & cadence columns in table</dd>
+  <dd>Improvements to cadence formatting</dd>
+  <dd>Tooltips on info popover</dd>
+  <dd>Point of Interest toolbar item</dd>
+
+  <dt>1.5.7</dt>
+  <dd>Delete route property/key fixes</dd>
+  <dd>Average grade for route</dd>
+  <dd>POI menu item now under "View"</dd>
+
+
+  <dt>v.1.5.6</dt>
+  <dd>Reverse route</dd>
+  <dd>Delete route/trackpoint properties via table column select → delete</dd>
+
+  <dt>v.1.5.3</dt>
+  <dd>Thumbs in welcome window now proportional</dd>
+  <dd>Elevation no longer serialized as integer</dd>
+  <dd>Datetime parsed from JPEG & TIFF exif</dd>
+  <dd>JPEG (w/ EXIF) sample included in app</dd>
+  <dd>LOC file export (using first/only trackpoint from route)</dd>
+  <dd>Only update selected point map annotation if necessary</dd>
+  <dd>Delete toolbar item</dd>
+  <dd>Fix for intermittent bug when copying a route's points</dd>
+  <dd>Fix for zoom toolbar item image</dd>
+  <dd>VAMs calculated for route/selection</dd>
+  <dd>Toolbar item for new from selection</dd>
+
+  <dt>v.1.5.2</dt>
+  <dd>TIFF exif data parsed</dd>
+  <dd>Improved toolbar icons</dd>
+  <dd>Improve XML serialization</dd>
+  <dd>Improved GPX parsing (power + hr)</dd>
+  <dd>Temperature point of interest</dd>
+
+  <dt>v1.5.1</dt>
+  <dd>Load welcome window thumbs in background</dd>
+  <dd>TouchBar for welcome window</dd>
+  <dd>GPX waypoints & routes are parsed</dd>
+  <dd>EXIF data from JPEG files parsed</dd>
+
+
+  <dt>v1.4.7</dt>
+  <dd>Welcome window</dd>
+  <dd>Improve detecting if delete is allowed</dd>
+  <dd>Fix for location toolbar icon state</dd>
+
+  <dt>v1.4.5</dt>
+  <dd>Creating new route from selection creates proper laps</dd>
+  <dd>Toolbar icons get a makeover</dd>
+  <dd>Active status for table toolbar icon</dd>
+
+  <dt>v1.4.4</dt>
+  <dd>Document window size constraints</dd>
+  <dd>Fix info popover title</dd>
+  <dd>Spring cleaning</dd>
+
+  <dt>v1.2.1</dt>
+  <dd>Fix lap selection in touchbar for routes with a plethora of laps</dd>
+  <dd>Full-size content view</dd>
+  <dd>Improved inspector layout</dd>
+
+  <dt>v1.2.0</dt>
+  <dd>.LOC file parsing</dd>
+  <dd>Improved popover for route/selection inspector</dd>
+
+  <dt>v1.1.10</dt>
+  <dd>Even-more-improved toolbar & touchbar icons</dd>
+  <dd>Toolbar item labels in customization palette</dd>
+  <dd>Map segmented toolbar item behaves properly after being removed/added</dd>
+  <dd>Table toolbar item</dd>
+  <dd>Tooltips & copy improvements</dd>
+  <dd>Table, laps, & map type touchbar items</dd>
+  <dd>Fix for initial table visibility</dd>
+  <dd>Touchbar for preferences window</dd>
+  <dd>Display sheet when trying to modify uneditable file type w/ checkbox to not show again</dd>
+
+
+  <dt>v1.1.9</dt>
+  <dd>Improved touchbar icons</dd>
+  <dd>Fix for potential crash w/ multiple selection</dd>
+  <dd>Map-type segment toolbar item</dd>
+
+  <dt>v1.1.8</dt>
+  <dd>Improved toolbar</dd>
+  <dd>New route from selection</dd>
+  <dd>Reveal selected rows in table</dd>
+  <dd>Power displayed in table</dd>
+
+  <dt>v1.1.7</dt>
+  <dd>Remove buggy graphview</dd>
+
+  <dt>v1.1.6</dt>
+  <dd>Compatibility with macOS 10.11 (El Capitan)</dd>
+
+  <dt>v1.1.5</dt>
+  <dd>Laps from Garmin & Pioneer devices are parsed</dd>
+  <dd>Show grade for trackpoints, when available</dd>
+  <dd>Fixed Pioneer distance parsing</dd>
+  <dd>Table columns remembered across sessions</dd>
+  <dd>“Zoom to Selection” is an alternate menu item for “Zoom to Route”</dd>
+
+  <dt>v1.1.4</dt>
+  <dd>Remember pref of table view visibility</dd>
+  <dd>Maximum speed along route is displayed</dd>
+  <dd>Metric distance formatting improvement</dd>
+  <dd>Dock app menu</dd>
+  <dd>Fix for duplicating .DB & .FIT routes</dd>
+
+  <dt>v1.1.3</dt>
+  <dd>Touchbar support</dd>
+
+  <dt>v1.1.2</dt>
+  <dd>Bing Maps</dd>
+  <dd>Document > Save As, Revert, Rename…, Move To…, & Revert To menu items enabled</dd>
+
+  <dt>v1.1.1</dt>
+  <dd>Improved Pioneer .DB parsing</dd>
+  <dd>Support for <a href="http://openstreetmap.org" title="OpenStreetMap">OpenStreetMap</a></dd>
+  <dd>Crop the beginning/end of a route through the trackpoint table</dd>
+  <dd>Select columns to delete trackpoint attributes (other than location/elevation)</dd>
+
+  <dt>v1.1</dt>
+  <dd>Trackpoint table</dd>
+  <dd>Copy trackpoint location</dd>
+  <dd>Copy external map URL for tracepoint</dd>
+
+  <dt>v1.0.6</dt>
+  <dd>Toolbar item to open starting pointing in Apple Maps</dd>
+  <dd>Even more better TCX, KML, and GPX parsing</dd>
+  <dd>Preference for <a href="https://maps.apple.com">Apple Maps</a> or <a href="https://maps.google.com">Google Maps</a> and units of measurement (Imperial/Metric)</dd>
+
+  <dt>v1.0.5</dt>
+  <dd>Improved route parsing</dd>
+
+  <dt>v1.0.4</dt>
+  <dd>Support for <a href="http://pioneer-cyclesports.com/" title="Pioneer cycle computer">Pioneer cycle computer</a> routes</dd>
+
+  <dt>v1.0.3</dt>
+  <dd>Icons for <code>.fit</code>, <code>.gpx</code>, <code>.tcx</code>, and <code>.kml</code> documents</dd>
+
+  <dt>v1.0.2</dt>
+  <dd>Application icon</dd>
+
+  <dt>v1.0.1</dt>
+  <dd>Add credits for included libraries</dd>
+
+  <dt>v1.0.0</dt>
+  <dd>Initial release</dd>
+</dl>
+
+<footer>
+  <hr>
+  &copy; 2018 <a href="https://readmeansrun.com">READMEANSRUN</a>. Check the <a href="https://readmeansrun.com/blog/">blog</a>.
+</footer>
+
+</div>
+
+</body>
+</html>
