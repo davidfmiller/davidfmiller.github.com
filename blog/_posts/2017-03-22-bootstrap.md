@@ -27,6 +27,7 @@ sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install ruby
+sudo apt-get install golang-go
 sudo apt-get install nodejs
 sudo apt-get install npm
 sudo apt-get install git
