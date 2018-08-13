@@ -12,6 +12,6 @@ My pet project [`man`](http://davidfmiller.github.io/man/)[^2] now supports [foo
 
 And because this blog runs on top of `man`, it gets footnotes for free. It's always cool when well-designed pieces come together.
 
-[^1]: Event in headers!
+[^1]: Even in headers!
 
 [^2]: (Named after the UNIX documentation toolset.)
