@@ -10,7 +10,7 @@ SOFTWARE SKILLS & TOOLS
 - Git, Mercurial, Subversion
 - Adobe Photoshop & Lightroom
 - Mac OS X, Linux & AWS
-
+- Hugo, Shopify, Wordpress, & Drupal
 
 EXPERIENCE
 
