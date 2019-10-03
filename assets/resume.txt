@@ -1,5 +1,6 @@
-David Francis Miller - Software & Web Developer
+David Francis Miller - Software & Web Developer, Photographer
 1-587-585-9857 - davidfmiller@me.com - https://readmeansrun.com
+
 
 SOFTWARE SKILLS & TOOLS
 
@@ -12,8 +13,8 @@ SOFTWARE SKILLS & TOOLS
 - Mac OS X, Linux & AWS
 - Hugo, Shopify, Wordpress, & Drupal
 
-EXPERIENCE
 
+EXPERIENCE
 
 Developer, Designer
 4iiii Innovations (Cochrane, Alberta)
