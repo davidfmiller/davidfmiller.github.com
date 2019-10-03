@@ -3,7 +3,7 @@ David Francis Miller - Software & Web Developer
 
 SOFTWARE SKILLS & TOOLS
 
-- HTML5, JavaScript, CSS3, XML
+- HTML5, JavaScript (React & Vue), CSS3, XML
 - Node, PHP, Apache 2, NGINX, Python, Bash
 - DSLR & medium-format film cameras
 - Objective-C & Swift, Cocoa, Xcode
