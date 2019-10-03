@@ -6,13 +6,11 @@ SOFTWARE SKILLS & TOOLS
 
 - HTML5, JavaScript (React & Vue), CSS3, XML
 - Node, PHP, Apache 2, NGINX, Python, Bash
-- DSLR & medium-format film cameras
+- DSLR cameras, Adobe Photoshop & Lightroom
 - Objective-C & Swift, Cocoa, Xcode
 - Git, Mercurial, Subversion
-- Adobe Photoshop & Lightroom
-- Mac OS X, Linux & AWS
+- Mac OS X, Linux, & AWS
 - Hugo, Shopify, Wordpress, & Drupal
-
 
 EXPERIENCE
 
