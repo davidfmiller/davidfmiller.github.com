@@ -14,9 +14,15 @@ SOFTWARE SKILLS & TOOLS
 
 EXPERIENCE
 
+Software & Systems Engineer
+AeroLab Technology (Calgary, Alberta)
+April 2020 - Present
+- Designing & developing all of the company’s digital assets: photography, web presence, and iOS application.
+
+
 Mobile Application Developer
 Showpass (Calgary, Alberta)
-November 2019 - Present
+November 2019 - April 2020
 - Designing, developing, and maintaining the company’s suite of (iOS & cross-platform) mobile applications.
 
 Developer, Designer
