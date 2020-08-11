@@ -9,7 +9,7 @@ SOFTWARE SKILLS & TOOLS
 - DSLR cameras, Adobe Photoshop & Lightroom
 - Objective-C & Swift (UI), Cocoa, Xcode
 - Git, Mercurial, Subversion
-- Mac OS X, Linux, & AWS
+- macOS, Linux, & AWS
 - Hugo, Shopify, Wordpress, & Drupal
 
 EXPERIENCE
@@ -17,7 +17,7 @@ EXPERIENCE
 Software & Systems Engineer
 AeroLab Technology (Calgary, Alberta)
 April 2020 - Present
-- Designing & developing all of the company’s digital & brand assets: photography, web & social-media presence, and iOS application.
+- Designing & developing all of the company’s digital assets: photography, web & social-media presence, and iOS & Garmin Connect IQ applications.
 
 
 Mobile Application Developer
