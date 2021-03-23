@@ -16,44 +16,52 @@ SOFTWARE SKILLS & TOOLS
 EXPERIENCE
 
 Senior Web & Application Developer
-VentureWeb (Squamish, British Columbia)
+VentureWeb: Squamish, British Columbia
+https://www.ventureweb.net
 June 2017 - November 2018
 April 2021 - Present
 - Working alongside design, marketing &amp; sales, client relations, and the external clients to create compelling online destinations and tools for outdoor/recreation/tourism businesses to thrive online.
 - Contributing to all aspects of the product development process, from concept through to release.
 
+
+Web/Software Designer & Developer, Photographer, Technical Writer
+AeroLab Technology: Calgary, Alberta
+https://aerolab.tech
+April 2020 - Present (Contractor as of April 2021)
+- Designed & developed all of the company’s digital assets: photography, web & social-media presences, and iOS & Garmin Connect IQ applications.
+- Wrote technical documentation and marketing copy.
+
 Freelance Photographer & Web/Software Developer
-READMEANSRUN (Calgary, AB)
+READMEANSRUN
+https://readmeansrun.com
 June 2006 - Present
 - Photographing events for publication by independent arts and entertainment organizations, and shooting other subjects such as weddings and portraits. View a complete list of clients.
 - Working with small businesses to establish a strong and unique online presence.
 - Writing software for macOS & iOS.
 
-Web/Software Designer & Developer, Photographer, Technical Writer
-AeroLab Technology (Calgary, Alberta)
-April 2020 - March 2021
-- Designed & developed all of the company’s digital assets: photography, web & social-media presences, and iOS & Garmin Connect IQ applications.
-- Wrote technical documentation and marketing copy.
-
 Mobile Application Developer
-Showpass (Calgary, Alberta)
+Showpass: Calgary, Alberta
+https://www.showpass.com
 November 2019 - April 2020
 - Designing, developing, and maintaining the company’s suite of (iOS & cross-platform) mobile applications.
 
 Developer/Designer
-4iiii Innovations (Cochrane, Alberta)
+4iiii Innovations: Cochrane, Alberta
+https://4iiii.com
 January 2019 - October 2019
 - Designing, prototyping, and creating iOS and server-side web applications for internal use and future business opportunities.
 - Shooting, editing, and art-directing photography for corporate marketing and communications.
 - Developing and maintaining the company’s web presence & online commerce platform.
 
 Data Visualization Engineer
-Edmunds.com (Santa Monica, CA)
+Edmunds.com: Santa Monica, CA
+https://www.edmunds.com
 April 2015 - February 2016
 - Building web applications alongside the data analytics and engineering teams to visualize and consume the mountains of data stored/created/mined within the company, using both open-source and in-house tools.
 
 Senior Front-End Engineer
-Yahoo Sports & Yahoo Video (Santa Monica, CA)
+Yahoo Sports & Yahoo Video: Santa Monica, CA
+https://sports.yahoo.com
 November 2007 - March 2010,
 June 2011 - March 2015
 - Developed and maintained the web’s most popular sports site (at the time).
@@ -61,17 +69,20 @@ June 2011 - March 2015
 - Directed front-end engineering team and trained junior employees and interns. Involved in hiring process, code and architecture reviews, and team development.
 
 Lead Developer
-Saatchi Online (Los Angeles, CA)
+Saatchi Online: Los Angeles, CA
+https://www.saatchiart.com
 April 2010 - September 2010
 - Developed a website for the art community to enhance the discovery, sharing, and selling/purchasing of art. Involved in all aspects of the development process: interviewing candidates, feature & site design and implementation, testing, and leadership within the company.
 
 Freelance Writer
 O'Reilly & Associates Inc & A List Apart
+https://www.oreilly.com, https://alistapart.com
 September 2003 - April 2008
 - Produced articles covering web development and photography for a network of websites maintained by the leading publisher of computer and technology books and the premier online web development resource.
 
 Senior Web Developer
-iStockphoto (Calgary, AB)
+iStockphoto: Calgary, AB
+https://www.istockphoto.com
 May 2005 - October 2007
 - Responsible for development tasks that included requirements analysis, database design and information architecture, back-end development, and interface design.
 - Key player in establishing development practices and standards.
