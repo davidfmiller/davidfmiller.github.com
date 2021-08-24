@@ -5,9 +5,8 @@ FN:David Miller
 NICKNAME:dave
 ORG:READMEANSRUN;
 EMAIL;type=INTERNET;type=WORK;type=pref:davidfmiller@me.com
-TEL;type=CELL;type=pref:+1 (587) 585-9857
 item2.ADR;type=HOME:;;;David Miller;AB;T3H 5P7;Canada
 item2.X-ABADR:us
-item4.URL;type=pref:http://readmeansrun.com
+item4.URL;type=pref:https://readmeansrun.com
 item4.X-ABLabel:_$!<HomePage>!$_
 END:VCARD
