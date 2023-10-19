@@ -1,0 +1,31 @@
+{
+  "name": "forematter",
+  "version": "0.1.15",
+  "description": "Probably the best (Safari) extension for viewing & inspecting JSON, plain-text, SVG & image responses",
+  "url": "https://readmeansrun.com/forematter/",
+  "license": "ISC",
+  "author": {
+    "name": "davidfmiller",
+    "url": "https://dfmllc.ca"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^6.8.0",
+    "grunt": "^1.1.0",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "terser-webpack-plugin": "^2.3.4",
+    "uglify-es": "^3.3.4",
+    "webpack": "^4.42.1"
+  },
+  "dependencies": {
+    "anchorme": "^1.1.2",
+    "rmr-fullscreen": "^0.1.4",
+    "rmr-popover": "^0.4.5",
+    "rmr-util": "^1.1.140"
+  }
+}
